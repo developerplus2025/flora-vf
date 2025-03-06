@@ -36,6 +36,7 @@ import { Separator } from "@/components/ui/separator";
 import { Card, CardContent } from "@/components/ui/card";
 import { useTheme } from "next-themes";
 import { createHighlighter } from "shiki";
+import { Loader } from "@/components/ui/loader";
 const blockRendererFn = (block: ContentBlock) => {
   if (block.getType() === "code-block") {
     return { component: CodeBlock, editable: false };
@@ -192,7 +193,12 @@ export default function RichTextEditor() {
   }, [editorLoaded]);
 
   if (!editorLoaded) {
-    return <div>Loading editor...</div>;
+    return (
+      <div>
+        {" "}
+        <Loader variant={"classic"} size={"sm"} />
+      </div>
+    );
   }
 
   return (
