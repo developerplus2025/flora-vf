@@ -7,6 +7,7 @@ import { Users, Music, Clock, Download } from "lucide-react";
 import { AudioWaveform, Disc3, Music2, Play } from "lucide-react";
 import { useEffect, useState } from "react";
 import { NumberTicker } from "@/components/magicui/number-ticker";
+import { InteractiveChart } from "./interactive-chart";
 const items = [
   {
     id: 1,
@@ -152,6 +153,9 @@ export default function Metric() {
             </motion.div>
           ))}
         </div>
+      </div>
+      <div>
+        <InteractiveChart />
       </div>
     </div>
   );
