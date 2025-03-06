@@ -699,7 +699,7 @@ export default function SocialProof() {
         </span>
       </div>
       <div className="flex flex-col items-center justify-center">
-        <div className="grid grid-cols-7 justify-items-center gap-4">
+        <div className="grid grid-cols-7 place-items-center justify-items-center gap-4">
           {items.map((item) => (
             <div key={item.id}>{item.svg}</div>
           ))}
