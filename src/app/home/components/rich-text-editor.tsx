@@ -105,15 +105,9 @@ export default function RichTextEditor() {
   const [editorState, setEditorState] = useState(
     EditorState.createWithContent(convertFromRaw(rawContent)),
   );
-  // useEffect(() => {
-  //   setEditorLoaded(true);
-
-  //   setTimeout(() => {
-  //     if (editorRef.current) {
-  //       editorRef.current.focus();
-  //     }
-  //   }, 100);
-  // }, []);
+  useEffect(() => {
+    setEditorLoaded(true);
+  }, []);
   const handleKeyCommand = (command: string, editorState: EditorState) => {
     const newState = RichUtils.handleKeyCommand(editorState, command);
     if (newState) {
@@ -128,7 +122,7 @@ export default function RichTextEditor() {
     if (block.getType() === "code-block") {
       return {
         component: CodeBlock,
-        editable: false, // Không cho chỉnh sửa trực tiếp code
+        editable: true, // Không cho chỉnh sửa trực tiếp code
       };
     }
     return null;
