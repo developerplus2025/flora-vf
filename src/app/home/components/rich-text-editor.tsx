@@ -385,11 +385,11 @@ export default function RichTextEditor() {
         <CardContent className="rounded-lg p-4 dark:bg-[#131313]">
           <div
             className="min-h-[300px] rounded-md border p-3 focus-within:ring-1 focus-within:ring-ring dark:border dark:bg-black dark:text-gray-200"
-            onClick={() => {
-              if (editorRef.current) {
-                editorRef.current.focus();
-              }
-            }}
+            // onClick={() => {
+            //   if (editorRef.current) {
+            //     editorRef.current.focus();
+            //   }
+            // }}
           >
             <Editor
               ref={editorRef}
