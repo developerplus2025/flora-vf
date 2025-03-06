@@ -105,15 +105,15 @@ export default function RichTextEditor() {
   const [editorState, setEditorState] = useState(
     EditorState.createWithContent(convertFromRaw(rawContent)),
   );
-  useEffect(() => {
-    setEditorLoaded(true);
+  // useEffect(() => {
+  //   setEditorLoaded(true);
 
-    setTimeout(() => {
-      if (editorRef.current) {
-        editorRef.current.focus();
-      }
-    }, 100);
-  }, []);
+  //   setTimeout(() => {
+  //     if (editorRef.current) {
+  //       editorRef.current.focus();
+  //     }
+  //   }, 100);
+  // }, []);
   const handleKeyCommand = (command: string, editorState: EditorState) => {
     const newState = RichUtils.handleKeyCommand(editorState, command);
     if (newState) {
