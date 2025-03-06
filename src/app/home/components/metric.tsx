@@ -154,7 +154,7 @@ export default function Metric() {
           ))}
         </div>
       </div>
-      <div>
+      <div className="w-full">
         <InteractiveChart />
       </div>
     </div>
