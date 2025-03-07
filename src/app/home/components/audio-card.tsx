@@ -3,7 +3,7 @@ import React from "react";
 
 const AudioCard = () => {
   return (
-    <div className="mt-[2rem] flex w-[700px] items-center justify-between gap-[1rem] rounded-lg bg-[#131313] px-[1rem] py-[1rem]">
+    <div className="mt-[2rem] flex w-[700px] items-center justify-between gap-[1rem] rounded-lg border bg-[#131313] px-[1rem] py-[1rem]">
       <div className="flex h-[50px] w-[50px] shrink-0 items-center justify-center rounded-lg bg-white text-black">
         <svg
           data-testid="geist-icon"
