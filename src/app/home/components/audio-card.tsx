@@ -1,11 +1,63 @@
-import { Slider } from "@/components/ui/slider";
-import React from "react";
+import * as Slider from "@radix-ui/react-slider";
+import React, { useRef, useState } from "react";
 
 const AudioCard = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [currentTime, setCurrentTime] = useState<number>(0);
+  const [currentTimeMusic, setCurrentTimeMusic] = useState<string>("3:40");
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [value, setValue] = useState<number[]>([0]);
+  const [soundValue, setSoundValue] = useState<number[]>([50]);
+  const [soundTempValue, setSoundTempValue] = useState<number[]>([50]);
+  const [tempValue, setTempValue] = useState<number[]>([0]);
+  const handlemousedown = () => {
+    if (audioRef.current) {
+      audioRef.current.pause();
+    }
+  };
+  const handlemouseup = () => {
+    if (audioRef.current) {
+      audioRef.current.play();
+    }
+  };
+  const handleTimeUpdate = () => {
+    if (audioRef.current) {
+      setCurrentTime(audioRef.current.currentTime);
+    }
+  };
+  const handlePlayPause = () => {
+    if (audioRef.current) {
+      if (audioRef.current.paused) {
+        audioRef.current.play();
+      } else {
+        audioRef.current.pause();
+      }
+    }
+  };
+  const formatTime = (time: number) => {
+    const minutes = Math.floor(time / 60); // Tính phút
+    const seconds = Math.floor(time % 60); // Tính giây còn lại
+    // Định dạng với 2 chữ số (ví dụ: 01:05)
+    return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+  };
   return (
     <div className="mt-[2rem] flex w-[700px] items-center justify-between gap-[1rem] rounded-lg border bg-[#131313] px-[1rem] py-[1rem]">
+      <audio
+        id="audio"
+        ref={audioRef}
+        src="/tawerrw6f4.mp3"
+        loop
+        autoPlay
+        onTimeUpdate={handleTimeUpdate}
+        className="hidden"
+      ></audio>
       <div className="flex h-[50px] w-[50px] shrink-0 items-center justify-center rounded-lg bg-white text-black">
         <svg
+          className={`${!isPlaying ? "hidden" : "flex"} h-[1.8rem] w-[1.8rem] border-none bg-transparent`}
+          onClick={() => {
+            setIsPlaying(!isPlaying);
+            handlePlayPause();
+          }}
           data-testid="geist-icon"
           height={20}
           strokeLinejoin="round"
@@ -18,6 +70,26 @@ const AudioCard = () => {
             clipRule="evenodd"
             d="M8 1C4.13401 1 1 4.13401 1 8V11H1.75H2.5H3.25C4.35457 11 5.25 10.1046 5.25 9V8.25C5.25 7.14543 4.35457 6.25 3.25 6.25H2.78426C3.51526 4.0704 5.57424 2.5 8 2.5C10.4258 2.5 12.4847 4.0704 13.2157 6.25H12.75C11.6454 6.25 10.75 7.14543 10.75 8.25V9C10.75 10.1046 11.6454 11 12.75 11H13.5C13.5 12.3807 12.3807 13.5 11 13.5H10V13C10 12.4477 9.55229 12 9 12H7C6.44772 12 6 12.4477 6 13V14C6 14.5523 6.44772 15 7 15H9H10H11C13.2091 15 15 13.2091 15 11V8C15 4.13401 11.866 1 8 1ZM12.75 7.75H13.4944C13.4981 7.83287 13.5 7.91622 13.5 8V9.5H12.75C12.4739 9.5 12.25 9.27614 12.25 9V8.25C12.25 7.97386 12.4739 7.75 12.75 7.75ZM2.50558 7.75C2.50187 7.83287 2.5 7.91622 2.5 8V9.5H3.25C3.52614 9.5 3.75 9.27614 3.75 9V8.25C3.75 7.97386 3.52614 7.75 3.25 7.75H2.50558Z"
             fill="currentColor"
+          />
+        </svg>
+        <svg
+          className={`${isPlaying ? "hidden" : "flex"} h-[1.8rem] w-[1.8rem] border-none bg-transparent`}
+          onClick={() => {
+            setIsPlaying(!isPlaying);
+            handlePlayPause();
+          }}
+          data-testid="geist-icon"
+          height={16}
+          strokeLinejoin="round"
+          viewBox="0 0 16 16"
+          width={16}
+          style={{ color: "currentcolor" }}
+        >
+          <path
+            fill="currentColor"
+            fillRule="evenodd"
+            d="M14.5 8a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0ZM16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0Zm-5.5-2.5h-5v5h5v-5Z"
+            clipRule="evenodd"
           />
         </svg>
       </div>
@@ -40,9 +112,26 @@ const AudioCard = () => {
         </svg>
       </div>
       <div className="flex w-full items-center justify-between gap-[1rem]">
-        <p className="text-sm">00:01</p>
-        <Slider defaultValue={[33]} max={100} step={1} />
-        <p className="text-sm">00:30</p>
+        <p className="text-sm tabular-nums">{formatTime(currentTime)}</p>
+        <Slider.Root
+          onValueChange={(newSoundValue) => {
+            setSoundValue(newSoundValue);
+          }}
+          value={[Number(soundValue)]}
+          max={100}
+          step={1}
+          className="relative flex w-full touch-none select-none items-center"
+        >
+          <Slider.Track
+            onMouseDown={handlemousedown}
+            onMouseUp={handlemouseup}
+            className="relative h-1.5 w-full grow overflow-hidden rounded-full bg-primary/20"
+          >
+            <Slider.Range className="absolute h-full bg-primary" />
+          </Slider.Track>
+          <Slider.Thumb className="block h-4 w-4 rounded-full border border-primary/50 bg-background shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50" />
+        </Slider.Root>
+        <p className="text-sm tabular-nums">{currentTimeMusic}</p>
       </div>
       <div>
         <svg
