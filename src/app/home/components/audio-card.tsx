@@ -9,7 +9,7 @@ const AudioCard = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const pathname = usePathname();
   const [value, setValue] = useState<number[]>([0]);
-  const [totalSeconds, setTotalSeconds] = useState<number>(220);
+  const [totalSeconds, setTotalSeconds] = useState<number>(201);
   const [soundValue, setSoundValue] = useState<number[]>([50]);
   const [soundTempValue, setSoundTempValue] = useState<number[]>([50]);
   const [tempValue, setTempValue] = useState<number[]>([0]);
