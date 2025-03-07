@@ -159,6 +159,7 @@ import SocialProof from "./components/social-proof";
 import Metric from "./components/metric";
 import GetInTouch from "./components/get-in-touch";
 import { Loader } from "@/components/ui/loader";
+import AudioCard from "./components/audio-card";
 export default function Home() {
   const { theme, systemTheme, setTheme } = useTheme();
   const [open, setOpen] = useState(false);
@@ -403,6 +404,7 @@ export default function Home() {
       <GetInTouch />
       <div className="mx-auto my-[4rem] h-px w-[700px] bg-gradient-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
       <Loader variant={"classic"} size={"sm"} />
+      <AudioCard />
       <div className="mx-auto my-[4rem] h-px w-[700px] bg-gradient-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
       {/* <div className="mt-[2rem] flex w-full items-center justify-center gap-[4rem] px-[2rem]">
         <ChartFirstYear />
