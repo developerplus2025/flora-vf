@@ -4,7 +4,7 @@ import React, { useRef, useState } from "react";
 const AudioCard = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState<number>(0);
-  const [currentTimeMusic, setCurrentTimeMusic] = useState<string>("3:40");
+  const [currentTimeMusic, setCurrentTimeMusic] = useState<string>("3:31");
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [value, setValue] = useState<number[]>([0]);
   const [totalSeconds, setTotalSeconds] = useState<number>(220);
@@ -46,7 +46,7 @@ const AudioCard = () => {
       <audio
         id="audio"
         ref={audioRef}
-        src="/tawerrw6f4.mp3"
+        src="/kw04scrx7h.mp3"
         loop
         autoPlay
         onTimeUpdate={handleTimeUpdate}
