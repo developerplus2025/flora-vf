@@ -54,11 +54,6 @@ const AudioCard = () => {
       ></audio>
       <div className="flex h-[50px] w-[50px] shrink-0 items-center justify-center rounded-lg bg-white text-black">
         <svg
-          className={`${!isPlaying ? "hidden" : "flex"} h-[1.8rem] w-[1.8rem] border-none bg-transparent`}
-          onClick={() => {
-            setIsPlaying(!isPlaying);
-            handlePlayPause();
-          }}
           data-testid="geist-icon"
           height={20}
           strokeLinejoin="round"
@@ -73,6 +68,8 @@ const AudioCard = () => {
             fill="currentColor"
           />
         </svg>
+      </div>
+      <div>
         <svg
           className={`${isPlaying ? "hidden" : "flex"} h-[1.8rem] w-[1.8rem] border-none bg-transparent`}
           onClick={() => {
@@ -93,9 +90,12 @@ const AudioCard = () => {
             clipRule="evenodd"
           />
         </svg>
-      </div>
-      <div>
         <svg
+          className={`${!isPlaying ? "hidden" : "flex"} h-[1.8rem] w-[1.8rem] border-none bg-transparent`}
+          onClick={() => {
+            setIsPlaying(!isPlaying);
+            handlePlayPause();
+          }}
           data-testid="geist-icon"
           height={16}
           strokeLinejoin="round"
