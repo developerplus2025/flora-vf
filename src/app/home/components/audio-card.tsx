@@ -89,7 +89,7 @@ const AudioCard = () => {
         onTimeUpdate={handleTimeUpdate}
         className="hidden"
       ></audio>
-      <div className="flex h-[50px] w-[50px] shrink-0 items-center justify-center rounded-lg bg-white text-black">
+      <div className="flex h-[50px] w-[50px] shrink-0 items-center justify-center rounded-lg border">
         <svg
           data-testid="geist-icon"
           height={20}
