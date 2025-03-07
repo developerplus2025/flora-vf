@@ -1,16 +1,53 @@
 import * as Slider from "@radix-ui/react-slider";
-import React, { useRef, useState } from "react";
+import { usePathname } from "next/navigation";
+import React, { useEffect, useRef, useState } from "react";
 
 const AudioCard = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState<number>(0);
   const [currentTimeMusic, setCurrentTimeMusic] = useState<string>("3:31");
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const pathname = usePathname();
   const [value, setValue] = useState<number[]>([0]);
   const [totalSeconds, setTotalSeconds] = useState<number>(220);
   const [soundValue, setSoundValue] = useState<number[]>([50]);
   const [soundTempValue, setSoundTempValue] = useState<number[]>([50]);
   const [tempValue, setTempValue] = useState<number[]>([0]);
+  useEffect(() => {
+    if (audioRef.current) {
+      setIsPlaying(false);
+      audioRef.current.pause();
+    }
+  }, [pathname]);
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.currentTime = (Number(value) / 100) * totalSeconds;
+    }
+  }, [value, totalSeconds]);
+  useEffect(() => {
+    setSoundTempValue(soundValue);
+    if (audioRef.current) {
+      audioRef.current.volume = Number(soundTempValue) / 100;
+    }
+  }, [soundTempValue, soundValue]);
+  const increaseVolume = () => {
+    if (audioRef.current && audioRef.current.volume <= 1) {
+      audioRef.current.volume = Math.min(1, Number(soundValue) / 100 + 0.1); // Tăng âm lượng 0.1 mỗi lần
+      console.log(`Current volume: ${Number(soundValue) / 100}`);
+      const sound = audioRef.current.volume * 100; // Lấy giá trị âm lượng hiện tại
+      setSoundValue([sound]);
+    }
+  };
+
+  const decreaseVolume = () => {
+    if (audioRef.current && audioRef.current.volume >= 0) {
+      audioRef.current.volume = Math.max(0, Number(soundValue) / 100 - 0.1); // Giảm âm lượng 0.1 mỗi lần
+      console.log(`Current volume: ${Number(soundValue) / 100}`);
+      const sound = audioRef.current.volume * 100; // Lấy giá trị âm lượng hiện tại
+      setSoundValue([sound]);
+    }
+  };
+
   const handlemousedown = () => {
     if (audioRef.current) {
       audioRef.current.pause();
@@ -126,7 +163,7 @@ const AudioCard = () => {
           <Slider.Track
             onMouseDown={handlemousedown}
             onMouseUp={handlemouseup}
-            className="relative h-1.5 w-[20rem] grow overflow-hidden rounded-full bg-primary/20"
+            className="relative h-1.5 w-full grow overflow-hidden rounded-full bg-primary/20"
           ></Slider.Track>
           <Slider.Thumb className="block h-4 w-4 rounded-full border border-primary/50 bg-background shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50" />
         </Slider.Root>
