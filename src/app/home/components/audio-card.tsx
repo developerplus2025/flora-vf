@@ -71,7 +71,7 @@ const AudioCard = () => {
       </div>
       <div>
         <svg
-          className={`${!isPlaying ? "hidden" : "flex"} h-[1.8rem] w-[1.8rem] border-none bg-transparent`}
+          className={`${!isPlaying ? "hidden" : "flex"} border-none bg-transparent`}
           onClick={() => {
             setIsPlaying(!isPlaying);
             handlePlayPause();
@@ -91,7 +91,7 @@ const AudioCard = () => {
           />
         </svg>
         <svg
-          className={`${isPlaying ? "hidden" : "flex"} h-[1.8rem] w-[1.8rem] border-none bg-transparent`}
+          className={`${isPlaying ? "hidden" : "flex"} border-none bg-transparent`}
           onClick={() => {
             setIsPlaying(!isPlaying);
             handlePlayPause();
