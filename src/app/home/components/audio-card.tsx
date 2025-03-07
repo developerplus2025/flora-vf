@@ -3,8 +3,8 @@ import React from "react";
 
 const AudioCard = () => {
   return (
-    <div className="flex w-[700px] justify-between rounded-lg bg-[#131313] px-[1rem] py-[1rem]">
-      <div className="h-[50px] w-[50px] rounded-lg bg-white text-black">
+    <div className="mt-[2rem] flex w-[700px] items-center justify-between gap-[1rem] rounded-lg bg-[#131313] px-[1rem] py-[1rem]">
+      <div className="flex h-[50px] w-[50px] shrink-0 items-center justify-center rounded-lg bg-white text-black">
         <svg
           data-testid="geist-icon"
           height={20}
@@ -40,9 +40,9 @@ const AudioCard = () => {
         </svg>
       </div>
       <div className="flex w-full items-center justify-between gap-[1rem]">
-        <p>00:01</p>
+        <p className="text-sm">00:01</p>
         <Slider defaultValue={[33]} max={100} step={1} />
-        <p>00:30</p>
+        <p className="text-sm">00:30</p>
       </div>
       <div>
         <svg
