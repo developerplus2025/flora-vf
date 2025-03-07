@@ -7,6 +7,7 @@ const AudioCard = () => {
   const [currentTimeMusic, setCurrentTimeMusic] = useState<string>("3:40");
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [value, setValue] = useState<number[]>([0]);
+  const [totalSeconds, setTotalSeconds] = useState<number>(220);
   const [soundValue, setSoundValue] = useState<number[]>([50]);
   const [soundTempValue, setSoundTempValue] = useState<number[]>([50]);
   const [tempValue, setTempValue] = useState<number[]>([0]);
@@ -114,13 +115,13 @@ const AudioCard = () => {
       <div className="flex w-full items-center justify-between gap-[1rem]">
         <p className="text-sm tabular-nums">{formatTime(currentTime)}</p>
         <Slider.Root
-          onValueChange={(newSoundValue) => {
-            setSoundValue(newSoundValue);
-          }}
-          value={[Number(soundValue)]}
+          onValueChange={(newTempValue) => setTempValue(newTempValue)}
+          onValueCommit={(newValue) => setValue(tempValue)}
+          defaultValue={[0]}
+          value={[(currentTime / totalSeconds) * 100]}
           max={100}
           step={1}
-          className="relative flex w-full touch-none select-none items-center"
+          className="relative flex w-[20rem] touch-none select-none items-center"
         >
           <Slider.Track
             onMouseDown={handlemousedown}
