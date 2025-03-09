@@ -179,7 +179,7 @@ const AudioCard = () => {
     <div className="flex flex-col items-center gap-4">
       <div
         ref={lyricsContainerRef}
-        className="w-full max-w-md space-y-2 text-center"
+        className="h-[190px] w-full max-w-md space-y-2 overflow-y-auto text-center"
       >
         {lyricsData.map((line, index) => (
           <p
