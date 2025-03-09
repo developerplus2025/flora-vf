@@ -180,7 +180,7 @@ const AudioCard = () => {
     <div className="flex flex-col items-center gap-4">
       <div
         ref={lyricsContainerRef}
-        className="custom_scroll h-[316px] w-full space-y-2 overflow-y-auto rounded-lg border bg-[#131313] text-center [&::-webkit-scrollbar-thumb]:bg-border [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar]:w-2.5"
+        className="custom_scroll h-[316px] w-full space-y-2 overflow-y-auto rounded-lg border bg-[#131313] py-[1rem] text-center [&::-webkit-scrollbar-thumb]:bg-border [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar]:w-2.5"
       >
         {lyricsData.map((line, index) => (
           <p
