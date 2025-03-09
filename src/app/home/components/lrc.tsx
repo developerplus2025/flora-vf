@@ -90,7 +90,7 @@ const LyricsSync = () => {
   return (
     <div className="flex flex-col items-center space-y-4">
       <audio ref={audioRef} controls className="w-full max-w-md">
-        <source src="/song.mp3" type="audio/mpeg" />
+        <source src="/kw04scrx7h.mp3" type="audio/mpeg" />
       </audio>
 
       <div className="w-full max-w-md space-y-2 text-center">
