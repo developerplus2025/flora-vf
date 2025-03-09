@@ -46,6 +46,23 @@ const lyrics = `
   [02:53.87] Đằng sau những khóe môi cười tươi
   [02:57.07] Biết đâu được phía sau lưng hại ta
 `;
+const parseLyrics = (lyrics: string) => {
+  return lyrics
+    .trim()
+    .split("\n")
+    .map((line) => {
+      const match = line.match(/\[(\d+):(\d+\.\d+)\] (.+)/);
+      if (!match) return null;
+      const minutes = parseInt(match[1], 10);
+      const seconds = parseFloat(match[2]);
+      return { time: minutes * 60 + seconds, text: match[3] };
+    })
+    .filter(Boolean) as { time: number; text: string }[];
+};
+interface LyricsSyncProps {
+  lyrics: string; // Nhận lời bài hát từ props
+  audioSrc: string; // Nhận nguồn audio từ props
+}
 const AudioCard = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState<number>(0);
@@ -57,6 +74,22 @@ const AudioCard = () => {
   const [soundValue, setSoundValue] = useState<number[]>([50]);
   const [soundTempValue, setSoundTempValue] = useState<number[]>([50]);
   const [tempValue, setTempValue] = useState<number[]>([0]);
+
+  const lyricsData = parseLyrics(lyrics);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    const updateTime = () => setCurrentTime(audio.currentTime);
+    audio.addEventListener("timeupdate", updateTime);
+
+    return () => audio.removeEventListener("timeupdate", updateTime);
+  }, []);
+
+  const activeIndex =
+    lyricsData.findIndex((line) => line.time > currentTime) - 1;
+
   useEffect(() => {
     if (audioRef.current) {
       setIsPlaying(false);
@@ -125,8 +158,19 @@ const AudioCard = () => {
 
   return (
     <div>
-      <div>
-        <LyricsSync lyrics={lyrics} audioSrc="/kw04scrx7h.mp3" />
+      <div className="w-full max-w-md space-y-2 text-center">
+        {lyricsData.map((line, index) => (
+          <p
+            key={index}
+            className={`transition-all duration-200 ${
+              index === activeIndex
+                ? "text-lg font-bold text-blue-500"
+                : "text-gray-500"
+            }`}
+          >
+            {line.text}
+          </p>
+        ))}
       </div>
       <div className="mt-[2rem] flex w-[820px] items-center justify-between gap-[1rem] rounded-lg border bg-[#131313] px-[1rem] py-2">
         <audio
