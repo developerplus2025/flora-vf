@@ -57,20 +57,18 @@ const parseLyrics = (lyrics: string) => {
       if (!match) return null;
       const minutes = parseInt(match[1], 10);
       const seconds = parseFloat(match[2]);
-      const words: { word: string; time: number | null }[] = match[3]
-        .split(" ")
-        .map((word) => ({ word, time: null })); // ✅ Thêm `number | null`
+      const startTime = minutes * 60 + seconds;
+      const words = match[3].split(" ");
 
-      // Gán timestamp từng chữ (chia đều)
-      const wordTimeGap =
-        words.length > 1 ? (seconds - minutes * 60) / words.length : 0;
-      words.forEach((word, i) => {
-        word.time = minutes * 60 + seconds + i * wordTimeGap;
-      });
-
-      return { words };
+      // Chia đều thời gian cho từng chữ
+      const wordTimeGap = words.length > 1 ? 1 / words.length : 0.5; // 1 giây chia đều
+      return words.map((word, i) => ({
+        word,
+        time: startTime + i * wordTimeGap,
+      }));
     })
-    .filter(Boolean) as { words: { word: string; time: number | null }[] }[];
+    .flat()
+    .filter(Boolean) as { word: string; time: number }[];
 };
 
 const LyricsSync = () => {
@@ -93,22 +91,18 @@ const LyricsSync = () => {
         <source src="/kw04scrx7h.mp3" type="audio/mpeg" />
       </audio>
 
-      <div className="w-full max-w-md space-y-2 text-center">
-        {lyricsData.map((line, lineIndex) => (
-          <p key={lineIndex} className="text-lg text-gray-500">
-            {line.words.map((wordData, wordIndex) => (
-              <span
-                key={wordIndex}
-                className={`transition-all duration-200 ${
-                  wordData.time !== null && wordData.time <= currentTime
-                    ? "font-bold text-blue-500"
-                    : ""
-                }`}
-              >
-                {wordData.word}{" "}
-              </span>
-            ))}
-          </p>
+      <div className="w-full max-w-md space-y-2 text-center text-lg">
+        {lyricsData.map((wordData, index) => (
+          <span
+            key={index}
+            className={`transition-all duration-200 ${
+              wordData.time <= currentTime
+                ? "font-bold text-blue-500"
+                : "text-gray-500"
+            }`}
+          >
+            {wordData.word}{" "}
+          </span>
         ))}
       </div>
     </div>
