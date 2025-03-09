@@ -79,7 +79,7 @@ const AudioCard = () => {
     return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
   };
   return (
-    <div className="mt-[2rem] flex w-[800px] items-center justify-between gap-[1rem] rounded-lg border bg-[#131313] px-[1rem] py-2">
+    <div className="mt-[2rem] flex w-[820px] items-center justify-between gap-[1rem] rounded-lg border bg-[#131313] px-[1rem] py-2">
       <audio
         id="audio"
         ref={audioRef}
