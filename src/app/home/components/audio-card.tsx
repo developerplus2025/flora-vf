@@ -178,23 +178,24 @@ const AudioCard = () => {
 
   return (
     <div className="flex flex-col items-center gap-4">
-      <ScrollArea ref={lyricsContainerRef} className="h-[250px] w-full">
-        <div className="w-full space-y-2 text-center">
-          {lyricsData.map((line, index) => (
-            <p
-              key={index}
-              ref={index === activeIndex ? activeLineRef : null} // Gán ref cho dòng đang hát
-              className={`transition-all duration-200 ${
-                index === activeIndex
-                  ? "text-lg font-bold text-white"
-                  : "text-[#a1a1a1]"
-              }`}
-            >
-              {line.text}
-            </p>
-          ))}
-        </div>
-      </ScrollArea>
+      <div
+        ref={lyricsContainerRef}
+        className="w-full space-y-2 rounded-lg border bg-[#131313] text-center [&::-webkit-scrollbar-thumb]:bg-border [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar]:w-2.5"
+      >
+        {lyricsData.map((line, index) => (
+          <p
+            key={index}
+            ref={index === activeIndex ? activeLineRef : null} // Gán ref cho dòng đang hát
+            className={`transition-all duration-200 ${
+              index === activeIndex
+                ? "text-lg font-bold text-white"
+                : "text-[#a1a1a1]"
+            }`}
+          >
+            {line.text}
+          </p>
+        ))}
+      </div>
 
       <div className="mt-[2rem] flex w-[820px] items-center justify-between gap-[1rem] rounded-lg border bg-[#131313] px-[1rem] py-2">
         <audio
