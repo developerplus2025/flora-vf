@@ -178,8 +178,8 @@ const AudioCard = () => {
 
   return (
     <div className="flex flex-col items-center gap-4">
-      <ScrollArea ref={lyricsContainerRef} className="h-[250px]">
-        <div className="w-full max-w-md space-y-2 text-center">
+      <ScrollArea ref={lyricsContainerRef} className="h-[250px] w-full">
+        <div className="w-full space-y-2 text-center">
           {lyricsData.map((line, index) => (
             <p
               key={index}
