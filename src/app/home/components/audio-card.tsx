@@ -2,6 +2,7 @@ import * as Slider from "@radix-ui/react-slider";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 import LyricsSync from "./lrc";
+import { ScrollArea } from "@/components/ui/scroll-area";
 const lyrics = `
   [00:25.27] Cùng cốc thâm sơn
   [00:27.92] Một mình một cõi
@@ -177,24 +178,27 @@ const AudioCard = () => {
 
   return (
     <div className="flex flex-col items-center gap-4">
-      <div
-        ref={lyricsContainerRef}
-        className="h-[190px] w-full max-w-md space-y-2 overflow-y-auto text-center"
-      >
-        {lyricsData.map((line, index) => (
-          <p
-            key={index}
-            ref={index === activeIndex ? activeLineRef : null} // Gán ref cho dòng đang hát
-            className={`transition-all duration-200 ${
-              index === activeIndex
-                ? "text-lg font-bold text-white"
-                : "text-[#a1a1a1]"
-            }`}
-          >
-            {line.text}
-          </p>
-        ))}
-      </div>
+      <ScrollArea className="h-[250px]">
+        <div
+          ref={lyricsContainerRef}
+          className="w-full max-w-md space-y-2 text-center"
+        >
+          {lyricsData.map((line, index) => (
+            <p
+              key={index}
+              ref={index === activeIndex ? activeLineRef : null} // Gán ref cho dòng đang hát
+              className={`transition-all duration-200 ${
+                index === activeIndex
+                  ? "text-lg font-bold text-white"
+                  : "text-[#a1a1a1]"
+              }`}
+            >
+              {line.text}
+            </p>
+          ))}
+        </div>
+      </ScrollArea>
+
       <div className="mt-[2rem] flex w-[820px] items-center justify-between gap-[1rem] rounded-lg border bg-[#131313] px-[1rem] py-2">
         <audio
           id="audio"
