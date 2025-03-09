@@ -79,7 +79,7 @@ const AudioCard = () => {
     return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
   };
   return (
-    <div className="mt-[2rem] flex w-[700px] items-center justify-between gap-[1rem] rounded-lg border bg-[#131313] px-[1rem] py-[1rem]">
+    <div className="mt-[2rem] flex w-[700px] items-center justify-between gap-[1rem] rounded-lg border bg-[#131313] px-[1rem] py-2">
       <audio
         id="audio"
         ref={audioRef}
@@ -150,7 +150,7 @@ const AudioCard = () => {
         </svg>
       </div>
       <div className="flex w-full items-center justify-between gap-[1rem]">
-        <p className="text-sm tabular-nums">{formatTime(currentTime)}</p>
+        <p className="text-xs tabular-nums">{formatTime(currentTime)}</p>
         <Slider.Root
           onValueChange={(newTempValue) => setTempValue(newTempValue)}
           onValueCommit={(newValue) => setValue(tempValue)}
@@ -163,14 +163,14 @@ const AudioCard = () => {
           <Slider.Track
             onMouseDown={handlemousedown}
             onMouseUp={handlemouseup}
-            className="relative h-1.5 w-full grow overflow-hidden rounded-full bg-primary/20"
+            className="relative h-1 w-full grow overflow-hidden rounded-full bg-primary/20"
           >
             {" "}
             <Slider.Range className="absolute h-full bg-primary" />
           </Slider.Track>
-          <Slider.Thumb className="block h-4 w-4 rounded-full border border-primary/50 bg-background shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50" />
+          <Slider.Thumb className="block h-3 w-3 rounded-full border border-primary/50 bg-background shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50" />
         </Slider.Root>
-        <p className="text-sm tabular-nums">{currentTimeMusic}</p>
+        <p className="text-xs tabular-nums">{currentTimeMusic}</p>
       </div>
       <div>
         <svg
