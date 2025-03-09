@@ -155,17 +155,40 @@ const AudioCard = () => {
     // Định dạng với 2 chữ số (ví dụ: 01:05)
     return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
   };
+  const lyricsContainerRef = useRef<HTMLDivElement | null>(null);
+  const activeLineRef = useRef<HTMLParagraphElement | null>(null);
+
+  useEffect(() => {
+    if (lyricsContainerRef.current && activeLineRef.current) {
+      const container = lyricsContainerRef.current;
+      const activeLine = activeLineRef.current;
+
+      // Tính toán vị trí cần cuộn để dòng đang hát nằm giữa
+      const containerHeight = container.clientHeight;
+      const lineHeight = activeLine.offsetHeight;
+      const lineOffset = activeLine.offsetTop - container.offsetTop;
+
+      container.scrollTo({
+        top: lineOffset - containerHeight / 2 + lineHeight / 2,
+        behavior: "smooth",
+      });
+    }
+  }, [activeIndex]); // Chạy mỗi khi dòng đang hát thay đổi
 
   return (
-    <div>
-      <div className="w-full max-w-md space-y-2 text-center">
+    <div className="flex flex-col items-center gap-4">
+      <div
+        ref={lyricsContainerRef}
+        className="w-full max-w-md space-y-2 text-center"
+      >
         {lyricsData.map((line, index) => (
           <p
             key={index}
+            ref={index === activeIndex ? activeLineRef : null} // Gán ref cho dòng đang hát
             className={`transition-all duration-200 ${
               index === activeIndex
-                ? "text-lg font-bold text-blue-500"
-                : "text-gray-500"
+                ? "text-lg font-bold text-white"
+                : "text-[#a1a1a1]"
             }`}
           >
             {line.text}
