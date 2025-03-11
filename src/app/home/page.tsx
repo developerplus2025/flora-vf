@@ -142,7 +142,7 @@ import { ChartBar } from "./components/chart";
 import { ChartFirstYear } from "./components/chart-first-year";
 import { ChartLastYear } from "./components/chart-last-yeart";
 import { InfiniteSlider } from "../home-2/components/core/infinite-slider";
-import PhotoFeatures from "./components/photo-features";
+
 import { motion } from "framer-motion";
 import SmoothScroll from "@/components/SmoothScroll";
 import AccordionFAQ from "./components/faq";
@@ -160,6 +160,7 @@ import Metric from "./components/metric";
 import GetInTouch from "./components/get-in-touch";
 import { Loader } from "@/components/ui/loader";
 import AudioCard from "./components/audio-card";
+import FeaturesSection from "./components/features-section";
 export default function Home() {
   const { theme, systemTheme, setTheme } = useTheme();
   const [open, setOpen] = useState(false);
@@ -389,7 +390,7 @@ export default function Home() {
 
       <div className="mx-auto mb-[4rem] mt-[6rem] h-px w-[700px] bg-gradient-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
       <div className="w-full">
-        <PhotoFeatures />
+        <FeaturesSection />
       </div>
       <div className="mx-auto my-[4rem] h-px w-[700px] bg-gradient-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
 
