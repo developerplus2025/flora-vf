@@ -161,6 +161,7 @@ import GetInTouch from "./components/get-in-touch";
 import { Loader } from "@/components/ui/loader";
 import AudioCard from "./components/audio-card";
 import FeaturesSection from "./components/features-section";
+import BeautifulFeaturesLayout from "./components/beautiful-features-layout";
 export default function Home() {
   const { theme, systemTheme, setTheme } = useTheme();
   const [open, setOpen] = useState(false);
@@ -390,7 +391,8 @@ export default function Home() {
 
       <div className="mx-auto mb-[4rem] mt-[6rem] h-px w-[700px] bg-gradient-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
       <div className="w-full">
-        <FeaturesSection />
+        {/* <FeaturesSection /> */}
+        <BeautifulFeaturesLayout />
       </div>
       <div className="mx-auto my-[4rem] h-px w-[700px] bg-gradient-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
 
