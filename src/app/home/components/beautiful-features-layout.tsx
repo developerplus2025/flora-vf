@@ -11,15 +11,17 @@ export default function BeautifulFeaturesLayout() {
   return (
     <section className="py-12 md:py-20">
       <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16">
-        <div className="relative z-10 mx-auto max-w-xl space-y-6 text-center md:space-y-12">
-          <h2 className="text-balance text-4xl font-medium lg:text-5xl">
-            The foundation for professional music creation
-          </h2>
-          <p>
-            Our software is more than just a tool. It’s an ecosystem that
-            supports everything from APIs to platforms, helping developers and
-            artists innovate effortlessly.
-          </p>
+        <div className="flex flex-col items-center justify-center gap-4">
+          <h1 className="w-[750px] text-center text-[3.5rem] font-bold leading-[4.5rem] tracking-tighter text-white sm:text-5xl xl:text-[3.5rem]">
+            Trusted by Musicians and Producers Worldwide
+          </h1>
+          <span className="md:text-md max-w-[500px] text-center text-zinc-500 dark:text-zinc-400">
+            This software is trusted by professionals in the music industry,
+            from independent artists to top recording studios. Discover why so
+            many creators rely on it to streamline their workflow and produce
+            high-quality music. Join a community that’s making music smarter
+            today!
+          </span>
         </div>
 
         <div className="relative mx-auto grid max-w-4xl divide-x divide-y border *:p-12 sm:grid-cols-2 lg:grid-cols-3">
