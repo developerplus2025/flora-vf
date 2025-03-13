@@ -94,7 +94,7 @@ export default function AccordionFAQ() {
           <Accordion
             type="single"
             collapsible
-            className="w-[650px] space-y-2"
+            className="w-[850px] space-y-2"
             defaultValue="3"
           >
             {items.map((item) => (
