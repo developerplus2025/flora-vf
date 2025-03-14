@@ -15,7 +15,7 @@ export default function BeautifulFeaturesLayout() {
           <h1 className="w-[750px] text-center text-[3.5rem] font-bold leading-[4.5rem] tracking-tighter text-white sm:text-5xl xl:text-[3.5rem]">
             The foundation for professional music creation
           </h1>
-          <span className="md:text-md max-w-[500px] text-center text-zinc-500 dark:text-zinc-400">
+          <span className="md:text-md max-w-[450px] text-center text-zinc-500 dark:text-zinc-400">
             Our software is more than just a tool. It’s an ecosystem that
             supports everything from APIs to platforms, helping developers and
             artists innovate effortlessly.
