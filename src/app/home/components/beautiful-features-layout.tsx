@@ -13,14 +13,12 @@ export default function BeautifulFeaturesLayout() {
       <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16">
         <div className="flex flex-col items-center justify-center gap-4">
           <h1 className="w-[750px] text-center text-[3.5rem] font-bold leading-[4.5rem] tracking-tighter text-white sm:text-5xl xl:text-[3.5rem]">
-            Trusted by Musicians and Producers Worldwide
+            The foundation for professional music creation
           </h1>
           <span className="md:text-md max-w-[500px] text-center text-zinc-500 dark:text-zinc-400">
-            This software is trusted by professionals in the music industry,
-            from independent artists to top recording studios. Discover why so
-            many creators rely on it to streamline their workflow and produce
-            high-quality music. Join a community that’s making music smarter
-            today!
+            Our software is more than just a tool. It’s an ecosystem that
+            supports everything from APIs to platforms, helping developers and
+            artists innovate effortlessly.
           </span>
         </div>
 
