@@ -673,7 +673,7 @@ const items = [
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width={231}
-        height={65}
+        height={22}
         viewBox="0 0 231 65"
         fill="none"
       >
@@ -712,7 +712,7 @@ const items = [
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width={154}
-        height={32}
+        height={22}
         viewBox="0 0 154 32"
         fill="none"
       >
@@ -736,7 +736,7 @@ const items = [
     svg: (
       <svg
         width={214}
-        height={50}
+        height={22}
         viewBox="0 0 214 50"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -803,7 +803,7 @@ const items = [
     svg: (
       <svg
         width={228}
-        height={41}
+        height={22}
         viewBox="0 0 228 41"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -882,7 +882,7 @@ const items = [
     svg: (
       <svg
         width={244}
-        height={44}
+        height={22}
         viewBox="0 0 244 44"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -921,7 +921,7 @@ const items = [
     svg: (
       <svg
         width={466}
-        height={65}
+        height={22}
         viewBox="0 0 466 65"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -1000,7 +1000,7 @@ const items = [
     svg: (
       <svg
         width={268}
-        height={58}
+        height={22}
         viewBox="0 0 268 58"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -1070,7 +1070,7 @@ export default function SocialProof() {
         </span>
       </div>
       <div className="flex flex-col items-center justify-center">
-        <div className="[&_svg]:w[108px] grid grid-cols-7 place-items-center justify-items-center gap-4 text-[#ffffffb3] [&_svg]:h-[22px]">
+        <div className="grid grid-cols-7 place-items-center justify-items-center gap-4 px-[4rem] text-[#ffffffb3]">
           {items.map((item) => (
             <div key={item.id}>{item.svg}</div>
           ))}
