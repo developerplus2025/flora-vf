@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 
 // import { usePathname } from "next/navigation";
 // import { AnimatePresence, motion } from "framer-motion";
-import { unstable_ViewTransition as ViewTransition } from "react";
 import { Inter } from "next/font/google";
 import "./globals.css";
 // import 'fumadsocs-ui/dist/style.css';
@@ -69,9 +68,7 @@ export default function RootLayout({
               className="top-[60px]"
               position="top-center"
             />
-            <RootProvider>
-              <ViewTransition>{children}</ViewTransition>
-            </RootProvider>
+            <RootProvider>{children}</RootProvider>
             <Footer />
           </ThemeProvider>
           {/* </motion.div>
