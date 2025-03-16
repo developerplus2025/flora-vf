@@ -6,7 +6,49 @@ import {
   Sparkles,
   Zap,
 } from "lucide-react";
-
+import { title } from "process";
+import { description } from "./chart";
+const items = [
+  {
+    id: 1,
+    title: "Smooth",
+    description:
+      " Optimized performance for seamless music editing and playback.",
+    icons: Zap,
+  },
+  {
+    id: 2,
+    title: "Powerful",
+    description: " Advanced audio processing tools for every creative need.",
+    icons: Cpu,
+  },
+  {
+    id: 3,
+    title: "Secure",
+    description:
+      "Protects your data and music rights with cutting-edge security.",
+    icons: Fingerprint,
+  },
+  {
+    id: 4,
+    title: "Customizable",
+    description: " Personalize the interface and features to match your style.",
+    icons: Pencil,
+  },
+  {
+    id: 5,
+    title: "Full Control",
+    description: "Gives you complete control over your music projects.",
+    icons: Settings2,
+  },
+  {
+    id: 6,
+    title: "AI-Powered",
+    description:
+      " Enhances your workflow with AI-driven music creation and production.",
+    icons: Sparkles,
+  },
+];
 export default function BeautifulFeaturesLayout() {
   return (
     <section className="py-12 md:py-20">
@@ -22,62 +64,18 @@ export default function BeautifulFeaturesLayout() {
           </span>
         </div>
 
-        <div className="relative mx-auto grid max-w-4xl divide-x divide-y border *:p-12 sm:grid-cols-2 lg:grid-cols-3">
-          <div className="space-y-3">
-            <div className="flex items-center gap-2">
-              <Zap className="size-4" />
-              <h3 className="text-sm font-medium">Smooth</h3>
+        <div className="relative mx-auto grid max-w-4xl border *:p-12 sm:grid-cols-2 lg:grid-cols-3">
+          {items.map((items) => (
+            <div
+              className={`${items.id === 1 ? "space-y-3" : "space-y-2"} ${items.id === 1 || items.id === 2 || items.id === 3 ? "border-b" : ""} `}
+            >
+              <div className="flex items-center gap-2">
+                <items.icons className="size-4" />
+                <h3 className="text-sm font-medium">{items.title}</h3>
+              </div>
+              <p className="text-sm">{items.description}</p>
             </div>
-            <p className="text-sm">
-              Optimized performance for seamless music editing and playback.
-            </p>
-          </div>
-          <div className="space-y-2">
-            <div className="flex items-center gap-2">
-              <Cpu className="size-4" />
-              <h3 className="text-sm font-medium">Powerful</h3>
-            </div>
-            <p className="text-sm">
-              Advanced audio processing tools for every creative need.
-            </p>
-          </div>
-          <div className="space-y-2">
-            <div className="flex items-center gap-2">
-              <Fingerprint className="size-4" />
-              <h3 className="text-sm font-medium">Secure</h3>
-            </div>
-            <p className="text-sm">
-              Protects your data and music rights with cutting-edge security.
-            </p>
-          </div>
-          <div className="space-y-2">
-            <div className="flex items-center gap-2">
-              <Pencil className="size-4" />
-              <h3 className="text-sm font-medium">Customizable</h3>
-            </div>
-            <p className="text-sm">
-              Personalize the interface and features to match your style.
-            </p>
-          </div>
-          <div className="space-y-2">
-            <div className="flex items-center gap-2">
-              <Settings2 className="size-4" />
-              <h3 className="text-sm font-medium">Full Control</h3>
-            </div>
-            <p className="text-sm">
-              Gives you complete control over your music projects.
-            </p>
-          </div>
-          <div className="space-y-2">
-            <div className="flex items-center gap-2">
-              <Sparkles className="size-4" />
-              <h3 className="text-sm font-medium">AI-Powered</h3>
-            </div>
-            <p className="text-sm">
-              Enhances your workflow with AI-driven music creation and
-              production.
-            </p>
-          </div>
+          ))}
         </div>
       </div>
     </section>
