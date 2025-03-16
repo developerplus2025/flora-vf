@@ -68,7 +68,7 @@ export default function BeautifulFeaturesLayout() {
           {items.map((items) => (
             <div
               key={items.id}
-              className={`${items.id === 1 ? "space-y-3" : "space-y-2"} ${items.id === 1 || items.id === 2 || items.id === 3 ? "border-b" : ""} `}
+              className={`${items.id === 1 ? "space-y-3" : "space-y-2"} ${items.id === 1 || items.id === 2 || items.id === 3 ? "border-b" : ""} ${items.id === 1 || items.id === 2 || items.id === 4 || items.id === 5 ? "border-r" : ""} `}
             >
               <div className="flex items-center gap-2">
                 <items.icons className="size-4" />
