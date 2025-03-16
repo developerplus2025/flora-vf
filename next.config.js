@@ -3,6 +3,9 @@ const { createMDX } = require("fumadocs-mdx/next");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  experimental: {
+    viewTransition: true,
+  },
   reactStrictMode: true,
   compiler: {
     styledComponents: true,
