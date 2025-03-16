@@ -67,6 +67,7 @@ export default function BeautifulFeaturesLayout() {
         <div className="relative mx-auto grid max-w-4xl border *:p-12 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((items) => (
             <div
+              key={items.id}
               className={`${items.id === 1 ? "space-y-3" : "space-y-2"} ${items.id === 1 || items.id === 2 || items.id === 3 ? "border-b" : ""} `}
             >
               <div className="flex items-center gap-2">
