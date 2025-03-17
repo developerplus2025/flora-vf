@@ -158,7 +158,7 @@ export default function Metric() {
     return () => controls.stop();
   }, []);
   return (
-    <div className="flex flex-col items-center gap-[2rem]">
+    <div className="flex w-[960px] flex-col items-center gap-[2rem]">
       {/* <LoopAnimation /> */}
       <div className="rounded-lg border p-3">
         <svg
@@ -190,7 +190,7 @@ export default function Metric() {
         </span>
       </div>
       <div className="flex items-center justify-between gap-[4rem]">
-        <div className="mx-auto grid grid-cols-2 gap-8 md:grid-cols-4">
+        <div className="grid w-full grid-cols-2 gap-8 md:grid-cols-4">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.title}
