@@ -2,14 +2,32 @@ import React from "react";
 import RichTextEditor from "./rich-text-editor";
 import YouTubeTextEditor from "./youtube-text";
 import Image from "next/image";
+import ContactForm from "./contact-form";
+import ContactInfo from "./contact-info";
 const GetInTouch = () => {
   return (
-    <div className="flex flex-col gap-[4rem]">
-      <div className="text-center text-4xl font-bold tracking-tighter text-white sm:text-5xl xl:text-[2.75rem]/none">
-        <p>Get In Touch</p>
+    <div className="flex flex-col gap-[2rem]">
+      <div className="container mx-auto px-4 py-12 md:px-6 md:py-24">
+        <div className="mx-auto max-w-5xl">
+          <div className="mb-12 text-center">
+            <div className="text-center text-4xl font-bold tracking-tighter text-white sm:text-5xl xl:text-[2.75rem]/none">
+              <p>Get In Touch</p>
+            </div>
+            <p className="mx-auto max-w-2xl text-muted-foreground">
+              Have questions about our music software? Need technical support?
+              Or just want to share your feedback? We'd love to hear from you.
+            </p>
+          </div>
+
+          <div className="grid gap-12 md:grid-cols-2">
+            <ContactForm />
+            <ContactInfo />
+          </div>
+        </div>
       </div>
       <div className="flex items-center justify-center">
         {/* <RichTextEditor /> */}
+
         <div className="relative mt-16">
           <div
             aria-hidden
