@@ -16,7 +16,7 @@ const DownloadButton: React.FC = () => {
   };
   return (
     <Button
-      className="bg-[#131313] ring-1 ring-[#c6c6c680] ring-offset-1 ring-offset-black"
+      className="bg-[#131313] ring-1 ring-[#c6c6c680] ring-offset-2 ring-offset-black"
       variant={"outline"}
       onClick={handleClick}
     >
