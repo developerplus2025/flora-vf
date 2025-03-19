@@ -351,7 +351,11 @@ export default function Home() {
           <DownloadButton />
           <Modal isOpen={open} onClose={() => setOpen(false)} />
           {/* <WatchDemo/> */}
-          <Button onClick={() => setOpen(true)}>
+          <Button
+            className="bg-[#131313] ring-1 ring-[#c6c6c680] ring-offset-2 ring-offset-black"
+            variant={"outline"}
+            onClick={() => setOpen(true)}
+          >
             <svg
               className="mr-2 h-4 w-4"
               data-testid="geist-icon"
