@@ -15,7 +15,8 @@ const GetInTouch = () => {
             </div>
             <p className="mx-auto max-w-2xl text-muted-foreground">
               Have questions about our music software? Need technical support?
-              Or just want to share your feedback? We'd love to hear from you.
+              Or just want to share your feedback? We&apos;d love to hear from
+              you.
             </p>
           </div>
 

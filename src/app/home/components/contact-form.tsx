@@ -1,18 +1,37 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
-import { z } from "zod"
-import { Music } from "lucide-react"
+import { useState } from "react";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { Music } from "lucide-react";
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Textarea } from "@/components/ui/textarea"
-import { toast } from "@/hooks/use-toast"
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Textarea } from "@/components/ui/textarea";
+import { toast } from "@/hooks/use-toast";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -27,10 +46,10 @@ const formSchema = z.object({
   message: z.string().min(10, {
     message: "Message must be at least 10 characters.",
   }),
-})
+});
 
 export default function ContactForm() {
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -40,21 +59,21 @@ export default function ContactForm() {
       subject: "",
       message: "",
     },
-  })
+  });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    setIsSubmitting(true)
+    setIsSubmitting(true);
 
     // Simulate form submission
     setTimeout(() => {
-      console.log(values)
-      setIsSubmitting(false)
-      form.reset()
+      console.log(values);
+      setIsSubmitting(false);
+      form.reset();
       toast({
         title: "Message sent!",
-        description: "We'll get back to you as soon as possible.",
-      })
-    }, 1000)
+        description: "We&apos;ll get back to you as soon as possible.",
+      });
+    }, 1000);
   }
 
   return (
@@ -64,7 +83,9 @@ export default function ContactForm() {
           <Music className="h-5 w-5" />
           <span>Contact Form</span>
         </CardTitle>
-        <CardDescription>Fill out the form below and we'll get back to you as soon as possible.</CardDescription>
+        <CardDescription>
+          Fill out the form below and we'll get back to you as soon as possible.
+        </CardDescription>
       </CardHeader>
       <CardContent>
         <Form {...form}>
@@ -101,7 +122,10 @@ export default function ContactForm() {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Subject</FormLabel>
-                  <Select onValueChange={field.onChange} defaultValue={field.value}>
+                  <Select
+                    onValueChange={field.onChange}
+                    defaultValue={field.value}
+                  >
                     <FormControl>
                       <SelectTrigger>
                         <SelectValue placeholder="Select a subject" />
@@ -112,7 +136,9 @@ export default function ContactForm() {
                       <SelectItem value="support">Technical Support</SelectItem>
                       <SelectItem value="billing">Billing Question</SelectItem>
                       <SelectItem value="feedback">Product Feedback</SelectItem>
-                      <SelectItem value="partnership">Partnership Opportunity</SelectItem>
+                      <SelectItem value="partnership">
+                        Partnership Opportunity
+                      </SelectItem>
                     </SelectContent>
                   </Select>
                   <FormMessage />
@@ -143,6 +169,5 @@ export default function ContactForm() {
         </Form>
       </CardContent>
     </Card>
-  )
+  );
 }
-
