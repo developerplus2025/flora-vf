@@ -28,9 +28,13 @@ const WaveAudioCard = () => {
         normalize={true}
         barGap={6}
         height={60}
+        width={"32rem"}
         barHeight={20}
         barRadius={20}
         barWidth={3}
+        onReady={onReady}
+        onPlay={() => setIsPlaying(true)}
+        onPause={() => setIsPlaying(false)}
       />
       <div className="wavesurfer-controls flex gap-4">
         <button onClick={onPlayPause}>{isPlaying ? "Pause" : "Play"}</button>
