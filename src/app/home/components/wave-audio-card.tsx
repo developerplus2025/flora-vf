@@ -59,9 +59,9 @@ const WaveAudioCard = () => {
 
       <div className="wavesurfer-controls flex gap-4">
         <button onClick={() => handleSkipBack()}>a</button>
-        <button onClick={handlePause}>a</button>
-        <button onClick={handleStop}>s</button>
-        <button onClick={handleSkipForward}>a</button>
+        <button onClick={() => handlePause()}>a</button>
+        <button onClick={() => handleStop()}>s</button>
+        <button onClick={() => handleSkipForward()}>a</button>
       </div>
     </div>
   );
