@@ -13,7 +13,7 @@ const GetInTouch = () => {
             <div className="text-center text-4xl font-bold tracking-tighter text-white sm:text-5xl xl:text-[2.75rem]/none">
               <p>Get In Touch</p>
             </div>
-            <p className="mx-auto max-w-2xl text-muted-foreground">
+            <p className="mx-auto w-[32rem] text-muted-foreground">
               Have questions about our music software? Need technical support?
               Or just want to share your feedback? We&apos;d love to hear from
               you.
