@@ -469,7 +469,7 @@ export function CoinChart() {
             />
             <ChartTooltip
               content={<ChartTooltipContent hideIndicator />}
-              cursor={<CustomCursor fill="var(--chart-1)" />}
+              cursor={<CustomCursor fill="#ffffff" />}
               formatter={(value) =>
                 `$${Number(value).toLocaleString("en-US", { maximumFractionDigits: 2 })}`
               }
