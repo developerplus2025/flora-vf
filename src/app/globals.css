@@ -109,6 +109,12 @@
     --color-fd-accent: hsl(0, 0%, 94.1%);
     --color-fd-accent-foreground: hsl(0, 0%, 9%);
     --color-fd-ring: hsl(0, 0%, 63.9%);
+    --color-chart-6: var(--chart-6);
+    --color-chart-5: var(--chart-5);
+    --color-chart-4: var(--chart-4);
+    --color-chart-3: var(--chart-3);
+    --color-chart-2: var(--chart-2);
+    --color-chart-1: var(--chart-1);
   }
   .dark {
     --color-fd-background: hsl(0, 0%, 2%);
@@ -219,6 +225,12 @@
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    --color-chart-6: var(--chart-6);
+    --color-chart-5: var(--chart-5);
+    --color-chart-4: var(--chart-4);
+    --color-chart-3: var(--chart-3);
+    --color-chart-2: var(--chart-2);
+    --color-chart-1: var(--chart-1);
   }
 
   .docs-title.active {
