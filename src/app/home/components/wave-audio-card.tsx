@@ -36,7 +36,7 @@ const WaveAudioCard = () => {
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}
       />
-      <div className="wavesurfer-controls flex justify-between gap-4">
+      <div className="wavesurfer-controls flex w-full justify-center gap-4">
         <div className="text-[1.5rem]">
           <svg
             className={`${!isPlaying ? "hidden" : "flex"} border-none bg-transparent`}
@@ -45,10 +45,10 @@ const WaveAudioCard = () => {
               onPlayPause();
             }}
             data-testid="geist-icon"
-            height={16}
+            height={20}
             strokeLinejoin="round"
             viewBox="0 0 16 16"
-            width={16}
+            width={20}
             style={{ color: "currentcolor" }}
           >
             <path
@@ -65,10 +65,10 @@ const WaveAudioCard = () => {
               onPlayPause();
             }}
             data-testid="geist-icon"
-            height={16}
+            height={20}
             strokeLinejoin="round"
             viewBox="0 0 16 16"
-            width={16}
+            width={20}
             style={{ color: "currentcolor" }}
           >
             <path
