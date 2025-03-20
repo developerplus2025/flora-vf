@@ -27,7 +27,7 @@ const WaveAudioCard = () => {
         hideScrollbar={true}
         normalize={true}
         barGap={6}
-        height={60}
+        height={20}
         width={"32rem"}
         barHeight={20}
         barRadius={20}
