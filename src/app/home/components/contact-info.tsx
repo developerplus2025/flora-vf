@@ -27,7 +27,7 @@ export default function ContactInfo() {
       </CardHeader>
       <CardContent className="space-y-6">
         <div className="space-y-4">
-          <div className="flex items-start gap-3">
+          <div className="flex items-center gap-3">
             <svg
               data-testid="geist-icon"
               height={16}
@@ -67,7 +67,7 @@ export default function ContactInfo() {
             </div>
           </div>
 
-          <div className="flex items-start gap-3">
+          <div className="flex items-center gap-3">
             <svg
               data-testid="geist-icon"
               height={16}
@@ -102,7 +102,7 @@ export default function ContactInfo() {
             </div>
           </div>
 
-          <div className="flex items-start gap-3">
+          <div className="flex items-center gap-3">
             <svg
               data-testid="geist-icon"
               height={16}
@@ -136,7 +136,7 @@ export default function ContactInfo() {
 
         <div className="h-full border-t pt-4">
           <h3 className="mb-3 font-medium">Follow Us</h3>
-          <div className="flex justify-between">
+          <div className="flex gap-4">
             <div className="flex h-full flex-col items-start justify-between gap-2">
               <Button variant="outline" size="icon" asChild>
                 <a
