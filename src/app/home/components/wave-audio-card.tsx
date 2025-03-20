@@ -18,7 +18,7 @@ const WaveAudioCard = () => {
   };
 
   return (
-    <div>
+    <div className="flex flex-col gap-4">
       <WavesurferPlayer
         waveColor="#202020"
         progressColor="#ffffff"
@@ -36,8 +36,50 @@ const WaveAudioCard = () => {
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}
       />
-      <div className="wavesurfer-controls flex gap-4">
-        <button onClick={onPlayPause}>{isPlaying ? "Pause" : "Play"}</button>
+      <div className="wavesurfer-controls flex justify-between gap-4">
+        <div className="text-[1.5rem]">
+          <svg
+            className={`${!isPlaying ? "hidden" : "flex"} border-none bg-transparent`}
+            onClick={() => {
+              setIsPlaying(!isPlaying);
+              onPlayPause();
+            }}
+            data-testid="geist-icon"
+            height={16}
+            strokeLinejoin="round"
+            viewBox="0 0 16 16"
+            width={16}
+            style={{ color: "currentcolor" }}
+          >
+            <path
+              fill="currentColor"
+              fillRule="evenodd"
+              d="M14.5 8a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0ZM16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0Zm-5.5-2.5h-5v5h5v-5Z"
+              clipRule="evenodd"
+            />
+          </svg>
+          <svg
+            className={`${isPlaying ? "hidden" : "flex"} border-none bg-transparent`}
+            onClick={() => {
+              setIsPlaying(!isPlaying);
+              onPlayPause();
+            }}
+            data-testid="geist-icon"
+            height={16}
+            strokeLinejoin="round"
+            viewBox="0 0 16 16"
+            width={16}
+            style={{ color: "currentcolor" }}
+          >
+            <path
+              fill="#666"
+              fillRule="evenodd"
+              d="M14.5 8a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0ZM16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM6 11l5.5-3L6 5v6Z"
+              clipRule="evenodd"
+              style={{ fill: "currentColor" }}
+            />
+          </svg>
+        </div>
       </div>
     </div>
   );
