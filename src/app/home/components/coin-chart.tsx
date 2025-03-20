@@ -331,7 +331,7 @@ const TIME_PERIOD_OPTIONS = ["1h", "1d", "1w", "1m", "1y"];
 
 const ViewOption = ({ id, value }: { id: string; value: string }) => {
   return (
-    <label className="relative z-10 inline-flex h-full min-w-8 cursor-pointer items-center justify-center px-2 whitespace-nowrap transition-colors select-none uppercase text-foreground has-data-[state=unchecked]:text-muted-foreground">
+    <label className="has-data-[state=unchecked]:text-muted-foreground relative z-10 inline-flex h-full min-w-8 cursor-pointer select-none items-center justify-center whitespace-nowrap px-2 uppercase text-foreground transition-colors">
       {value}
       <RadioGroupItem id={`${id}-${value}`} value={value} className="sr-only" />
     </label>
@@ -411,19 +411,19 @@ export function CoinChart() {
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div className="space-y-0.5">
             <CardTitle>ArkFi</CardTitle>
-            <div className="font-bold text-3xl mb-1">
+            <div className="mb-1 text-3xl font-bold">
               <span className="text-xl text-muted-foreground">$</span>
               1,327,349.19
             </div>
-            <div className="text-emerald-500 text-sm font-medium">
+            <div className="text-sm font-medium text-emerald-500">
               ↗ $2,849.27 (+4%)
             </div>
           </div>
-          <div className="bg-muted dark:bg-background/50 inline-flex h-8 rounded-full p-1 shrink-0">
+          <div className="inline-flex h-8 shrink-0 rounded-full bg-muted p-1 dark:bg-background/50">
             <RadioGroup
               value={selectedValue}
               onValueChange={setSelectedValue}
-              className="group text-xs after:bg-background dark:after:bg-card/64 has-focus-visible:after:border-ring has-focus-visible:after:ring-ring/50 relative inline-grid grid-cols-[repeat(5,1fr)] items-center gap-0 font-medium after:absolute after:inset-y-0 after:w-1/5 after:rounded-full after:shadow-xs dark:after:inset-shadow-[0_1px_rgb(255_255_255/0.15)] after:transition-[translate,box-shadow] after:duration-300 after:[transition-timing-function:cubic-bezier(0.16,1,0.3,1)] has-focus-visible:after:ring-[3px] [&:after]:translate-x-[calc(var(--selected-index)*100%)]"
+              className="dark:after:bg-card/64 has-focus-visible:after:border-ring has-focus-visible:after:ring-ring/50 after:shadow-xs dark:after:inset-shadow-[0_1px_rgb(255_255_255/0.15)] has-focus-visible:after:ring-[3px] group relative inline-grid grid-cols-[repeat(5,1fr)] items-center gap-0 text-xs font-medium after:absolute after:inset-y-0 after:w-1/5 after:rounded-full after:bg-background after:transition-[translate,box-shadow] after:duration-300 after:[transition-timing-function:cubic-bezier(0.16,1,0.3,1)] [&:after]:translate-x-[calc(var(--selected-index)*100%)]"
               data-state={selectedValue}
               style={
                 {
@@ -441,7 +441,7 @@ export function CoinChart() {
       <CardContent>
         <ChartContainer
           config={chartConfig}
-          className="aspect-auto h-72 w-full [&_.recharts-rectangle.recharts-tooltip-cursor]:fill-(--chart-1)/10 [&_.recharts-rectangle.recharts-tooltip-inner-cursor]:fill-(--chart-1)/25 [&_.recharts-cartesian-grid_line[stroke='#ccc']]:stroke-border dark:[&_.recharts-cartesian-grid_line[stroke='#ccc']]:stroke-card [&_.recharts-cartesian-axis-line]:stroke-border dark:[&_.recharts-cartesian-axis-line]:stroke-card"
+          className="[&_.recharts-rectangle.recharts-tooltip-cursor]:fill-(--chart-1)/10 [&_.recharts-rectangle.recharts-tooltip-inner-cursor]:fill-(--chart-1)/25 aspect-auto h-72 w-full [&_.recharts-cartesian-axis-line]:stroke-border dark:[&_.recharts-cartesian-axis-line]:stroke-card [&_.recharts-cartesian-grid_line[stroke='#ccc']]:stroke-border dark:[&_.recharts-cartesian-grid_line[stroke='#ccc']]:stroke-card"
         >
           <LineChart
             accessibilityLayer
@@ -477,7 +477,7 @@ export function CoinChart() {
             <Line
               type="linear"
               dataKey="value"
-              stroke="var(--color-value)"
+              stroke="#ffffff"
               strokeWidth={2}
               dot={false}
               activeDot={{
