@@ -8,6 +8,7 @@ import { AudioWaveform, Disc3, Music2, Play } from "lucide-react";
 import { useEffect, useState } from "react";
 import { NumberTicker } from "@/components/magicui/number-ticker";
 import { InteractiveChart } from "./interactive-chart";
+import { CoinChart } from "./coin-chart";
 const items = [
   {
     id: 1,
@@ -219,7 +220,8 @@ export default function Metric() {
         </div>
       </div>
       <div className="w-full">
-        <InteractiveChart />
+        <CoinChart />
+        {/* <InteractiveChart /> */}
       </div>
     </div>
   );
