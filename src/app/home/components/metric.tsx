@@ -33,6 +33,7 @@ const items = [
 ];
 const stats = [
   {
+    id: 1,
     title: "Active Users",
     value: "10,483",
     icon: (
@@ -55,6 +56,7 @@ const stats = [
     description: "Daily active users",
   },
   {
+    id: 2,
     title: "Tracks Created",
     value: "856,942",
     icon: (
@@ -77,6 +79,7 @@ const stats = [
     description: "Total tracks created",
   },
   {
+    id: 3,
     title: "Total Playtime",
     value: "2.4M hours",
     icon: (
@@ -99,6 +102,7 @@ const stats = [
     description: "Cumulative playtime",
   },
   {
+    id: 4,
     title: "Downloads",
     value: "1.2M",
     icon: (
@@ -190,8 +194,8 @@ export default function Metric() {
           software.
         </span>
       </div>
-      <div className="flex items-center justify-between gap-[4rem]">
-        <div className="grid w-full grid-cols-2 gap-8 md:grid-cols-4">
+      <div className="flex w-full items-center justify-between gap-[4rem]">
+        <div className="grid w-full grid-cols-2 gap-8 rounded-md border md:grid-cols-4">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.title}
@@ -200,7 +204,9 @@ export default function Metric() {
               transition={{ delay: 0.2 + index * 0.1 }}
               className="text-center"
             >
-              <motion.div className="flex flex-col gap-2 rounded-xl border p-3 backdrop-blur-lg transition-colors">
+              <motion.div
+                className={`flex ${stat.id === 1 || stat.id === 2 || stat.id === 3 ? "border-r" : ""} flex-col gap-2 rounded-xl p-3 backdrop-blur-lg transition-colors`}
+              >
                 <div className="flex justify-center text-white/70">
                   {stat.icon}
                 </div>
