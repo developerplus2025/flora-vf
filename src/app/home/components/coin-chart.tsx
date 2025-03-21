@@ -441,7 +441,7 @@ export function CoinChart() {
       <CardContent>
         <ChartContainer
           config={chartConfig}
-          className="[&_.recharts-rectangle.recharts-tooltip-cursor]:fill-hsl((--chart-1))/10 [&_.recharts-rectangle.recharts-tooltip-inner-cursor]:fill-(--chart-1)/25 aspect-auto h-72 w-full [&_.recharts-cartesian-axis-line]:stroke-border dark:[&_.recharts-cartesian-axis-line]:stroke-card [&_.recharts-cartesian-grid_line[stroke='#a1a1a1']]:stroke-[#a1a1a1] dark:[&_.recharts-cartesian-grid_line[stroke='#ccc']]:stroke-card"
+          className="[&_.recharts-rectangle.recharts-tooltip-cursor]:fill-hsl((--chart-1))/10 [&_.recharts-rectangle.recharts-tooltip-inner-cursor]:fill-(--chart-1)/25 aspect-auto h-72 w-full [&_.recharts-cartesian-axis-line]:stroke-border dark:[&_.recharts-cartesian-axis-line]:stroke-card [&_.recharts-cartesian-grid_line[stroke='#a1a1a1']]:stroke-[#a1a1a1] dark:[&_.recharts-cartesian-grid_line[stroke='#a1a1a1']]:stroke-[#a1a1a1]"
         >
           <LineChart
             accessibilityLayer
