@@ -31,7 +31,7 @@ const WaveAudioCard = () => {
         width={"32rem"}
         barHeight={20}
         barRadius={20}
-        barWidth={3}
+        barWidth={1}
         onReady={onReady}
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}
