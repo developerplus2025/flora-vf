@@ -319,11 +319,11 @@ const formatDate = (dateStr: string, period: string) => {
 const chartConfig = {
   value: {
     label: "Value",
-    color: "var(--chart-1)",
+    color: "hsl(var(--chart-1))",
   },
   projected: {
     label: "Projected",
-    color: "var(--chart-3)",
+    color: "hsl(var(--chart-3))",
   },
 } satisfies ChartConfig;
 
@@ -441,7 +441,7 @@ export function CoinChart() {
       <CardContent>
         <ChartContainer
           config={chartConfig}
-          className="[&_.recharts-rectangle.recharts-tooltip-cursor]:fill-(--chart-1)/10 [&_.recharts-rectangle.recharts-tooltip-inner-cursor]:fill-(--chart-1)/25 aspect-auto h-72 w-full [&_.recharts-cartesian-axis-line]:stroke-border dark:[&_.recharts-cartesian-axis-line]:stroke-card [&_.recharts-cartesian-grid_line[stroke='#ccc']]:stroke-border dark:[&_.recharts-cartesian-grid_line[stroke='#ccc']]:stroke-card"
+          className="[&_.recharts-rectangle.recharts-tooltip-cursor]:fill-hsl((--chart-1))/10 [&_.recharts-rectangle.recharts-tooltip-inner-cursor]:fill-(--chart-1)/25 aspect-auto h-72 w-full [&_.recharts-cartesian-axis-line]:stroke-border dark:[&_.recharts-cartesian-axis-line]:stroke-card [&_.recharts-cartesian-grid_line[stroke='#ccc']]:stroke-border dark:[&_.recharts-cartesian-grid_line[stroke='#ccc']]:stroke-card"
         >
           <LineChart
             accessibilityLayer
@@ -469,7 +469,7 @@ export function CoinChart() {
             />
             <ChartTooltip
               content={<ChartTooltipContent hideIndicator />}
-              cursor={<CustomCursor fill="#ffffff" />}
+              cursor={<CustomCursor fill="hsl(var(--chart-1))" />}
               formatter={(value) =>
                 `$${Number(value).toLocaleString("en-US", { maximumFractionDigits: 2 })}`
               }
@@ -477,13 +477,13 @@ export function CoinChart() {
             <Line
               type="linear"
               dataKey="value"
-              stroke="#ffffff"
+              stroke="var(--color-value)"
               strokeWidth={2}
               dot={false}
               activeDot={{
                 r: 5,
-                fill: "var(--chart-1)",
-                stroke: "var(--background)",
+                fill: "hsl(var(--chart-1))",
+                stroke: "hsl(var(--background))",
                 strokeWidth: 2,
               }}
             />
