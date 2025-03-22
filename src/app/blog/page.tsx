@@ -24,47 +24,43 @@ export default function BlogPage() {
           </Button>
         </div>
         <div className="grid justify-items-center px-[10rem] sm:grid-cols-2 lg:grid-cols-3">
-          {posts.map((post, index) => (
-            <Card key={index} className="overflow-hidden rounded-none">
-              <CardHeader className="hidden p-2">
-                {/* <Image
-                  src={`/placeholder.svg?height=400&width=800`}
-                  width={800}
-                  height={400}
-                  alt={post.title}
-                  className="aspect-[2/1] w-full object-cover"
-                /> */}
-                <div className="aspect-[2/1] w-full border bg-black object-cover"></div>
-              </CardHeader>
-              <CardContent className="p-6">
-                <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                  <Badge variant="outline">{post.data.category}</Badge>
-                  <div className="flex items-center gap-1">
-                    <Calendar className="h-3 w-3" />
-                    <span>{post.data.date}</span>
+          {Array.from({ length: 100 }).map((_, index) => {
+            const post = posts[index % posts.length]; // Lặp lại danh sách khi hết dữ liệu
+            return (
+              <Card key={index} className="overflow-hidden rounded-none">
+                <CardHeader className="hidden p-2">
+                  <div className="aspect-[2/1] w-full border bg-black object-cover"></div>
+                </CardHeader>
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                    <Badge variant="outline">{post.data.category}</Badge>
+                    <div className="flex items-center gap-1">
+                      <Calendar className="h-3 w-3" />
+                      <span>{post.data.date}</span>
+                    </div>
                   </div>
-                </div>
-                <h3 className="mt-2 text-xl font-bold">
-                  <Link href="#" className="hover:underline">
-                    {post.data.title}
-                  </Link>
-                </h3>
-                <p className="mt-2 line-clamp-2 text-sm text-muted-foreground">
-                  {post.data.description}
-                </p>
-              </CardContent>
-              <CardFooter className="px-6 pb-6 pt-0">
-                <Button variant="link" className="p-0" asChild>
-                  <Link
-                    href={`/blog/${post.data.link}`}
-                    className="inline-flex items-center gap-1"
-                  >
-                    Read More <ArrowRight className="h-3 w-3" />
-                  </Link>
-                </Button>
-              </CardFooter>
-            </Card>
-          ))}
+                  <h3 className="mt-2 text-xl font-bold">
+                    <Link href="#" className="hover:underline">
+                      {post.data.title}
+                    </Link>
+                  </h3>
+                  <p className="mt-2 line-clamp-2 text-sm text-muted-foreground">
+                    {post.data.description}
+                  </p>
+                </CardContent>
+                <CardFooter className="px-6 pb-6 pt-0">
+                  <Button variant="link" className="p-0" asChild>
+                    <Link
+                      href={`/blog/${post.data.link}`}
+                      className="inline-flex items-center gap-1"
+                    >
+                      Read More <ArrowRight className="h-3 w-3" />
+                    </Link>
+                  </Button>
+                </CardFooter>
+              </Card>
+            );
+          })}
         </div>
       </div>
     </main>
