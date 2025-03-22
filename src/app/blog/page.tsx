@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { blog } from "@/lib/source";
+import CompAvatarListBlog from "@/components/comp-410";
 export default function BlogPage() {
   const posts = blog.getPages();
   return (
@@ -32,12 +33,15 @@ export default function BlogPage() {
                   <div className="aspect-[2/1] w-full border bg-black object-cover"></div>
                 </CardHeader>
                 <CardContent className="p-6">
-                  <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                  <div className="flex items-center justify-between gap-4 text-sm text-muted-foreground">
                     <Badge variant="outline">{post.data.category}</Badge>
                     <div className="flex items-center gap-1">
                       <Calendar className="h-3 w-3" />
                       <span>{post.data.date}</span>
                     </div>
+                  </div>
+                  <div>
+                    <CompAvatarListBlog />
                   </div>
                   <h3 className="mt-2 text-xl font-bold">
                     <Link href="#" className="hover:underline">
