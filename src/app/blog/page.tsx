@@ -70,7 +70,7 @@ export default function BlogPage() {
                   </p>
                 </CardContent>
                 <CardFooter className="flex flex-col items-start gap-4 border-[0px] px-6 pb-6 pt-0">
-                  <div className="flex items-center justify-between">
+                  <div className="flex w-full items-center justify-between">
                     <Button variant="link" className="p-0" asChild>
                       <Link
                         href={`/blog/${post.data.link}`}
@@ -80,7 +80,7 @@ export default function BlogPage() {
                         <ArrowRight className="absolute h-3 w-3 translate-x-[50px] transition-transform duration-300 ease-out group-hover:translate-x-[60px]" />
                       </Link>
                     </Button>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-4">
                       <svg
                         data-testid="geist-icon"
                         height={16}
