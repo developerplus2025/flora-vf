@@ -11,7 +11,9 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { blog } from "@/lib/source";
 export default function BlogPage() {
+  const posts = blog.getPages();
   return (
     <main className="mb-[4rem] mt-[3rem] flex w-full items-center justify-center">
       <div className="mt-12 space-y-8">
@@ -22,71 +24,7 @@ export default function BlogPage() {
           </Button>
         </div>
         <div className="grid justify-items-center px-[10rem] sm:grid-cols-2 lg:grid-cols-3">
-          {[
-            {
-              title: "10 Best Free VST Plugins of 2024",
-              category: "Plugins",
-              image: "Free%20VST%20Plugins",
-              description:
-                "Discover the top free VST plugins that deliver professional quality sound without the price tag.",
-            },
-            {
-              title: "Mastering Techniques in FL Studio",
-              category: "Tutorial",
-              image: "FL%20Studio%20Mastering",
-              description:
-                "Learn professional mastering techniques using only FL Studio's native plugins.",
-            },
-            {
-              title: "Hardware vs Software Synths: The Ultimate Comparison",
-              category: "Gear",
-              image: "Synth%20Comparison",
-              description:
-                "We compare the pros and cons of hardware and software synthesizers for modern music production.",
-            },
-            {
-              title: "Hardware vs Software Synths: The Ultimate Comparison",
-              category: "Gear",
-              image: "Synth%20Comparison",
-              description:
-                "We compare the pros and cons of hardware and software synthesizers for modern music production.",
-            },
-            {
-              title: "Hardware vs Software Synths: The Ultimate Comparison",
-              category: "Gear",
-              image: "Synth%20Comparison",
-              description:
-                "We compare the pros and cons of hardware and software synthesizers for modern music production.",
-            },
-            {
-              title: "Hardware vs Software Synths: The Ultimate Comparison",
-              category: "Gear",
-              image: "Synth%20Comparison",
-              description:
-                "We compare the pros and cons of hardware and software synthesizers for modern music production.",
-            },
-            {
-              title: "Hardware vs Software Synths: The Ultimate Comparison",
-              category: "Gear",
-              image: "Synth%20Comparison",
-              description:
-                "We compare the pros and cons of hardware and software synthesizers for modern music production.",
-            },
-            {
-              title: "Hardware vs Software Synths: The Ultimate Comparison",
-              category: "Gear",
-              image: "Synth%20Comparison",
-              description:
-                "We compare the pros and cons of hardware and software synthesizers for modern music production.",
-            },
-            {
-              title: "Hardware vs Software Synths: The Ultimate Comparison",
-              category: "Gear",
-              image: "Synth%20Comparison",
-              description:
-                "We compare the pros and cons of hardware and software synthesizers for modern music production.",
-            },
-          ].map((post, index) => (
+          {posts.map((post, index) => (
             <Card key={index} className="overflow-hidden rounded-none">
               <CardHeader className="hidden p-2">
                 {/* <Image
@@ -100,19 +38,19 @@ export default function BlogPage() {
               </CardHeader>
               <CardContent className="p-6">
                 <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                  <Badge variant="outline">{post.category}</Badge>
+                  <Badge variant="outline">{post.data.category}</Badge>
                   <div className="flex items-center gap-1">
                     <Calendar className="h-3 w-3" />
-                    <span>March {15 + index}, 2024</span>
+                    <span>{post.data.data}</span>
                   </div>
                 </div>
                 <h3 className="mt-2 text-xl font-bold">
                   <Link href="#" className="hover:underline">
-                    {post.title}
+                    {post.data.title}
                   </Link>
                 </h3>
                 <p className="mt-2 line-clamp-2 text-sm text-muted-foreground">
-                  {post.description}
+                  {post.data.description}
                 </p>
               </CardContent>
               <CardFooter className="px-6 pb-6 pt-0">
