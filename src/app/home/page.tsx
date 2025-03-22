@@ -163,6 +163,7 @@ import AudioCard from "./components/audio-card";
 import FeaturesSection from "./components/features-section";
 import BeautifulFeaturesLayout from "./components/beautiful-features-layout";
 import WaveAudioCard from "./components/wave-audio-card";
+import CompAvatar from "@/components/comp-412";
 export default function Home() {
   const { theme, systemTheme, setTheme } = useTheme();
   const [open, setOpen] = useState(false);
@@ -256,15 +257,7 @@ export default function Home() {
     <main className="GeistSans relative flex min-h-screen w-full flex-col items-center justify-between gap-[1rem] overflow-x-hidden pb-[1rem] pt-[6rem] dark:bg-black dark:[color-scheme:dark]">
       {/* <TailwindcssButton /> */}
 
-      <div className="group relative grid overflow-hidden rounded-full px-3 py-1 shadow-[0_1000px_0_0_hsl(0_0%_20%)_inset] transition-colors duration-200">
-        <span>
-          <span className="spark mask-gradient absolute inset-0 h-[100%] w-[100%] animate-flip overflow-hidden rounded-full [mask:linear-gradient(white,_transparent_50%)] before:absolute before:aspect-square before:w-[200%] before:rotate-[-90deg] before:animate-rotate before:bg-[conic-gradient(from_0deg,transparent_0_340deg,white_360deg)] before:content-[''] before:[inset:0_auto_auto_50%] before:[translate:-50%_-15%]" />
-        </span>
-        <span className="backdrop absolute inset-px rounded-full bg-neutral-950 transition-colors duration-200" />
-        <span className="z-10 text-xs font-medium text-neutral-400">
-          Introducing Flora v10.9.5
-        </span>
-      </div>
+      <CompAvatar />
       <motion.div
         initial={{ opacity: 0, y: 20 }} // Trạng thái ban đầu: mờ và di chuyển xuống
         animate={{ opacity: 1, y: 0 }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
