@@ -41,7 +41,7 @@ export default function BlogPage() {
                   <Badge variant="outline">{post.data.category}</Badge>
                   <div className="flex items-center gap-1">
                     <Calendar className="h-3 w-3" />
-                    <span>{post.data.data}</span>
+                    <span>{post.data.date}</span>
                   </div>
                 </div>
                 <h3 className="mt-2 text-xl font-bold">
