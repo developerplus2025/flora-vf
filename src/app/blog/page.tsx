@@ -24,13 +24,13 @@ export default function BlogPage() {
             <Link href="#">View All</Link>
           </Button>
         </div>
-        <div className="grid justify-items-center divide-x-1 divide-y-1 border sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid justify-items-center divide-x-1 divide-y-1 border-b border-r sm:grid-cols-2 lg:grid-cols-3">
           {Array.from({ length: 102 }).map((_, index) => {
             const post = posts[index % posts.length]; // Lặp lại danh sách khi hết dữ liệu
             return (
               <Card
                 key={index}
-                className="overflow-hidden rounded-none border-[0px]"
+                className={`overflow-hidden rounded-none ${index === 1 ? "border-l border-t" : "border-[0px]"}`}
               >
                 <CardHeader className="hidden p-2">
                   <div className="aspect-[2/1] w-full border-[0px] bg-black object-cover"></div>
