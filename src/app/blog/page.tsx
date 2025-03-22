@@ -13,7 +13,7 @@ import { ArrowRight, Calendar } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 export default function BlogPage() {
   return (
-    <main className="mx-[5rem] mb-[4rem] mt-[3rem] w-full">
+    <main className="mb-[4rem] mt-[3rem] w-full">
       <div className="mt-12 space-y-8">
         <div className="flex items-center justify-between">
           <h2 className="text-2xl font-bold tracking-tight">Recent Articles</h2>
@@ -21,7 +21,7 @@ export default function BlogPage() {
             <Link href="#">View All</Link>
           </Button>
         </div>
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid justify-items-center gap-8 px-[2rem] sm:grid-cols-2 lg:grid-cols-3">
           {[
             {
               title: "10 Best Free VST Plugins of 2024",
@@ -47,13 +47,14 @@ export default function BlogPage() {
           ].map((post, index) => (
             <Card key={index} className="overflow-hidden">
               <CardHeader className="p-0">
-                <Image
+                {/* <Image
                   src={`/placeholder.svg?height=400&width=800`}
                   width={800}
                   height={400}
                   alt={post.title}
                   className="aspect-[2/1] w-full object-cover"
-                />
+                /> */}
+                <div className="aspect-[2/1] w-full bg-black object-cover"></div>
               </CardHeader>
               <CardContent className="p-6">
                 <div className="flex items-center gap-4 text-sm text-muted-foreground">
