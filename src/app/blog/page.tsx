@@ -13,13 +13,27 @@ import { ArrowRight, Calendar } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { blog } from "@/lib/source";
 import CompAvatarListBlog from "@/components/comp-410";
+import { Input } from "@/components/ui/input";
+import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 export default function BlogPage() {
   const posts = blog.getPages();
   return (
     <main className="mb-[4rem] mt-[3rem] flex w-full items-center justify-center px-[10rem]">
       <div className="mt-12 space-y-8">
-        <div className="flex w-full items-center justify-between">
+        <div className="flex w-full items-center justify-between gap-[4rem]">
           <h2 className="text-2xl font-bold tracking-tight">Recent Articles</h2>
+          <div className="relative w-full">
+            <Input
+              type="text"
+              placeholder="Search for favorite songs"
+              className="w-full pl-[3rem] placeholder:text-[#7c7c7c]"
+            />
+            <MagnifyingGlassIcon
+              width="21"
+              height="21"
+              className="absolute left-[16px] top-1/2 -translate-y-1/2"
+            />
+          </div>
           <Button variant="outline" asChild>
             <Link href="#">View All</Link>
           </Button>
