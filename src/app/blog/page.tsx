@@ -50,7 +50,7 @@ export default function BlogPage() {
                     {post.data.description}
                   </p>
                 </CardContent>
-                <CardFooter className="px-6 pb-6 pt-0">
+                <CardFooter className="flex flex-col px-6 pb-6 pt-0">
                   <Button variant="link" className="p-0" asChild>
                     <Link
                       href={`/blog/${post.data.link}`}
