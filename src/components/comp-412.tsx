@@ -5,10 +5,8 @@ export default function CompAvatar() {
         <span className="spark mask-gradient absolute inset-0 h-[100%] w-[100%] animate-flip overflow-hidden rounded-full [mask:linear-gradient(white,_transparent_50%)] before:absolute before:aspect-square before:w-[200%] before:rotate-[-90deg] before:animate-rotate before:bg-[conic-gradient(from_0deg,transparent_0_340deg,white_360deg)] before:content-[''] before:[inset:0_auto_auto_50%] before:[translate:-50%_-15%]" />
       </span>
       <span className="backdrop absolute inset-px rounded-full bg-neutral-950 transition-colors duration-200" />
-      <span className="z-10 text-xs font-medium text-neutral-400">
-        Introducing Flora v10.9.5
-      </span>
-      <div className="flex items-center rounded-full border bg-background p-1 shadow-sm">
+
+      <div className="z-10 flex items-center rounded-full border bg-background p-1 px-2 shadow-sm">
         <div className="flex -space-x-1.5">
           <img
             className="rounded-full ring-1 ring-background"
