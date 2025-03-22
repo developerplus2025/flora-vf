@@ -40,7 +40,7 @@ export default function BlogPage() {
             <Link href="#">View All</Link>
           </Button>
         </div>
-        <div className="grid justify-items-center divide-x-1 divide-y-1 border-b border-t first:border-l first:border-r sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid justify-items-center divide-x-1 divide-y-1 border-b border-r first:border-l first:border-t sm:grid-cols-2 lg:grid-cols-3">
           {Array.from({ length: 102 }).map((_, index) => {
             const post = posts[index % posts.length]; // Lặp lại danh sách khi hết dữ liệu
             return (
