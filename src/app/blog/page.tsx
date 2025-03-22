@@ -30,13 +30,13 @@ export default function BlogPage() {
             return (
               <Card
                 key={index}
-                className="overflow-hidden rounded-none border-none"
+                className="overflow-hidden rounded-none border-[0px]"
               >
                 <CardHeader className="hidden p-2">
-                  <div className="aspect-[2/1] w-full border bg-black object-cover"></div>
+                  <div className="aspect-[2/1] w-full border-[0px] bg-black object-cover"></div>
                 </CardHeader>
                 <CardContent className="p-6">
-                  <div className="flex items-center justify-between gap-4 text-sm text-muted-foreground">
+                  <div className="flex items-center justify-between gap-4 border-[0px] text-sm text-muted-foreground">
                     <Badge variant="outline">{post.data.category}</Badge>
                     <div className="flex items-center gap-1">
                       <Calendar className="h-3 w-3" />
@@ -53,7 +53,7 @@ export default function BlogPage() {
                     {post.data.description}
                   </p>
                 </CardContent>
-                <CardFooter className="flex flex-col items-start gap-4 px-6 pb-6 pt-0">
+                <CardFooter className="flex flex-col items-start gap-4 border-[0px] px-6 pb-6 pt-0">
                   <Button variant="link" className="p-0" asChild>
                     <Link
                       href={`/blog/${post.data.link}`}
