@@ -46,7 +46,7 @@ export default function BlogPage() {
             },
           ].map((post, index) => (
             <Card key={index} className="overflow-hidden">
-              <CardHeader className="p-0">
+              <CardHeader className="p-2">
                 {/* <Image
                   src={`/placeholder.svg?height=400&width=800`}
                   width={800}
