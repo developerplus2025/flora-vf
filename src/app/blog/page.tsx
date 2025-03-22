@@ -44,6 +44,48 @@ export default function BlogPage() {
               description:
                 "We compare the pros and cons of hardware and software synthesizers for modern music production.",
             },
+            {
+              title: "Hardware vs Software Synths: The Ultimate Comparison",
+              category: "Gear",
+              image: "Synth%20Comparison",
+              description:
+                "We compare the pros and cons of hardware and software synthesizers for modern music production.",
+            },
+            {
+              title: "Hardware vs Software Synths: The Ultimate Comparison",
+              category: "Gear",
+              image: "Synth%20Comparison",
+              description:
+                "We compare the pros and cons of hardware and software synthesizers for modern music production.",
+            },
+            {
+              title: "Hardware vs Software Synths: The Ultimate Comparison",
+              category: "Gear",
+              image: "Synth%20Comparison",
+              description:
+                "We compare the pros and cons of hardware and software synthesizers for modern music production.",
+            },
+            {
+              title: "Hardware vs Software Synths: The Ultimate Comparison",
+              category: "Gear",
+              image: "Synth%20Comparison",
+              description:
+                "We compare the pros and cons of hardware and software synthesizers for modern music production.",
+            },
+            {
+              title: "Hardware vs Software Synths: The Ultimate Comparison",
+              category: "Gear",
+              image: "Synth%20Comparison",
+              description:
+                "We compare the pros and cons of hardware and software synthesizers for modern music production.",
+            },
+            {
+              title: "Hardware vs Software Synths: The Ultimate Comparison",
+              category: "Gear",
+              image: "Synth%20Comparison",
+              description:
+                "We compare the pros and cons of hardware and software synthesizers for modern music production.",
+            },
           ].map((post, index) => (
             <Card key={index} className="overflow-hidden rounded-none">
               <CardHeader className="hidden p-2">
