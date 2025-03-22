@@ -40,9 +40,7 @@ export default function BlogPage() {
                       <span>{post.data.date}</span>
                     </div>
                   </div>
-                  <div>
-                    <CompAvatarListBlog />
-                  </div>
+
                   <h3 className="mt-2 text-xl font-bold">
                     <Link href="#" className="hover:underline">
                       {post.data.title}
@@ -61,6 +59,9 @@ export default function BlogPage() {
                       Read More <ArrowRight className="h-3 w-3" />
                     </Link>
                   </Button>
+                  <div>
+                    <CompAvatarListBlog />
+                  </div>
                 </CardFooter>
               </Card>
             );
