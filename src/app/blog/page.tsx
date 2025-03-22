@@ -25,7 +25,7 @@ export default function BlogPage() {
           </Button>
         </div>
         <div className="grid justify-items-center divide-x-1 divide-y-1 border sm:grid-cols-2 lg:grid-cols-3">
-          {Array.from({ length: 100 }).map((_, index) => {
+          {Array.from({ length: 102 }).map((_, index) => {
             const post = posts[index % posts.length]; // Lặp lại danh sách khi hết dữ liệu
             return (
               <Card
