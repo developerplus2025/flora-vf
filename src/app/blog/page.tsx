@@ -21,7 +21,7 @@ export default function BlogPage() {
             <Link href="#">View All</Link>
           </Button>
         </div>
-        <div className="grid justify-items-center gap-8 px-[10rem] sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid justify-items-center px-[10rem] sm:grid-cols-2 lg:grid-cols-3">
           {[
             {
               title: "10 Best Free VST Plugins of 2024",
@@ -45,8 +45,8 @@ export default function BlogPage() {
                 "We compare the pros and cons of hardware and software synthesizers for modern music production.",
             },
           ].map((post, index) => (
-            <Card key={index} className="overflow-hidden">
-              <CardHeader className="p-2">
+            <Card key={index} className="overflow-hidden rounded-none">
+              <CardHeader className="hidden p-2">
                 {/* <Image
                   src={`/placeholder.svg?height=400&width=800`}
                   width={800}
