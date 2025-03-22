@@ -38,7 +38,7 @@ export function QueryPagination({
       <PaginationContent>
         {prevPage >= 1 ? (
           <PaginationItem>
-            <PaginationPrevious href={createPageURL(prevPage)} />
+            <PaginationPrevious size={"small"} href={createPageURL(prevPage)} />
           </PaginationItem>
         ) : null}
 
@@ -50,6 +50,7 @@ export function QueryPagination({
               key={`page-button-${index}`}
             >
               <PaginationLink
+                size={"small"}
                 isActive={currentPage === index + 1}
                 href={createPageURL(index + 1)}
               >
@@ -60,7 +61,7 @@ export function QueryPagination({
 
         {nextPage <= totalPages ? (
           <PaginationItem>
-            <PaginationNext href={createPageURL(nextPage)} />
+            <PaginationNext size={"small"} href={createPageURL(nextPage)} />
           </PaginationItem>
         ) : null}
       </PaginationContent>
