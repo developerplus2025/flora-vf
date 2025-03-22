@@ -13,15 +13,15 @@ import { ArrowRight, Calendar } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 export default function BlogPage() {
   return (
-    <main className="mb-[4rem] mt-[3rem] w-full">
+    <main className="mb-[4rem] mt-[3rem] flex w-full items-center justify-center">
       <div className="mt-12 space-y-8">
-        <div className="flex items-center justify-between">
+        <div className="flex w-full items-center justify-between px-[10rem]">
           <h2 className="text-2xl font-bold tracking-tight">Recent Articles</h2>
           <Button variant="outline" asChild>
             <Link href="#">View All</Link>
           </Button>
         </div>
-        <div className="grid justify-items-center gap-8 px-[2rem] sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid justify-items-center gap-8 px-[10rem] sm:grid-cols-2 lg:grid-cols-3">
           {[
             {
               title: "10 Best Free VST Plugins of 2024",
@@ -54,7 +54,7 @@ export default function BlogPage() {
                   alt={post.title}
                   className="aspect-[2/1] w-full object-cover"
                 /> */}
-                <div className="aspect-[2/1] w-full bg-black object-cover"></div>
+                <div className="aspect-[2/1] w-full border bg-black object-cover"></div>
               </CardHeader>
               <CardContent className="p-6">
                 <div className="flex items-center gap-4 text-sm text-muted-foreground">
