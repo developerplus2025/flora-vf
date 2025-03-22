@@ -28,7 +28,10 @@ export default function BlogPage() {
           {Array.from({ length: 100 }).map((_, index) => {
             const post = posts[index % posts.length]; // Lặp lại danh sách khi hết dữ liệu
             return (
-              <Card key={index} className="overflow-hidden rounded-none">
+              <Card
+                key={index}
+                className="overflow-hidden rounded-none border-none"
+              >
                 <CardHeader className="hidden p-2">
                   <div className="aspect-[2/1] w-full border bg-black object-cover"></div>
                 </CardHeader>
