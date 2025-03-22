@@ -56,7 +56,7 @@ export default function BlogPage() {
               <CardFooter className="px-6 pb-6 pt-0">
                 <Button variant="link" className="p-0" asChild>
                   <Link
-                    href={post.data.link}
+                    href={`/${post.data.link}`}
                     className="inline-flex items-center gap-1"
                   >
                     Read More <ArrowRight className="h-3 w-3" />
