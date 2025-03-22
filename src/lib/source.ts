@@ -1,12 +1,13 @@
-import { createMDXSource } from 'fumadocs-mdx';
-import type { InferMetaType, InferPageType } from 'fumadocs-core/source';
-import { loader } from 'fumadocs-core/source';
-import { icons } from 'lucide-react';
-import { attachFile, createOpenAPI } from 'fumadocs-openapi/server';
-import { createElement } from 'react';
-import { docs, } from '../../.source';
+import { createMDXSource } from "fumadocs-mdx";
+import type { InferMetaType, InferPageType } from "fumadocs-core/source";
+import { loader } from "fumadocs-core/source";
+import { icons } from "lucide-react";
+import { attachFile, createOpenAPI } from "fumadocs-openapi/server";
+import { createElement } from "react";
+import { docs } from "../../.source";
+import { blogPosts } from "../../.source";
 export const source = loader({
-  baseUrl: '/docs',
+  baseUrl: "/docs",
   icon(icon) {
     if (icon && icon in icons)
       return createElement(icons[icon as keyof typeof icons]);
@@ -17,14 +18,17 @@ export const source = loader({
   },
 });
 
-
+export const blog = loader({
+  baseUrl: "/blog",
+  source: createMDXSource(blogPosts),
+});
 
 export const openapi = createOpenAPI({
-  proxyUrl: '/api/proxy',
+  proxyUrl: "/api/proxy",
   shikiOptions: {
     themes: {
-      dark: 'vesper',
-      light: 'vitesse-light',
+      dark: "vesper",
+      light: "vitesse-light",
     },
   },
 });
