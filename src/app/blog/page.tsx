@@ -13,7 +13,7 @@ import { ArrowRight, Calendar } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 export default function BlogPage() {
   return (
-    <main className="mt-[3rem] w-full">
+    <main className="mx-[5rem] mb-[4rem] mt-[3rem] w-full">
       <div className="mt-12 space-y-8">
         <div className="flex items-center justify-between">
           <h2 className="text-2xl font-bold tracking-tight">Recent Articles</h2>
@@ -48,7 +48,7 @@ export default function BlogPage() {
             <Card key={index} className="overflow-hidden">
               <CardHeader className="p-0">
                 <Image
-                  src={`/placeholder.svg?height=400&width=800&text=${post.image}`}
+                  src={`/placeholder.svg?height=400&width=800`}
                   width={800}
                   height={400}
                   alt={post.title}
