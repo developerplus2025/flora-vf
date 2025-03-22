@@ -23,5 +23,6 @@ export const blogPosts = defineCollections({
     author: z.string(),
     category: z.string(),
     date: z.string(),
+    link: z.string(),
   }),
 });
