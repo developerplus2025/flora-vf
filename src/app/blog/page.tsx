@@ -45,7 +45,7 @@ export default function BlogPage() {
                   </div>
 
                   <h3 className="mt-2 text-xl font-bold">
-                    <Link href="#" className="hover:underline">
+                    <Link href="#" className="">
                       {post.data.title}
                     </Link>
                   </h3>
