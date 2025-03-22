@@ -57,7 +57,7 @@ export default function BlogPage() {
                       className="group relative inline-flex items-center gap-1"
                     >
                       Read More{" "}
-                      <ArrowRight className="absolute h-3 w-3 transition-transform duration-300 ease-out group-hover:translate-x-[10px]" />
+                      <ArrowRight className="absolute h-3 w-3 translate-x-[50px] transition-transform duration-300 ease-out group-hover:translate-x-[60px]" />
                     </Link>
                   </Button>
                   <div>
