@@ -15,6 +15,7 @@ import { blog } from "@/lib/source";
 import CompAvatarListBlog from "@/components/comp-410";
 import { Input } from "@/components/ui/input";
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
+import { AnimatedTabs } from "@/components/AnimationTab";
 export default function BlogPage() {
   const posts = blog.getPages();
   return (
@@ -24,6 +25,7 @@ export default function BlogPage() {
           <h2 className="flex-shrink-0 text-2xl font-bold tracking-tight">
             Recent Articles
           </h2>
+          <AnimatedTabs />
           <div className="relative w-full">
             <Input
               type="text"
