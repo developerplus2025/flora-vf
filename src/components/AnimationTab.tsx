@@ -42,7 +42,7 @@ export function AnimatedTabs() {
             <button
               key={index}
               onClick={() => setActiveTab(tab.label)}
-              className="flex h-8 items-center rounded-full p-3 text-sm font-medium text-white dark:text-black"
+              className="flex h-8 items-center text-nowrap rounded-full p-3 text-sm font-medium text-white dark:text-black"
               tabIndex={-1}
             >
               {tab.label}
@@ -59,7 +59,7 @@ export function AnimatedTabs() {
               key={index}
               ref={isActive ? activeTabRef : null}
               onClick={() => setActiveTab(label)}
-              className="flex h-8 items-center rounded-full p-3 text-sm font-medium text-neutral-500 dark:text-neutral-300"
+              className="flex h-8 items-center text-nowrap rounded-full p-3 text-sm font-medium text-neutral-500 dark:text-neutral-300"
             >
               {label}
             </button>
