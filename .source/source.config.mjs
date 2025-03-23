@@ -20,8 +20,9 @@ var blogPosts = defineCollections({
   // add required frontmatter properties
   schema: frontmatterSchema.extend({
     author: z.string(),
-    catetory: z.string(),
-    date: z.string()
+    category: z.string(),
+    date: z.string(),
+    link: z.string()
   })
 });
 export {
