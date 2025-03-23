@@ -46,7 +46,7 @@ export default function BlogPage() {
             return (
               <Card
                 key={index}
-                className={`overflow-hidden rounded-none ${index === 0 ? "border-l border-t" : "border-[0px]"}`}
+                className={`overflow-hidden rounded-none ${index === 0 ? "border-b-[0px] border-l border-r-[0px] border-t" : "border-[0px]"}`}
               >
                 <CardHeader className="hidden p-2">
                   <div className="aspect-[2/1] w-full border-[0px] bg-black object-cover"></div>
