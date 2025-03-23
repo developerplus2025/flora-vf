@@ -1,6 +1,6 @@
 "use client"; // @NOTE: Add in case you are using Next.js
 
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 const TABS = [
