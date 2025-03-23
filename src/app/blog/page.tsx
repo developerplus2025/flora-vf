@@ -28,7 +28,7 @@ export default function BlogPage() {
           <AnimatedTabs />
           <div className="relative w-full">
             <Input
-              type="text"
+              type="search"
               placeholder="Search for favorite songs"
               className="w-full rounded-full pl-[3rem] placeholder:text-[#7c7c7c]"
             />
