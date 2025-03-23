@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Pricing",
-  description: "MusicHub App",
+  title: "Blog - Flora",
+  description: "Blog - Flora",
 };
 export default function BlogLayout({
   children,
