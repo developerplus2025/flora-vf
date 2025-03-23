@@ -54,14 +54,16 @@ export function AnimatedTabs() {
         </div>
       </div>
       <div className="relative flex w-full justify-center">
-        {TABS.map(({ label }, index) => {
+        {TABS.map(({ label, link }, index) => {
           const isActive = activeTab === label;
 
           return (
             <button
               key={index}
               ref={isActive ? activeTabRef : null}
-              onClick={() => setActiveTab(label)}
+              onClick={() => {
+                setActiveTab(label), router.push(`${link}`);
+              }}
               className="flex h-8 items-center text-nowrap rounded-full p-3 text-sm font-medium text-neutral-500 dark:text-neutral-300"
             >
               {label}
