@@ -67,7 +67,7 @@ export default function BlogPage() {
                       {post.data.title}
                     </Link>
                   </h3>
-                  <p className="mt-2 line-clamp-2 text-sm text-muted-foreground">
+                  <p className="mt-2 line-clamp-[9] text-sm text-muted-foreground">
                     {post.data.description}
                   </p>
                 </CardContent>
