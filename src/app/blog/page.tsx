@@ -62,12 +62,12 @@ export default function BlogPage() {
                     </div>
                   </div>
 
-                  <h3 className="mt-2 text-xl font-bold">
+                  <h3 className="mt-4 text-xl font-bold">
                     <Link href="#" className="">
                       {post.data.title}
                     </Link>
                   </h3>
-                  <p className="mt-2 line-clamp-[9] text-sm text-muted-foreground">
+                  <p className="mt-4 line-clamp-[9] text-sm text-muted-foreground">
                     {post.data.description}
                   </p>
                 </CardContent>
