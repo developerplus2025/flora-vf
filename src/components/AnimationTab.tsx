@@ -1,12 +1,13 @@
 "use client"; // @NOTE: Add in case you are using Next.js
 
+import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
 
 const TABS = [
-  { label: "All Posts" },
-  { label: "Interactions" },
-  { label: "Resources" },
-  { label: "Docs" },
+  { label: "All Posts", link: "/blog/category/interactions/" },
+  { label: "Interactions", link: "/blog/category/interactions/" },
+  { label: "Resources", link: "/blog/category/interactions/" },
+  { label: "Docs", link: "/blog/category/interactions/" },
 ];
 
 export function AnimatedTabs() {
@@ -30,7 +31,7 @@ export function AnimatedTabs() {
       }
     }
   }, [activeTab, activeTabRef, containerRef]);
-
+  const router = useRouter();
   return (
     <div className="relative mx-auto flex w-fit flex-col items-center rounded-full">
       <div
@@ -41,7 +42,9 @@ export function AnimatedTabs() {
           {TABS.map((tab, index) => (
             <button
               key={index}
-              onClick={() => setActiveTab(tab.label)}
+              onClick={() => {
+                setActiveTab(tab.label), router.push(`${tab.link}`);
+              }}
               className="flex h-8 items-center text-nowrap rounded-full p-3 text-sm font-medium text-white dark:text-black"
               tabIndex={-1}
             >
