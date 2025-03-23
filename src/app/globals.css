@@ -750,3 +750,7 @@ number-flow-react::part(suffix) {
 .custom_scroll::-webkit-scrollbar-thumb {
   background-color: var(--border) !important;
 }
+.search_input-blog:focus ~ & {
+  animation: pulseAttention 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) forwards
+    infinite;
+}

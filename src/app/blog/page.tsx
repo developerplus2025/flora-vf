@@ -30,12 +30,12 @@ export default function BlogPage() {
             <Input
               type="text"
               placeholder="Search for favorite songs"
-              className="w-full pl-[3rem] placeholder:text-[#7c7c7c]"
+              className="w-full rounded-full pl-[3rem] placeholder:text-[#7c7c7c]"
             />
             <MagnifyingGlassIcon
               width="21"
               height="21"
-              className="absolute left-[16px] top-1/2 -translate-y-1/2"
+              className="search_input-blog absolute left-[16px] top-1/2 -translate-y-1/2"
             />
           </div>
           <Button variant="outline" asChild>
