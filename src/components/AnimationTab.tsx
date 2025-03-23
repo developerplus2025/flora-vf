@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 const TABS = [
-  { label: "All Posts", link: "/blog/category/interactions/" },
+  { label: "All Posts", link: "/blog/" },
   { label: "Interactions", link: "/blog/category/interactions/" },
   { label: "Resources", link: "/blog/category/interactions/" },
   { label: "Docs", link: "/blog/category/interactions/" },
