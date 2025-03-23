@@ -53,7 +53,9 @@ export default function BlogPage() {
                 </CardHeader>
                 <CardContent className="p-6">
                   <div className="flex items-center justify-between gap-4 border-[0px] text-sm text-muted-foreground">
-                    <Badge variant="outline">{post.data.category}</Badge>
+                    <Badge className="border-0 p-0" variant="outline">
+                      {post.data.category}
+                    </Badge>
                     <div className="flex items-center gap-1">
                       <Calendar className="h-3 w-3" />
                       <span>{post.data.date}</span>
