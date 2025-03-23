@@ -1,10 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* @import 'fumadocs-ui/css/neutral.css';
-@import 'fumadocs-ui/css/preset.css'; */
+@import "fumadocs-ui/css/neutral.css";
+@import "fumadocs-ui/css/preset.css";
 
-@source '../node_modules/fumadocs-ui/dist/**/*.js';
+/* @source '../node_modules/fumadocs-ui/dist*.js'; */
 
 @layer base {
   :root {
