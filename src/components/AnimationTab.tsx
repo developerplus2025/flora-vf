@@ -17,12 +17,19 @@ export function AnimatedTabs() {
   const activeTabRef = useRef<HTMLButtonElement>(null);
   const [activeTab, setActiveTab] = useState<string>("");
 
-  // Cập nhật activeTab khi component mount hoặc pathname thay đổi
+  // Chuẩn hóa đường dẫn (loại bỏ dấu '/' ở cuối nếu có)
+  const normalizePath = (path: string) => path.replace(/\/$/, "");
+
   useEffect(() => {
-    const currentTab = TABS.find((tab) => pathname === tab.link);
-    if (currentTab) {
-      setActiveTab(currentTab.label);
-    }
+    const normalizedPath = normalizePath(pathname);
+
+    // Tìm tab phù hợp
+    const currentTab =
+      TABS.find((tab) => normalizePath(tab.link) === normalizedPath) || // So khớp chính xác
+      TABS.find((tab) => normalizedPath.startsWith(normalizePath(tab.link)) && tab.link !== "/blog/") || // Kiểm tra nếu pathname bắt đầu bằng link, nhưng không phải /blog/
+      TABS[0]; // Mặc định chọn "All Posts"
+
+    setActiveTab(currentTab.label);
   }, [pathname]);
 
   // Cập nhật hiệu ứng nền dựa trên tab đang active
