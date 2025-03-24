@@ -62,7 +62,7 @@ export function AnimatedTabs() {
       <div className="relative flex w-full justify-center">
         {TABS.map(({ label, link }, index) => {
           // So sánh đường dẫn hiện tại với link để xác định tab active
-          const isActive = pathname === link;
+          const isActive = activeTab === label;
           return (
             <button
               key={index}
