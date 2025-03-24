@@ -1,4 +1,4 @@
-"use client"; // @NOTE: Add in case you are using Next.js
+"use client";
 
 import { useRouter, usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -12,20 +12,27 @@ const TABS = [
 
 export function AnimatedTabs() {
   const router = useRouter();
-  const pathname = usePathname(); // Lấy đường dẫn hiện tại
+  const pathname = usePathname();
   const containerRef = useRef<HTMLDivElement>(null);
   const activeTabRef = useRef<HTMLButtonElement>(null);
   const [activeTab, setActiveTab] = useState<string>("");
 
-  // Đồng bộ activeTab với đường dẫn khi component mount hoặc URL thay đổi
   useEffect(() => {
-    const matchedTab = TABS.find((tab) => pathname.startsWith(tab.link));
-    if (matchedTab) {
-      setActiveTab(matchedTab.label);
-    }
-  }, [pathname]); // Chạy lại mỗi khi pathname thay đổi
+    console.log("Current Path:", pathname); // Kiểm tra URL hiện tại
 
-  // Hiệu ứng clip-path cho tab active
+    // Tìm tab có đường dẫn khớp chính xác nhất
+    let matchedTab = TABS[0]; // Mặc định là "All Posts"
+    for (const tab of TABS) {
+      if (pathname === tab.link || pathname.startsWith(tab.link)) {
+        if (tab.link.length > matchedTab.link.length) {
+          matchedTab = tab;
+        }
+      }
+    }
+
+    setActiveTab(matchedTab.label);
+  }, [pathname]);
+
   useEffect(() => {
     const container = containerRef.current;
     if (container && activeTab) {
@@ -42,7 +49,7 @@ export function AnimatedTabs() {
 
   return (
     <div className="relative mx-auto flex w-fit flex-col items-center rounded-full">
-      {/* Lớp nền hiệu ứng */}
+      {/* Hiệu ứng nền */}
       <div
         ref={containerRef}
         className="absolute z-10 w-full overflow-hidden [clip-path:inset(0px_75%_0px_0%_round_17px)] [transition:clip-path_0.25s_ease]"
@@ -60,7 +67,7 @@ export function AnimatedTabs() {
         </div>
       </div>
 
-      {/* Các tab điều hướng */}
+      {/* Tabs */}
       <div className="relative flex w-full justify-center">
         {TABS.map(({ label, link }, index) => {
           const isActive = activeTab === label;
