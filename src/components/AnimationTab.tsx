@@ -17,10 +17,12 @@ export function AnimatedTabs() {
   const activeTabRef = useRef<HTMLButtonElement>(null);
   const [activeTab, setActiveTab] = useState<string>("");
 
-  // Cập nhật activeTab dựa trên pathname hiện tại
+  // Cập nhật activeTab khi component mount hoặc pathname thay đổi
   useEffect(() => {
-    const currentTab = TABS.find((tab) => pathname === tab.link) || TABS[0];
-    setActiveTab(currentTab.label);
+    const currentTab = TABS.find((tab) => pathname === tab.link);
+    if (currentTab) {
+      setActiveTab(currentTab.label);
+    }
   }, [pathname]);
 
   // Cập nhật hiệu ứng nền dựa trên tab đang active
@@ -61,7 +63,6 @@ export function AnimatedTabs() {
       {/* Tabs */}
       <div className="relative flex w-full justify-center">
         {TABS.map(({ label, link }, index) => {
-          // So sánh đường dẫn hiện tại với link để xác định tab active
           const isActive = activeTab === label;
           return (
             <button
