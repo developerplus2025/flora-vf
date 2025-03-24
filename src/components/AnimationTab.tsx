@@ -54,7 +54,8 @@ export function AnimatedTabs() {
       {/* Tabs */}
       <div className="relative flex w-full justify-center">
         {TABS.map(({ label, link }, index) => {
-          const isActive = activeTab === pathname;
+          const activeTab = pathname;
+          const isActive = activeTab === label;
           return (
             <button
               key={index}
