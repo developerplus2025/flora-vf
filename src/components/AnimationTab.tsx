@@ -18,17 +18,11 @@ export function AnimatedTabs() {
   const [activeTab, setActiveTab] = useState<string>("");
 
   useEffect(() => {
-    console.log("Current Path:", pathname); // Kiểm tra URL hiện tại
+    console.log("Current Path:", pathname);
 
-    // Tìm tab có đường dẫn khớp chính xác nhất
-    let matchedTab = TABS[0]; // Mặc định là "All Posts"
-    for (const tab of TABS) {
-      if (pathname === tab.link || pathname.startsWith(tab.link)) {
-        if (tab.link.length > matchedTab.link.length) {
-          matchedTab = tab;
-        }
-      }
-    }
+    // Tìm tab khớp chính xác nhất
+    let matchedTab =
+      TABS.find((tab) => pathname.startsWith(tab.link)) || TABS[0];
 
     setActiveTab(matchedTab.label);
   }, [pathname]);
