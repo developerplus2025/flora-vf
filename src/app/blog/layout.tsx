@@ -16,7 +16,7 @@ export default function BlogLayout({
 }) {
   return (
     <section>
-      <div className="flex w-full items-center justify-between gap-[4rem] px-[10rem]">
+      <div className="flex w-full items-center justify-between gap-[4rem] px-[10rem] pt-[4rem]">
         <h2 className="flex-shrink-0 text-nowrap text-2xl font-bold tracking-tight">
           Recent Articles
         </h2>

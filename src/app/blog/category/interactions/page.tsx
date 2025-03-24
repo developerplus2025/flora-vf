@@ -21,27 +21,6 @@ export default function BlogPage() {
   return (
     <main className="mb-[4rem] mt-[3rem] flex w-full items-center justify-center px-[10rem]">
       <div className="mt-12 space-y-8">
-        <div className="hidden w-full items-center justify-between gap-[4rem]">
-          <h2 className="flex-shrink-0 text-nowrap text-2xl font-bold tracking-tight">
-            Recent Articles
-          </h2>
-          <AnimatedTabs />
-          <div className="relative w-full">
-            <Input
-              type="search"
-              placeholder="Search for favorite songs"
-              className="w-full rounded-full pl-[3rem] placeholder:text-[#7c7c7c]"
-            />
-            <MagnifyingGlassIcon
-              width="21"
-              height="21"
-              className="search_input-blog absolute left-[16px] top-1/2 -translate-y-1/2"
-            />
-          </div>
-          <Button variant="outline" asChild>
-            <Link href="#">View All</Link>
-          </Button>
-        </div>
         <div className="grid justify-items-center divide-x-1 divide-y-1 border-b border-r first:border-l first:border-t sm:grid-cols-2 lg:grid-cols-3">
           {Array.from({ length: 102 }).map((_, index) => {
             const post = posts[index % posts.length]; // Lặp lại danh sách khi hết dữ liệu
