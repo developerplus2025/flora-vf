@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter, usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef } from "react";
 
 const TABS = [
   { label: "All Posts", link: "/blog/" },
@@ -15,35 +15,27 @@ export function AnimatedTabs() {
   const pathname = usePathname();
   const containerRef = useRef<HTMLDivElement>(null);
   const activeTabRef = useRef<HTMLButtonElement>(null);
-  const [activeTab, setActiveTab] = useState<string>("");
 
-  // Chuẩn hóa đường dẫn (loại bỏ dấu '/' ở cuối nếu có)
+  // Chuẩn hóa đường dẫn
   const normalizePath = (path: string) => path.replace(/\/$/, "");
 
-  useEffect(() => {
-    const normalizedPath = normalizePath(pathname);
+  // Tìm tab đang active
+  const activeTab =
+    TABS.find((tab) => normalizePath(tab.link) === normalizePath(pathname)) ||
+    TABS.find((tab) => normalizePath(pathname).startsWith(normalizePath(tab.link)) && tab.link !== "/blog/") ||
+    TABS[0];
 
-    // Tìm tab phù hợp
-    const currentTab =
-      TABS.find((tab) => normalizePath(tab.link) === normalizedPath) || // So khớp chính xác
-      TABS.find((tab) => normalizedPath.startsWith(normalizePath(tab.link)) && tab.link !== "/blog/") || // Kiểm tra nếu pathname bắt đầu bằng link, nhưng không phải /blog/
-      TABS[0]; // Mặc định chọn "All Posts"
-
-    setActiveTab(currentTab.label);
-  }, [pathname]);
-
-  // Cập nhật hiệu ứng nền dựa trên tab đang active
-  useEffect(() => {
+  // Cập nhật hiệu ứng clip-path
+  useLayoutEffect(() => {
     const container = containerRef.current;
-    if (container && activeTab) {
-      const activeTabElement = activeTabRef.current;
-      if (activeTabElement) {
-        const { offsetLeft, offsetWidth } = activeTabElement;
-        const clipLeft = offsetLeft;
-        const clipRight = offsetLeft + offsetWidth;
+    const activeTabElement = activeTabRef.current;
 
-        container.style.clipPath = `inset(0 ${100 - (clipRight / container.offsetWidth) * 100}% 0 ${(clipLeft / container.offsetWidth) * 100}% round 17px)`;
-      }
+    if (container && activeTabElement) {
+      const { offsetLeft, offsetWidth } = activeTabElement;
+      const clipLeft = offsetLeft;
+      const clipRight = offsetLeft + offsetWidth;
+
+      container.style.clipPath = `inset(0 ${100 - (clipRight / container.offsetWidth) * 100}% 0 ${(clipLeft / container.offsetWidth) * 100}% round 17px)`;
     }
   }, [activeTab]);
 
@@ -55,9 +47,9 @@ export function AnimatedTabs() {
         className="absolute z-10 w-full overflow-hidden [clip-path:inset(0px_75%_0px_0%_round_17px)] [transition:clip-path_0.25s_ease]"
       >
         <div className="relative flex w-full justify-center bg-black dark:bg-white">
-          {TABS.map((tab, index) => (
+          {TABS.map((tab) => (
             <button
-              key={index}
+              key={tab.label}
               className="flex h-8 items-center text-nowrap rounded-full p-3 text-sm font-medium text-white dark:text-black"
               tabIndex={-1}
             >
@@ -69,16 +61,13 @@ export function AnimatedTabs() {
 
       {/* Tabs */}
       <div className="relative flex w-full justify-center">
-        {TABS.map(({ label, link }, index) => {
-          const isActive = activeTab === label;
+        {TABS.map(({ label, link }) => {
+          const isActive = activeTab.label === label;
           return (
             <button
-              key={index}
+              key={label}
               ref={isActive ? activeTabRef : null}
-              onClick={() => {
-                setActiveTab(label);
-                router.push(link);
-              }}
+              onClick={() => router.push(link)}
               aria-selected={isActive}
               tabIndex={isActive ? 0 : -1}
               className={`flex h-8 items-center text-nowrap rounded-full p-3 text-sm font-medium ${
