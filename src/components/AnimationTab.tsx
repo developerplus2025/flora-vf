@@ -54,16 +54,13 @@ export function AnimatedTabs() {
       {/* Tabs */}
       <div className="relative flex w-full justify-center">
         {TABS.map(({ label, link }, index) => {
-          const isActive = activeTab === label;
+          const isActive = activeTab === pathname;
           return (
             <button
               key={index}
               ref={isActive ? activeTabRef : null}
               onClick={() => {
-                if (link === pathname) {
-                  setActiveTab(label);
-                }
-
+                setActiveTab(label);
                 router.push(link);
               }}
               aria-selected={isActive}
