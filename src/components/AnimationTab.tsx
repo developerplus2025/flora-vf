@@ -63,7 +63,7 @@ export function AnimatedTabs() {
                 if (link === pathname) {
                   setActiveTab(label);
                 }
-                setActiveTab(label);
+
                 router.push(link);
               }}
               aria-selected={isActive}
