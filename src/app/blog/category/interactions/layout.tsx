@@ -8,5 +8,5 @@ export default function BlogLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <section className="pt-[4rem]">{children}</section>;
+  return <section className="">{children}</section>;
 }
