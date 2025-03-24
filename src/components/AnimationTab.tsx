@@ -60,7 +60,7 @@ export function AnimatedTabs() {
               key={index}
               ref={isActive ? activeTabRef : null}
               onClick={() => {
-                if (label === pathname) {
+                if (link === pathname) {
                   setActiveTab(label);
                 }
                 setActiveTab(label);
