@@ -10,40 +10,45 @@ const TABS = [
   { label: "Docs", link: "/blog/category/docs/" },
 ];
 
+// Hàm chuẩn hóa đường dẫn (loại bỏ dấu '/' ở cuối nếu có)
+const normalizePath = (path: string) => path.replace(/\/$/, "");
+
 export function AnimatedTabs() {
   const router = useRouter();
   const pathname = usePathname();
   const containerRef = useRef<HTMLDivElement>(null);
   const activeTabRef = useRef<HTMLButtonElement>(null);
-  const [activeTab, setActiveTab] = useState<string | null>(null);
 
-  // Chuẩn hóa đường dẫn (loại bỏ dấu '/' ở cuối nếu có)
-  const normalizePath = (path: string) => path.replace(/\/$/, "");
-
-  useEffect(() => {
-    // Lấy currentUrl từ localStorage hoặc dùng pathname hiện tại
+  // Lấy giá trị mặc định từ localStorage hoặc pathname
+  const getInitialTab = () => {
     const storedUrl = localStorage.getItem("currentUrl") || pathname;
     const normalizedPath = normalizePath(storedUrl);
 
-    // Tìm tab phù hợp với pathname
-    const currentTab =
+    return (
       TABS.find((tab) => normalizePath(tab.link) === normalizedPath) || // So khớp chính xác
       TABS.find((tab) => normalizedPath.startsWith(normalizePath(tab.link)) && tab.link !== "/blog/") || // Nếu pathname bắt đầu bằng link
-      null; // Không mặc định chọn All Posts
+      TABS[0] // Nếu không tìm thấy tab phù hợp, mặc định là "All Posts"
+    ).label;
+  };
 
-    if (currentTab) {
-      setActiveTab(currentTab.label);
-    }
-  }, []);
+  // Khởi tạo activeTab ngay từ đầu
+  const [activeTab, setActiveTab] = useState<string>(getInitialTab);
 
   useEffect(() => {
-    if (activeTab !== null) {
-      // Lưu currentUrl và prevUrl vào Local Storage khi pathname thay đổi
-      const prevUrl = localStorage.getItem("currentUrl") || "";
-      localStorage.setItem("prevUrl", prevUrl);
-      localStorage.setItem("currentUrl", pathname);
-    }
-  }, [pathname, activeTab]);
+    // Đồng bộ currentUrl và prevUrl trong localStorage
+    const prevUrl = localStorage.getItem("currentUrl") || "";
+    localStorage.setItem("prevUrl", prevUrl);
+    localStorage.setItem("currentUrl", pathname);
+
+    // Cập nhật activeTab ngay lập tức khi pathname thay đổi
+    const normalizedPath = normalizePath(pathname);
+    const currentTab =
+      TABS.find((tab) => normalizePath(tab.link) === normalizedPath) ||
+      TABS.find((tab) => normalizedPath.startsWith(normalizePath(tab.link)) && tab.link !== "/blog/") ||
+      TABS[0];
+
+    setActiveTab(currentTab.label);
+  }, [pathname]);
 
   // Cập nhật hiệu ứng nền dựa trên tab đang active
   useEffect(() => {
