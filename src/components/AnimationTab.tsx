@@ -10,7 +10,6 @@ const TABS = [
   { label: "Docs", link: "/blog/category/docs/" },
 ];
 
-// Hàm chuẩn hóa đường dẫn (loại bỏ dấu '/' ở cuối nếu có)
 const normalizePath = (path: string) => path.replace(/\/$/, "");
 
 export function AnimatedTabs() {
@@ -18,30 +17,17 @@ export function AnimatedTabs() {
   const pathname = usePathname();
   const containerRef = useRef<HTMLDivElement>(null);
   const activeTabRef = useRef<HTMLButtonElement>(null);
+  
+  // Ban đầu set là `null` để tránh lỗi trên server
+  const [activeTab, setActiveTab] = useState<string | null>(null);
 
-  // Lấy giá trị mặc định từ localStorage hoặc pathname
-  const getInitialTab = () => {
+  useEffect(() => {
+    if (typeof window === "undefined") return; // Kiểm tra nếu đang chạy trên server thì thoát
+
+    // Lấy tab từ localStorage hoặc pathname
     const storedUrl = localStorage.getItem("currentUrl") || pathname;
     const normalizedPath = normalizePath(storedUrl);
 
-    return (
-      TABS.find((tab) => normalizePath(tab.link) === normalizedPath) || // So khớp chính xác
-      TABS.find((tab) => normalizedPath.startsWith(normalizePath(tab.link)) && tab.link !== "/blog/") || // Nếu pathname bắt đầu bằng link
-      TABS[0] // Nếu không tìm thấy tab phù hợp, mặc định là "All Posts"
-    ).label;
-  };
-
-  // Khởi tạo activeTab ngay từ đầu
-  const [activeTab, setActiveTab] = useState<string>(getInitialTab);
-
-  useEffect(() => {
-    // Đồng bộ currentUrl và prevUrl trong localStorage
-    const prevUrl = localStorage.getItem("currentUrl") || "";
-    localStorage.setItem("prevUrl", prevUrl);
-    localStorage.setItem("currentUrl", pathname);
-
-    // Cập nhật activeTab ngay lập tức khi pathname thay đổi
-    const normalizedPath = normalizePath(pathname);
     const currentTab =
       TABS.find((tab) => normalizePath(tab.link) === normalizedPath) ||
       TABS.find((tab) => normalizedPath.startsWith(normalizePath(tab.link)) && tab.link !== "/blog/") ||
@@ -50,22 +36,33 @@ export function AnimatedTabs() {
     setActiveTab(currentTab.label);
   }, [pathname]);
 
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    // Lưu `currentUrl` và `prevUrl` vào localStorage
+    const prevUrl = localStorage.getItem("currentUrl") || "";
+    localStorage.setItem("prevUrl", prevUrl);
+    localStorage.setItem("currentUrl", pathname);
+  }, [pathname]);
+
   // Cập nhật hiệu ứng nền dựa trên tab đang active
   useEffect(() => {
+    if (!activeTab) return;
     const container = containerRef.current;
-    if (container && activeTab) {
-      const activeTabElement = activeTabRef.current;
-      if (activeTabElement) {
-        const { offsetLeft, offsetWidth } = activeTabElement;
-        const clipLeft = offsetLeft;
-        const clipRight = offsetLeft + offsetWidth;
+    const activeTabElement = activeTabRef.current;
+    
+    if (container && activeTabElement) {
+      const { offsetLeft, offsetWidth } = activeTabElement;
+      const clipLeft = offsetLeft;
+      const clipRight = offsetLeft + offsetWidth;
 
-        container.style.clipPath = `inset(0 ${100 - (clipRight / container.offsetWidth) * 100}% 0 ${
-          (clipLeft / container.offsetWidth) * 100
-        }% round 17px)`;
-      }
+      container.style.clipPath = `inset(0 ${100 - (clipRight / container.offsetWidth) * 100}% 0 ${
+        (clipLeft / container.offsetWidth) * 100
+      }% round 17px)`;
     }
   }, [activeTab]);
+
+  if (activeTab === null) return null; // Tránh lỗi render sai khi chưa có tab
 
   return (
     <div className="relative mx-auto flex w-fit flex-col items-center rounded-full">
