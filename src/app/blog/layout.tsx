@@ -1,4 +1,10 @@
-import { AnimatedTabs } from "@/components/AnimationTab";
+import dynamic from "next/dynamic";
+const AnimatedTabs = dynamic(
+  () => import("./AnimationTab").then((mod) => mod.AnimatedTabs),
+  {
+    ssr: false,
+  },
+);
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
