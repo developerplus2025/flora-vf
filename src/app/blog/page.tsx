@@ -129,8 +129,12 @@ export default function BlogPage() {
                     </div>
                   </div>
 
-                  <div>
+                  <div className="flex items-center justify-between">
                     <CompAvatarListBlog />
+                    <p className="text-sm text-[#a1a1a1]">
+                      {" "}
+                      Giacomo, Alice, and 2 others
+                    </p>
                   </div>
                 </CardFooter>
               </Card>
