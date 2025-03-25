@@ -26,10 +26,19 @@ export function AnimatedTabs() {
     // Tìm tab phù hợp
     const currentTab =
       TABS.find((tab) => normalizePath(tab.link) === normalizedPath) || // So khớp chính xác
-      TABS.find((tab) => normalizedPath.startsWith(normalizePath(tab.link)) && tab.link !== "/blog/") || // Kiểm tra nếu pathname bắt đầu bằng link, nhưng không phải /blog/
+      TABS.find(
+        (tab) =>
+          normalizedPath.startsWith(normalizePath(tab.link)) &&
+          tab.link !== "/blog/",
+      ) || // Kiểm tra nếu pathname bắt đầu bằng link, nhưng không phải /blog/
       TABS[0]; // Mặc định chọn "All Posts"
 
     setActiveTab(currentTab.label);
+
+    // Lưu currentUrl và prevUrl vào Local Storage
+    const prevUrl = localStorage.getItem("currentUrl") || "";
+    localStorage.setItem("prevUrl", prevUrl);
+    localStorage.setItem("currentUrl", pathname);
   }, [pathname]);
 
   // Cập nhật hiệu ứng nền dựa trên tab đang active
@@ -42,7 +51,9 @@ export function AnimatedTabs() {
         const clipLeft = offsetLeft;
         const clipRight = offsetLeft + offsetWidth;
 
-        container.style.clipPath = `inset(0 ${100 - (clipRight / container.offsetWidth) * 100}% 0 ${(clipLeft / container.offsetWidth) * 100}% round 17px)`;
+        container.style.clipPath = `inset(0 ${100 - (clipRight / container.offsetWidth) * 100}% 0 ${
+          (clipLeft / container.offsetWidth) * 100
+        }% round 17px)`;
       }
     }
   }, [activeTab]);
