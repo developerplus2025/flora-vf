@@ -21,21 +21,21 @@ export function AnimatedTabs() {
   const normalizePath = (path: string) => path.replace(/\/$/, "");
 
   useEffect(() => {
-    const normalizedPath = normalizePath(pathname);
+    // Lấy currentUrl từ localStorage (nếu có)
+    const storedUrl = localStorage.getItem("currentUrl") || pathname;
+    const normalizedPath = normalizePath(storedUrl);
 
     // Tìm tab phù hợp
     const currentTab =
       TABS.find((tab) => normalizePath(tab.link) === normalizedPath) || // So khớp chính xác
-      TABS.find(
-        (tab) =>
-          normalizedPath.startsWith(normalizePath(tab.link)) &&
-          tab.link !== "/blog/",
-      ) || // Kiểm tra nếu pathname bắt đầu bằng link, nhưng không phải /blog/
+      TABS.find((tab) => normalizedPath.startsWith(normalizePath(tab.link)) && tab.link !== "/blog/") || // Kiểm tra nếu pathname bắt đầu bằng link, nhưng không phải /blog/
       TABS[0]; // Mặc định chọn "All Posts"
 
     setActiveTab(currentTab.label);
+  }, []);
 
-    // Lưu currentUrl và prevUrl vào Local Storage
+  useEffect(() => {
+    // Lưu currentUrl và prevUrl vào Local Storage khi pathname thay đổi
     const prevUrl = localStorage.getItem("currentUrl") || "";
     localStorage.setItem("prevUrl", prevUrl);
     localStorage.setItem("currentUrl", pathname);
