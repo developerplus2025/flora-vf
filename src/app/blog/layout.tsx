@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 const AnimatedTabs = dynamic(
   () => import("./AnimationTab").then((mod) => mod.AnimatedTabs),
   {
-    ssr: false,
+    ssr: true,
   },
 );
 import { Button } from "@/components/ui/button";
