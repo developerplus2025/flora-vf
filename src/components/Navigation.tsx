@@ -533,7 +533,7 @@ export const Navigation = (): JSX.Element => {
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
-                <NavigationMenuItem className="hidden">
+                <NavigationMenuItem className="">
                   <Link href="/blog" legacyBehavior passHref>
                     <NavigationMenuLink
                       className={`relative flex h-7 items-center rounded-full px-3 text-sm duration-300 ease-out ${

@@ -19,6 +19,8 @@ import { Calendar } from "@/components/ui/calendar";
 import { format } from "date-fns";
 import { cn } from "@/lib/utils";
 import { DatePickerBlog } from "./date-picker-blog";
+// import Tabs from "./tabs";
+import TabAnimation from "./tabs";
 export const metadata: Metadata = {
   title: "Blog - Flora",
   description: "Blog - Flora",
@@ -34,6 +36,7 @@ export default function BlogLayout({
         <h2 className="flex-shrink-0 text-nowrap text-2xl font-bold tracking-tight">
           Recent Articles
         </h2>
+        <TabAnimation />
         <AnimatedTabs />
         <div className="relative w-full">
           <Input
