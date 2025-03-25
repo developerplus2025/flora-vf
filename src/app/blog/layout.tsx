@@ -36,7 +36,7 @@ export default function BlogLayout({
         <h2 className="flex-shrink-0 text-nowrap text-2xl font-bold tracking-tight">
           Recent Articles
         </h2>
-        <TabAnimation />
+        {/* <TabAnimation /> */}
         <AnimatedTabs />
         <div className="relative w-full">
           <Input
