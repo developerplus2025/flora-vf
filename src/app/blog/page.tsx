@@ -129,7 +129,7 @@ export default function BlogPage() {
                     </div>
                   </div>
 
-                  <div className="flex items-center justify-between">
+                  <div className="flex w-full items-center justify-between">
                     <CompAvatarListBlog />
                     <p className="text-sm text-[#a1a1a1]">
                       {" "}
