@@ -448,6 +448,7 @@ export const Navigation = (): JSX.Element => {
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
+
                 <NavigationMenuItem>
                   <Link href="/pricing" legacyBehavior passHref>
                     <NavigationMenuLink
@@ -469,7 +470,27 @@ export const Navigation = (): JSX.Element => {
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
-
+                <NavigationMenuItem className="">
+                  <Link href="/blog" legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={`relative flex h-7 items-center rounded-full px-3 text-sm duration-300 ease-out ${
+                        pathname === "/blog"
+                          ? "dark:text-white"
+                          : "dark:text-[#9b9b9b]"
+                      } cursor-pointer select-none transition-colors dark:hover:text-white`}
+                    >
+                      <TextHoverEnter
+                        className={`${
+                          pathname === "/blog"
+                            ? "dark:text-white"
+                            : "dark:text-[#9b9b9b]"
+                        }`}
+                      >
+                        Blog
+                      </TextHoverEnter>
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
                 <NavigationMenuItem>
                   <Link href="/docs" legacyBehavior passHref>
                     <NavigationMenuLink
@@ -533,27 +554,7 @@ export const Navigation = (): JSX.Element => {
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
-                <NavigationMenuItem className="">
-                  <Link href="/blog" legacyBehavior passHref>
-                    <NavigationMenuLink
-                      className={`relative flex h-7 items-center rounded-full px-3 text-sm duration-300 ease-out ${
-                        pathname === "/blog"
-                          ? "dark:text-white"
-                          : "dark:text-[#9b9b9b]"
-                      } cursor-pointer select-none transition-colors dark:hover:text-white`}
-                    >
-                      <TextHoverEnter
-                        className={`${
-                          pathname === "/blog"
-                            ? "dark:text-white"
-                            : "dark:text-[#9b9b9b]"
-                        }`}
-                      >
-                        Blog
-                      </TextHoverEnter>
-                    </NavigationMenuLink>
-                  </Link>
-                </NavigationMenuItem>
+
                 {/* <NavigationMenuItem>
                   <Link href="/aboutus" legacyBehavior passHref>
                     <NavigationMenuLink
