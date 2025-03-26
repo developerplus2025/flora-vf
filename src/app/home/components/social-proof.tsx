@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
-const items = [
+const items_emty = [
   {
     id: 1,
     src: "horizontal",
@@ -1037,6 +1037,68 @@ const items = [
     ),
   },
 ];
+const items = [
+  {
+    id: 1,
+    svg: "chatbase-dark.9942d0bb.svg",
+  },
+  {
+    id: 2,
+    svg: "chroma-dark.349ec480.svg",
+  },
+  {
+    id: 3,
+    svg: "cohere-dark.35c1d607.svg",
+  },
+  {
+    id: 4,
+    svg: "groq-dark.afbf47b0.svg",
+  },
+  {
+    id: 5,
+    svg: "hume-dark.f7fbe057.svg",
+  },
+  {
+    id: 6,
+    svg: "langchain-dark.5016eb2b.svg",
+  },
+  {
+    id: 7,
+    svg: "leonardo-ai-dark.8bcabd31.svg",
+  },
+  {
+    id: 8,
+    svg: "modal-dark.c38300ad.svg",
+  },
+  {
+    id: 9,
+    svg: "open-ai-dark.160d53ef.svg",
+  },
+  {
+    id: 10,
+    svg: "pika-dark.98cbd56f.svg",
+  },
+  {
+    id: 11,
+    svg: "pinecone-dark.7c35d380.svg",
+  },
+  {
+    id: 12,
+    svg: "replicate-dark.49fb5b16.svg",
+  },
+  {
+    id: 13,
+    svg: "runway-dark.a6a2447b.svg",
+  },
+  {
+    id: 14,
+    svg: "scale-dark.afb01c23.svg",
+  },
+  {
+    id: 15,
+    svg: "suno-dark.d4497518.svg",
+  },
+];
 export default function SocialProof() {
   return (
     <div className="flex flex-col items-center gap-[2rem]">
@@ -1070,7 +1132,7 @@ export default function SocialProof() {
         </span>
       </div>
       <div className="flex flex-col items-center justify-center">
-        <div className="grid grid-cols-7 place-items-center justify-items-center gap-4 px-[4rem] text-[#ffffffb3]">
+        <div className="grid grid-cols-3 place-items-center justify-items-center divide-x-1 divide-y-1 border-l border-t px-[4rem] text-[#ffffffb3]">
           {items.map((item) => (
             <div key={item.id}>{item.svg}</div>
           ))}
