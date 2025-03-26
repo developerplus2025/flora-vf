@@ -1134,9 +1134,9 @@ export default function SocialProof() {
       <div className="flex flex-col items-center justify-center">
         <div className="grid grid-cols-3 place-items-center justify-items-center divide-x-1 divide-y-1 border-l border-t px-[4rem] text-[#ffffffb3]">
           {items.map((item) => (
-            <div key={item.id}>
+            <div className="p-[48px]" key={item.id}>
               <Image
-                className=""
+                className="h-full w-full"
                 width={"20"}
                 height={"40"}
                 alt="svg-branch"
