@@ -427,10 +427,10 @@ export const Navigation = (): JSX.Element => {
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
-                <NavigationMenuItem>
+                <NavigationMenuItem className="px-3">
                   <Link href="/creative" legacyBehavior passHref>
                     <NavigationMenuLink
-                      className={`relative flex h-7 items-center rounded-full px-3 text-sm duration-300 ease-out ${
+                      className={`relative flex h-7 items-center rounded-full text-sm duration-300 ease-out ${
                         pathname === "/creative"
                           ? "dark:text-white"
                           : "dark:text-[#9b9b9b]"
@@ -449,10 +449,10 @@ export const Navigation = (): JSX.Element => {
                   </Link>
                 </NavigationMenuItem>
 
-                <NavigationMenuItem>
+                <NavigationMenuItem className="px-3">
                   <Link href="/pricing" legacyBehavior passHref>
                     <NavigationMenuLink
-                      className={`relative flex h-7 items-center rounded-full px-3 text-sm duration-300 ease-out ${
+                      className={`relative flex h-7 items-center rounded-full text-sm duration-300 ease-out ${
                         pathname === "/pricing"
                           ? "dark:text-white"
                           : "dark:text-[#9b9b9b]"
@@ -470,10 +470,10 @@ export const Navigation = (): JSX.Element => {
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
-                <NavigationMenuItem className="">
+                <NavigationMenuItem className="px-3">
                   <Link href="/blog" legacyBehavior passHref>
                     <NavigationMenuLink
-                      className={`relative flex h-7 items-center rounded-full px-3 text-sm duration-300 ease-out ${
+                      className={`relative flex h-7 items-center rounded-full text-sm duration-300 ease-out ${
                         pathname === "/blog"
                           ? "dark:text-white"
                           : "dark:text-[#9b9b9b]"
@@ -571,7 +571,7 @@ export const Navigation = (): JSX.Element => {
                 <NavigationMenuItem className="hidden">
                   <Link href="/generation" legacyBehavior passHref>
                     <NavigationMenuLink
-                      className={`relative flex h-7 items-center rounded-full px-3 text-sm duration-300 ease-out ${
+                      className={`relative flex h-7 items-center rounded-full text-sm duration-300 ease-out ${
                         pathname === "/generation"
                           ? "dark:text-white"
                           : "dark:text-[#9b9b9b]"
