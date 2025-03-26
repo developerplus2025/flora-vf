@@ -20,7 +20,7 @@ const GetInTouch = () => {
             </p>
           </div>
 
-          <div className="grid gap-12 md:grid-cols-2">
+          <div className="grid md:grid-cols-2">
             <ContactForm />
             <ContactInfo />
           </div>

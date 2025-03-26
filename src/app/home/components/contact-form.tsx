@@ -77,7 +77,7 @@ export default function ContactForm() {
   }
 
   return (
-    <Card>
+    <Card className="rounded-none rounded-bl-lg rounded-tl-lg border-r-0">
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <svg

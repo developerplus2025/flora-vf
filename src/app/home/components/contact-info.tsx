@@ -110,7 +110,7 @@ const items = [
 ];
 export default function ContactInfo() {
   return (
-    <Card>
+    <Card className="rounded-none rounded-br-lg rounded-tr-lg">
       <CardHeader>
         <CardTitle>Other Ways to Connect</CardTitle>
         <CardDescription>
