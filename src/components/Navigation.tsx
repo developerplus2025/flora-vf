@@ -788,7 +788,7 @@ export const Navigation = (): JSX.Element => {
                   transition={{ duration: 0.5, ease: "easeOut" }}
                 >
                   <Button className="h-fit gap-1 px-3 py-1 [&_svg]:size-2">
-                    Sign Up
+                    Create Account
                     <svg
                       data-testid="geist-icon"
                       height={12}
