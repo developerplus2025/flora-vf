@@ -16,11 +16,31 @@ import CompAvatarListBlog from "@/components/comp-410";
 import { Input } from "@/components/ui/input";
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 import { AnimatedTabs } from "./AnimationTab";
+import { DatePickerBlog } from "../../date-picker-blog";
 export default function BlogPage() {
   const posts = blog.getPages();
   return (
     <main className="mb-[4rem] flex w-full items-center justify-center px-[10rem]">
-      <AnimatedTabs />
+      <div className="flex w-full items-center justify-between gap-[4rem] px-[10rem] pt-[4rem]">
+        <h2 className="flex-shrink-0 text-nowrap text-2xl font-bold tracking-tight">
+          Recent Articles
+        </h2>
+        <AnimatedTabs />
+        <div className="relative w-full">
+          <Input
+            type="search"
+            placeholder="Search for favorite songs"
+            className="w-full rounded-full pl-[3rem] placeholder:text-[#7c7c7c]"
+          />
+          <MagnifyingGlassIcon
+            width="21"
+            height="21"
+            className="search_input-blog absolute left-[16px] top-1/2 -translate-y-1/2"
+          />
+          s
+        </div>
+        <DatePickerBlog />
+      </div>
       <div className="mt-12 space-y-8">
         <div className="grid justify-items-center divide-x-1 divide-y-1 border-r sm:grid-cols-2 lg:grid-cols-3">
           {Array.from({ length: 102 }).map((_, index) => {

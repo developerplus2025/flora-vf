@@ -30,29 +30,5 @@ export default function BlogLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <section>
-      <div className="flex w-full items-center justify-between gap-[4rem] px-[10rem] pt-[4rem]">
-        <h2 className="flex-shrink-0 text-nowrap text-2xl font-bold tracking-tight">
-          Recent Articles
-        </h2>
-        {/* <TabAnimation /> */}
-        {/* <AnimatedTabs /> */}
-        <div className="relative w-full">
-          <Input
-            type="search"
-            placeholder="Search for favorite songs"
-            className="w-full rounded-full pl-[3rem] placeholder:text-[#7c7c7c]"
-          />
-          <MagnifyingGlassIcon
-            width="21"
-            height="21"
-            className="search_input-blog absolute left-[16px] top-1/2 -translate-y-1/2"
-          />
-        </div>
-        <DatePickerBlog />
-      </div>
-      {children}
-    </section>
-  );
+  return <section>{children}</section>;
 }
