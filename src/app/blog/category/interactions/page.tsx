@@ -15,11 +15,12 @@ import { blog } from "@/lib/source";
 import CompAvatarListBlog from "@/components/comp-410";
 import { Input } from "@/components/ui/input";
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
-import { AnimatedTabs } from "@/components/AnimationTab";
+import { AnimatedTabs } from "./AnimationTab";
 export default function BlogPage() {
   const posts = blog.getPages();
   return (
     <main className="mb-[4rem] flex w-full items-center justify-center px-[10rem]">
+      <AnimatedTabs />
       <div className="mt-12 space-y-8">
         <div className="grid justify-items-center divide-x-1 divide-y-1 border-r sm:grid-cols-2 lg:grid-cols-3">
           {Array.from({ length: 102 }).map((_, index) => {

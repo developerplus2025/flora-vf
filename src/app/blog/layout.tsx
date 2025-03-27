@@ -37,7 +37,7 @@ export default function BlogLayout({
           Recent Articles
         </h2>
         {/* <TabAnimation /> */}
-        <AnimatedTabs />
+        {/* <AnimatedTabs /> */}
         <div className="relative w-full">
           <Input
             type="search"
