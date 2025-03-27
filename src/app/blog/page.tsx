@@ -20,8 +20,8 @@ import { DatePickerBlog } from "./date-picker-blog";
 export default function BlogPage() {
   const posts = blog.getPages();
   return (
-    <main className="mb-[4rem] flex w-full items-center justify-center px-[10rem]">
-      <div className="flex w-full items-center justify-between gap-[4rem] px-[10rem] pt-[4rem]">
+    <main className="mb-[4rem] flex w-full flex-col items-center justify-center px-[10rem]">
+      <div className="flex w-full items-center justify-between gap-[4rem] pt-[4rem]">
         <h2 className="flex-shrink-0 text-nowrap text-2xl font-bold tracking-tight">
           Recent Articles
         </h2>
