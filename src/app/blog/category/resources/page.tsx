@@ -37,7 +37,6 @@ export default function BlogPage() {
             height="21"
             className="search_input-blog absolute left-[16px] top-1/2 -translate-y-1/2"
           />
-          s
         </div>
         <DatePickerBlog />
       </div>

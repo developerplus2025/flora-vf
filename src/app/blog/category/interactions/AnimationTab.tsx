@@ -42,7 +42,7 @@ export function AnimatedTabs() {
           normalizedPath.startsWith(normalizePath(tab.link)) &&
           tab.link !== "/blog/",
       ) ||
-      TABS[0];
+      TABS[1];
     setActiveTab(currentTab.label);
   }, [pathname]);
 
