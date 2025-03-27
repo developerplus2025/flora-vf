@@ -205,7 +205,7 @@ export default function Metric() {
               className="text-center"
             >
               <motion.div
-                className={`flex ${stat.id === 1 || stat.id === 2 || stat.id === 3 ? "border-r" : ""} flex-col gap-2 rounded-xl p-3 backdrop-blur-lg transition-colors`}
+                className={`flex ${stat.id === 1 || stat.id === 2 || stat.id === 3 ? "border-r" : ""} flex-col gap-2 p-3 backdrop-blur-lg transition-colors`}
               >
                 <div className="flex justify-center text-white/70">
                   {stat.icon}
