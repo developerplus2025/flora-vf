@@ -21,7 +21,7 @@ export function AnimatedTabs() {
         <button
           key={tab.id}
           onClick={() => {
-            setActiveTab(tab.id), router.push(`/${tab.link}`);
+            setActiveTab(tab.id), router.push(tab.link);
           }}
           className={`${
             activeTab === tab.id ? "" : "hover:text-white/60"
