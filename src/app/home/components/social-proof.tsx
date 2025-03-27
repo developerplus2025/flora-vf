@@ -1132,10 +1132,10 @@ export default function SocialProof() {
         </span>
       </div>
       <div className="flex flex-col items-center justify-center">
-        <div className="grid w-[1000px] grid-cols-3 divide-x-1 divide-y-1 border-b border-l border-r text-[#ffffffb3] first:border-t">
+        <div className="grid w-[1000px] grid-cols-3 divide-x-1 divide-y-1 border-b border-r text-[#ffffffb3]">
           {items.map((item) => (
             <div
-              className="flex items-center justify-center p-[48px]"
+              className={`${item.id === 1 ? "border-l border-t" : ""}flex items-center justify-center p-[48px]`}
               key={item.id}
             >
               <Image

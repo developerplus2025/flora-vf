@@ -64,7 +64,7 @@ export default function BeautifulFeaturesLayout() {
           </span>
         </div>
 
-        <div className="relative mx-auto grid max-w-4xl rounded-lg border *:p-12 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="relative mx-auto grid max-w-4xl rounded-lg border bg-[#131313] *:p-12 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((items) => (
             <div
               key={items.id}
