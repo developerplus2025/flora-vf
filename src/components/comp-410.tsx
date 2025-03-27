@@ -5,28 +5,28 @@ export default function CompAvatarListBlog() {
     <div className="flex -space-x-3">
       <img
         className="h-[25px] w-[25px] rounded-full ring-2 ring-background"
-        src="/avatar-80-03.jpg"
+        src="/eric-grigorian.avif"
         width={20}
         height={20}
         alt="Avatar 01"
       />
       <img
         className="h-[25px] w-[25px] rounded-full ring-2 ring-background"
-        src="/avatar-80-04.jpg"
+        src="/charlton-roberts.avif"
         width={20}
         height={20}
         alt="Avatar 02"
       />
       <img
         className="h-[25px] w-[25px] rounded-full ring-2 ring-background"
-        src="/avatar-80-05.jpg"
+        src="/jony.avif"
         width={20}
         height={20}
         alt="Avatar 03"
       />
       <img
         className="h-[25px] w-[25px] rounded-full ring-2 ring-background"
-        src="/avatar-80-06.jpg"
+        src="/jasoncottrell-sm.avif"
         width={20}
         height={20}
         alt="Avatar 04"
