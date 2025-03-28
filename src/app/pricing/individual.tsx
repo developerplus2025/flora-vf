@@ -101,7 +101,8 @@ const pricingData = {
       title: "Stater Plan",
       price: 0,
       tooltip: "Starter for Everyone",
-      description: "For entry-level users and trial",
+      description:
+        "Those new to music production who want to explore basic features before",
       features: [
         {
           name: "5 virtual instruments",
@@ -267,7 +268,8 @@ const pricingData = {
       title: "Basic Plan",
       price: 12,
       tooltip: "Starter for Everyone",
-      description: "For hobbyists and beginners",
+      description:
+        "Music enthusiasts, solo creators, and beginners looking for more tools.",
       features: [
         {
           name: "10 virtual instruments",
@@ -433,7 +435,8 @@ const pricingData = {
       title: "Plus Plan",
       price: 26,
       tooltip: "Starter for Everyone",
-      description: "For serious musicians and producers",
+      description:
+        "Professionals who need advanced tools and enhanced collaboration.",
       features: [
         {
           name: "50 virtual instruments",
@@ -599,7 +602,8 @@ const pricingData = {
       title: "Pro Plan",
       price: 42,
       tooltip: "Super Plan For Musican",
-      description: "For professional studios and artists",
+      description:
+        "Recording studios, professional artists, and large-scale music production teams.",
       features: [
         {
           name: "Unlimited virtual instruments",
