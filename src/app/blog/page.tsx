@@ -54,7 +54,10 @@ export default function BlogPage() {
                 </CardHeader>
                 <CardContent className="p-6">
                   <div className="flex items-center justify-between gap-4 border-[0px] text-sm text-muted-foreground">
-                    <Badge className="border-0 p-0" variant="outline">
+                    <Badge
+                      className="border-0 p-0 font-medium"
+                      variant="outline"
+                    >
                       {post.data.category}
                     </Badge>
                     <div className="flex items-center gap-2">
