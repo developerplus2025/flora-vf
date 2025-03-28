@@ -883,7 +883,7 @@ export default function Individual() {
               <CardTitle className="text-[1.04rem] font-medium text-[#a1a1a1]">
                 <div className="flex items-center justify-between">
                   <p
-                    className={`${tier.title === "Plus Plan" || tier.title === "Basic Plan" ? "hidden" : ""}text-white`}
+                    className={`${tier.title === "Plus Plan" || tier.title === "Basic Plan" ? "hidden" : ""}`}
                   >
                     {tier.title}
                   </p>
@@ -953,7 +953,9 @@ export default function Individual() {
                 suffix={`per user / ${isYearly ? "year" : "month"}`}
               />
 
-              <CardDescription>{tier.description}</CardDescription>
+              <CardDescription className="text-md">
+                {tier.description}
+              </CardDescription>
               <div className="pt-[1rem]">
                 {tier.title === "Pro Plan" && (
                   <div className="flex items-center justify-center gap-4">
