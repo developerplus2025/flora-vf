@@ -860,7 +860,7 @@ export default function Individual() {
       initial={{ opacity: 0 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.25 }}
-      className="px-[6rem]"
+      className="px-[12rem]"
     >
       <div className="mb-[3rem] mt-4 flex items-center justify-center space-x-2">
         <span className="text-sm">Monthly</span>
@@ -871,11 +871,11 @@ export default function Individual() {
         />
         <span className="text-sm">Yearly (10% off)</span>
       </div>
-      <div className="grid gap-[2rem] md:grid-cols-4">
+      <div className="grid gap-[2rem] md:grid-cols-3">
         {pricingData.individual.map((tier) => (
           <Card
             key={tier.title}
-            className="flex flex-col rounded-lg border-[1px] dark:bg-[#000000]"
+            className={`flex flex-col ${tier.title === "Basic Plan" ? "hidden" : ""} rounded-lg border-[1px] dark:bg-[#000000]`}
           >
             <CardHeader
               className={`${tier.title === "Starter Plan" ? "to-[#121212]" : tier.title === "Basic Plan" ? "to-[#121212]" : tier.title === "Plus Plan" ? "to-[#121212]" : "to-[#121212]"} space-y-2 rounded-t-lg bg-[#00000099] p-[1.5rem]`}
@@ -883,7 +883,7 @@ export default function Individual() {
               <CardTitle className="text-[1.04rem] font-medium text-[#a1a1a1]">
                 <div className="flex items-center justify-between">
                   <p
-                    className={`${tier.title === "Plus Plan" || tier.title === "Basic Plan" ? "hidden" : ""}`}
+                    className={`${tier.title === "Plus Plan" || tier.title === "Basic Plan" ? "hidden" : ""}text-white`}
                   >
                     {tier.title}
                   </p>
@@ -920,7 +920,7 @@ export default function Individual() {
                 </div>
 
                 {tier.title === "Plus Plan" && (
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between text-white">
                     <p>Plus Plan</p>
                     <Badge className="h-fit px-3 py-1" variant={"outline"}>
                       Popular
