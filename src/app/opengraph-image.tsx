@@ -30,7 +30,8 @@ export default async function Image() {
   } else if (currentUrl === "https://localhost:3000/") {
     imagePreview = "Đăng Bình";
   } else {
-    imagePreview = "Anh Yêu Em Như Vòi Xịt Đít Hết Nước Rồi Anh Dùng Giấy Vệ Sinh Đi";
+    imagePreview =
+      "Anh Yêu Em Như Vòi Xịt Đít Hết Nước Rồi Anh Dùng Giấy Vệ Sinh Đi";
   }
 
   const geistLight = fetch(
@@ -42,20 +43,36 @@ export default async function Image() {
       // ImageResponse JSX element
       <div
         style={{
-          textAlign: "center",
-          fontSize: 98,
-          background: "black",
-          width: "100%",
           height: "100%",
+          width: "100%",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          color: "white",
-          gap: "2rem",
+          backgroundColor: "#000",
+          fontSize: 32,
+          fontWeight: 600,
         }}
       >
-        {imagePreview}
+        <svg
+          width="75"
+          viewBox="0 0 75 65"
+          fill="#fff"
+          style={{ margin: "0 75px" }}
+        >
+          <path d="M37.59.25l36.95 64H.64l36.95-64z"></path>
+        </svg>
+        <div
+          style={{
+            marginTop: 40,
+            color: "#fff",
+            fontSize: 60,
+            textAlign: "center",
+            width: "52rem",
+          }}
+        >
+          The next generation of audio collaboration.
+        </div>
       </div>
     ),
     // ImageResponse options
