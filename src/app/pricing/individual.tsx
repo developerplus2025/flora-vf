@@ -860,7 +860,7 @@ export default function Individual() {
       initial={{ opacity: 0 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.25 }}
-      className="px-[12rem]"
+      className="px-[11rem]"
     >
       <div className="mb-[3rem] mt-4 flex items-center justify-center space-x-2">
         <span className="text-sm">Monthly</span>
