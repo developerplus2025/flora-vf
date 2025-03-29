@@ -66,9 +66,9 @@ export default async function Image() {
           style={{
             marginTop: 40,
             color: "#fff",
-            fontSize: 60,
+            fontSize: 80,
             textAlign: "center",
-            width: "52rem",
+            width: "57rem",
           }}
         >
           The next generation of audio collaboration.
