@@ -195,7 +195,7 @@ export default function Metric() {
         </span>
       </div>
       <div className="flex w-full items-center justify-between gap-[4rem]">
-        <div className="relative grid w-full grid-cols-2 gap-8 rounded-md border md:grid-cols-4">
+        <div className="relative grid w-full grid-cols-2 gap-8 border md:grid-cols-4">
           <div className="absolute -left-[1px] -top-[1px] h-[1px] w-[1px] border-l border-t border-[#ffffff]"></div>
           <div className="absolute -right-[1px] -top-[1px] h-[1px] w-[1px] border-l border-t border-[#ffffff]"></div>
           <div className="absolute -bottom-[1px] -left-[1px] h-[1px] w-[1px] border-l border-t border-[#ffffff]"></div>
