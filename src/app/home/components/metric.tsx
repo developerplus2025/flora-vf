@@ -196,10 +196,10 @@ export default function Metric() {
       </div>
       <div className="flex w-full items-center justify-between gap-[4rem]">
         <div className="relative grid w-full grid-cols-2 gap-8 border md:grid-cols-4">
-          <div className="absolute -left-[1px] -top-[1px] h-[1px] w-[1px] border-l border-t border-[#ffffff]"></div>
-          <div className="absolute -right-[1px] -top-[1px] h-[1px] w-[1px] border-l border-t border-[#ffffff]"></div>
-          <div className="absolute -bottom-[1px] -left-[1px] h-[1px] w-[1px] border-l border-t border-[#ffffff]"></div>
-          <div className="absolute -bottom-[1px] -right-[1px] h-[1px] w-[1px] border-l border-t border-[#ffffff]"></div>
+          <div className="absolute -left-[1px] -top-[1px] h-[14px] w-[14px] border-l border-t border-[#ffffff]"></div>
+          <div className="absolute -right-[1px] -top-[1px] h-[14px] w-[14px] border-r border-t border-[#ffffff]"></div>
+          <div className="absolute -bottom-[1px] -left-[1px] h-[14px] w-[14px] border-b border-l border-[#ffffff]"></div>
+          <div className="absolute -bottom-[1px] -right-[1px] h-[14px] w-[14px] border-b border-r border-[#ffffff]"></div>
           {stats.map((stat, index) => (
             <motion.div
               key={stat.title}
