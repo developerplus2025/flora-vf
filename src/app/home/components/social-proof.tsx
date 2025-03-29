@@ -1135,7 +1135,7 @@ export default function SocialProof() {
         <div className="grid w-[1000px] grid-cols-3 divide-x-1 divide-y-1 border-b border-r text-[#ffffffb3]">
           {items.map((item) => (
             <div
-              className={`${item.id === 1 ? "border-l border-t" : ""}flex items-center justify-center p-[48px]`}
+              className={`${item.id === 1 ? "border-l border-t" : ""} flex items-center justify-center p-[48px]`}
               key={item.id}
             >
               <Image
