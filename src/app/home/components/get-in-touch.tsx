@@ -7,7 +7,7 @@ import ContactInfo from "./contact-info";
 const GetInTouch = () => {
   return (
     <div className="flex flex-col gap-[2rem]">
-      <div className="container mx-auto px-4 py-12 md:px-6 md:py-24">
+      <div className="container mx-auto hidden px-4 py-12 md:px-6 md:py-24">
         <div className="mx-auto max-w-5xl">
           <div className="mb-12 text-center">
             <div className="text-center text-4xl font-bold tracking-tighter text-white sm:text-5xl xl:text-[2.75rem]/none">

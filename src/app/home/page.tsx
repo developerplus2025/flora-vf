@@ -387,7 +387,7 @@ export default function Home() {
           </div>
         </div> */}
 
-      <div className="mx-auto mb-[4rem] mt-[6rem] h-px w-[700px] bg-gradient-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
+      <div className="mx-auto mb-[4rem] mt-[10rem] h-px w-full bg-gradient-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
       <div className="w-full">
         {/* <FeaturesSection /> */}
         <BeautifulFeaturesLayout />
@@ -404,10 +404,10 @@ export default function Home() {
       <div className="mx-auto my-[4rem] h-px w-[700px] bg-gradient-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
       <GetInTouch />
       <div className="mx-auto my-[4rem] h-px w-[700px] bg-gradient-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
-      {/* <Loader variant={"classic"} size={"sm"} /> */}
+      {/* <Loader variant={"classic"} size={"sm"} />
       <AudioCard />
       <div className="mx-auto my-[4rem] h-px w-[700px] bg-gradient-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
-      <WaveAudioCard />
+      <WaveAudioCard /> */}
       {/* <div className="mt-[2rem] flex w-full items-center justify-center gap-[4rem] px-[2rem]">
         <ChartFirstYear />
         <ChartLastYear />
