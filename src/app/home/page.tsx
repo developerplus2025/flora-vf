@@ -387,7 +387,7 @@ export default function Home() {
           </div>
         </div> */}
 
-      <div className="mx-auto mb-[4rem] mt-[10rem] h-px w-full bg-[#131313]"></div>
+      <div className="mx-auto mb-[4rem] mt-[10rem] h-px w-full bg-[#262626]"></div>
       <div className="w-full">
         {/* <FeaturesSection /> */}
         <BeautifulFeaturesLayout />
