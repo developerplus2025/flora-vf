@@ -387,7 +387,7 @@ export default function Home() {
           </div>
         </div> */}
 
-      <div className="mx-auto mb-[4rem] mt-[10rem] h-px w-full bg-gradient-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
+      <div className="mx-auto mb-[4rem] mt-[10rem] h-px w-full !bg-black bg-gradient-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
       <div className="w-full">
         {/* <FeaturesSection /> */}
         <BeautifulFeaturesLayout />
