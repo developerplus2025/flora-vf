@@ -19,7 +19,7 @@ export function AnimatedTabs() {
   return (
     <div className="flex space-x-1">
       {TABS.map((tab) => (
-        <Link href={`${tab.link}`} key={tab.id}>
+        <Link href={`/blog/${tab.link}`} key={tab.id}>
           <button
             key={tab.id}
             onClick={() => {

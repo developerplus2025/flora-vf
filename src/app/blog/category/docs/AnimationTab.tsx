@@ -5,7 +5,7 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 const TABS = [
-  { id: 1, label: "All Posts", link: "/" },
+  { id: 1, label: "All Posts", link: "" },
   { id: 2, label: "Interactions", link: "/category/interactions/" },
   { id: 3, label: "Resources", link: "/category/resources/" },
   { id: 4, label: "Docs", link: "/category/docs/" },
@@ -19,7 +19,7 @@ export function AnimatedTabs() {
   return (
     <div className="flex space-x-1">
       {TABS.map((tab) => (
-        <Link href={`${tab.link}`} key={tab.id}>
+        <Link href={`/blog/${tab.link}`} key={tab.id}>
           <button
             key={tab.id}
             onClick={() => {
