@@ -5,7 +5,7 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 const TABS = [
-  { id: 1, label: "All Posts", link: "/" },
+  { id: 1, label: "All Posts", link: "" },
   { id: 2, label: "Interactions", link: "/category/interactions/" },
   { id: 3, label: "Resources", link: "/category/resources/" },
   { id: 4, label: "Docs", link: "/category/docs/" },

@@ -5,10 +5,10 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 const TABS = [
-  { id: 1, label: "All Posts", link: "/blog/" },
-  { id: 2, label: "Interactions", link: "/blog/category/interactions/" },
-  { id: 3, label: "Resources", link: "/blog/category/resources/" },
-  { id: 4, label: "Docs", link: "/blog/category/docs/" },
+  { id: 1, label: "All Posts", link: "" },
+  { id: 2, label: "Interactions", link: "/category/interactions/" },
+  { id: 3, label: "Resources", link: "/category/resources/" },
+  { id: 4, label: "Docs", link: "/category/docs/" },
 ];
 
 const normalizePath = (path: string) => path.replace(/\/$/, "");
