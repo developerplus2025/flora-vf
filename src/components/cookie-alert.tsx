@@ -78,11 +78,12 @@ const CookieAlert = ({
       <AnimatePresence initial={false}>
         {!isAccepted ? (
           <motion.div
+            className="fixed inset-0 bottom-[4rem] left-[2rem] z-[20]"
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0 }}
           >
-            <Alert className="fixed inset-0 bottom-[4rem] left-[2rem] z-[2] flex w-[480px] flex-col gap-4">
+            <Alert className="flex w-[480px] flex-col gap-4">
               <AlertTitle className="flex items-center justify-between">
                 <p className="text-[1.1rem]">Cookies Settings</p>
 
