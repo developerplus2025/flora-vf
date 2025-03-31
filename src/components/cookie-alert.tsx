@@ -58,7 +58,10 @@ const CookieAlert = ({
     setCookie("cookieAccepted", "true", 365);
     setIsAccepted(true);
   };
-
+  const handleDecline = () => {
+    setCookie("cookieAccepted", "false", 0);
+    setIsAccepted(false);
+  };
   return (
     <div
     // transition={{ duration: 0 }}
@@ -79,7 +82,7 @@ const CookieAlert = ({
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0 }}
           >
-            <Alert className="fixed left-[2rem] top-[32rem] z-[2] flex w-[480px] flex-col gap-4">
+            <Alert className="fixed inset-0 bottom-[4rem] left-[2rem] z-[2] flex w-[480px] flex-col gap-4">
               <AlertTitle className="flex items-center justify-between">
                 <p className="text-[1.1rem]">Cookies Settings</p>
 
