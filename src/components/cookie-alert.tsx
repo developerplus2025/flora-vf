@@ -114,7 +114,11 @@ const CookieAlert = ({
                 <Button className="w-full" onClick={handleAccept}>
                   Accept
                 </Button>
-                <Button className="w-full" variant={"outline"}>
+                <Button
+                  className="w-full"
+                  onClick={handleDecline}
+                  variant={"outline"}
+                >
                   Decline
                 </Button>
               </div>
