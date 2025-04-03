@@ -58,10 +58,7 @@ const CookieAlert = ({
     setCookie("cookieAccepted", "true", 365);
     setIsAccepted(true);
   };
-  const handleDecline = () => {
-    setCookie("cookieAccepted", "false", 0);
-    setIsAccepted(false);
-  };
+
   return (
     <div
     // transition={{ duration: 0 }}
@@ -78,12 +75,11 @@ const CookieAlert = ({
       <AnimatePresence initial={false}>
         {!isAccepted ? (
           <motion.div
-            className="fixed inset-0 z-[50]"
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0 }}
           >
-            <Alert className="absolute bottom-[4rem] left-[2rem] flex w-[480px] flex-col gap-4">
+            <Alert className="fixed left-[2rem] top-[calc(100vh-4rem)] z-[2] flex w-[480px] flex-col gap-4">
               <AlertTitle className="flex items-center justify-between">
                 <p className="text-[1.1rem]">Cookies Settings</p>
 
@@ -115,8 +111,8 @@ const CookieAlert = ({
                   Accept
                 </Button>
                 <Button
-                  className="w-full"
                   onClick={() => setIsAccepted(true)}
+                  className="w-full"
                   variant={"outline"}
                 >
                   Decline
