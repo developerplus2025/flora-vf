@@ -412,6 +412,17 @@ export default function Home() {
         <ChartFirstYear />
         <ChartLastYear />
       </div> */}
+<pre className="whitespace-pre">
+     
+███████ ██       ██████  ██████   █████  
+██      ██      ██    ██ ██   ██ ██   ██ 
+█████   ██      ██    ██ ██████  ███████ 
+██      ██      ██    ██ ██   ██ ██   ██ 
+██      ███████  ██████  ██   ██ ██   ██ 
+                                         
+                                         
+                            
+</pre>
       <div
         className="contentsP min-[375px]:hidden min-[645px]:hidden xl:hidden"
         id="musicContent"
