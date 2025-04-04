@@ -235,18 +235,14 @@ export const Navigation = (): JSX.Element => {
                 href="/"
                 className="text-[1.1rem] font-bold transition-colors duration-300 ease-out dark:text-white"
               >
-                <pre
-                  id="taag_output_text"
-                
-                  className="fig text-[2px]"
-                  contentEditable="true"
-                >
-                    ███████ ██       ██████  ██████   █████  
-                    ██      ██      ██    ██ ██   ██ ██   ██ 
-                    █████   ██      ██    ██ ██████  ███████ 
-                    ██      ██      ██    ██ ██   ██ ██   ██ 
-                    ██      ███████  ██████  ██   ██ ██   ██ 
-                </pre>
+        
+               <pre  style={{"float":"left"}} className="fig text-[2px]" contentEditable="true">███████ ██       ██████  ██████   █████  
+               ██      ██      ██    ██ ██   ██ ██   ██ 
+               █████   ██      ██    ██ ██████  ███████ 
+               ██      ██      ██    ██ ██   ██ ██   ██ 
+               ██      ███████  ██████  ██   ██ ██   ██ 
+                                                        
+                                                        </pre>
               </Link>
               <Link
                 href="/"
