@@ -236,13 +236,7 @@ export const Navigation = (): JSX.Element => {
                 className="text-[1.1rem] font-bold transition-colors duration-300 ease-out dark:text-white"
               >
         
-               <pre  style={{"float":"left"}} className="fig text-[2px] float-left" contentEditable="true">███████ ██       ██████  ██████   █████  
-               ██      ██      ██    ██ ██   ██ ██   ██ 
-               █████   ██      ██    ██ ██████  ███████ 
-               ██      ██      ██    ██ ██   ██ ██   ██ 
-               ██      ███████  ██████  ██   ██ ██   ██ 
-                                                        
-                                                        </pre>
+       FLORA
               </Link>
               <Link
                 href="/"
