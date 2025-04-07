@@ -50,7 +50,7 @@ export default function Modal({ isOpen, onClose }: ModalProps) {
               perspective: 500, // Tạo chiều sâu 3D
             }}
             initial={{
-              filter:"blur(40px)",
+             
               perspective:500,
               // opacity: 0,
               rotateY: -80, // Nghiêng về sau bên trái
@@ -59,7 +59,7 @@ export default function Modal({ isOpen, onClose }: ModalProps) {
               // scale: 0.9,
             }}
             animate={{
-              filter:"blur(0px)",
+         
               opacity: 1,
               rotateY: 0, // Trở lại trạng thái bình thường
               rotateX: 0,
