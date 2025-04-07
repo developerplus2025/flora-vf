@@ -165,15 +165,16 @@ import BeautifulFeaturesLayout from "./components/beautiful-features-layout";
 import WaveAudioCard from "./components/wave-audio-card";
 import CompAvatar from "@/components/comp-412";
 export default function Home() {
-  const text = "
-███████ ██       ██████  ██████   █████      
-██      ██      ██    ██ ██   ██ ██   ██     
-█████   ██      ██    ██ ██████  ███████     
-██      ██      ██    ██ ██   ██ ██   ██     
-██      ███████  ██████  ██   ██ ██   ██     
-                                             
-                                             
-"
+  const text = `
+  ███████ ██       ██████  ██████   █████      
+  ██      ██      ██    ██ ██   ██ ██   ██     
+  █████   ██      ██    ██ ██████  ███████     
+  ██      ██      ██    ██ ██   ██ ██   ██     
+  ██      ███████  ██████  ██   ██ ██   ██     
+                                               
+                                               
+  `;
+  
   const { theme, systemTheme, setTheme } = useTheme();
   const [open, setOpen] = useState(false);
   const [position, setPosition] = React.useState("benoit");
