@@ -164,6 +164,7 @@ import FeaturesSection from "./components/features-section";
 import BeautifulFeaturesLayout from "./components/beautiful-features-layout";
 import WaveAudioCard from "./components/wave-audio-card";
 import CompAvatar from "@/components/comp-412";
+import { RadixDialog } from "./components/modal-animation-video";
 export default function Home() {
   const text = `
 
@@ -355,8 +356,7 @@ export default function Home() {
         </div>
         <div className="flex gap-[2rem]">
           <DownloadButton />
-          <Modal isOpen={open} onClose={() => setOpen(false)} />
-          {/* <WatchDemo/> */}
+          {/* <Modal isOpen={open} onClose={() => setOpen(false)} />
           <Button
             className="bg-[#131313] ring-1 ring-[#c6c6c680] ring-offset-2 ring-offset-black"
             variant={"outline"}
@@ -380,7 +380,8 @@ export default function Home() {
               />
             </svg>
             Watch Demo Now
-          </Button>
+          </Button> */}
+          <RadixDialog/>
           {/* <VideoModal/> */}
         </div>
       </motion.div>
