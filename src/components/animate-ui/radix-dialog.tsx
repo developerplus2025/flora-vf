@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import * as React from 'react';
-import * as DialogPrimitive from '@radix-ui/react-dialog';
-import { X } from 'lucide-react';
-import { AnimatePresence, motion, type Transition } from 'motion/react';
+import * as React from "react";
+import * as DialogPrimitive from "@radix-ui/react-dialog";
+import { X } from "lucide-react";
+import { AnimatePresence, motion, type Transition } from "motion/react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 interface DialogContextType {
   isOpen: boolean;
@@ -15,7 +15,7 @@ const DialogContext = React.createContext<DialogContextType>({ isOpen: false });
 const useDialog = (): DialogContextType => {
   const context = React.useContext(DialogContext);
   if (!context) {
-    throw new Error('useDialog must be used within a Dialog');
+    throw new Error("useDialog must be used within a Dialog");
   }
   return context;
 };
@@ -67,13 +67,13 @@ const DialogOverlay = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <DialogPrimitive.Overlay
     ref={ref}
-    className={cn('fixed inset-0 z-50 bg-black/80', className)}
+    className={cn("fixed inset-0 z-50 bg-black/80", className)}
     {...props}
   />
 ));
 DialogOverlay.displayName = DialogPrimitive.Overlay.displayName;
 
-type FlipDirection = 'top' | 'bottom' | 'left' | 'right';
+type FlipDirection = "top" | "bottom" | "left" | "right";
 
 type DialogContentProps = React.ComponentPropsWithoutRef<
   typeof DialogPrimitive.Content
@@ -89,8 +89,8 @@ const DialogContent = React.forwardRef<
     {
       className,
       children,
-      from = 'top',
-      transition = { type: 'spring', stiffness: 150, damping: 25 },
+      from = "top",
+      transition = { type: "spring", stiffness: 150, damping: 25 },
       ...props
     },
     ref,
@@ -98,9 +98,9 @@ const DialogContent = React.forwardRef<
     const { isOpen } = useDialog();
 
     const initialRotation =
-      from === 'top' || from === 'left' ? '20deg' : '-20deg';
-    const isVertical = from === 'top' || from === 'bottom';
-    const rotateAxis = isVertical ? 'rotateX' : 'rotateY';
+      from === "top" || from === "left" ? "20deg" : "-20deg";
+    const isVertical = from === "top" || from === "bottom";
+    const rotateAxis = isVertical ? "rotateX" : "rotateY";
 
     return (
       <AnimatePresence>
@@ -110,10 +110,10 @@ const DialogContent = React.forwardRef<
               <DialogOverlay asChild forceMount>
                 <motion.div
                   key="dialog-overlay"
-                  initial={{ opacity: 0, filter: 'blur(4px)' }}
-                  animate={{ opacity: 1, filter: 'blur(0px)' }}
-                  exit={{ opacity: 0, filter: 'blur(4px)' }}
-                  transition={{ duration: 0.3, ease: 'easeInOut' }}
+                  initial={{ opacity: 0, filter: "blur(4px)" }}
+                  animate={{ opacity: 1, filter: "blur(0px)" }}
+                  exit={{ opacity: 0, filter: "blur(4px)" }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
                 />
               </DialogOverlay>
               <DialogPrimitive.Content asChild forceMount ref={ref} {...props}>
@@ -121,22 +121,22 @@ const DialogContent = React.forwardRef<
                   key="dialog-content"
                   initial={{
                     opacity: 0,
-                    filter: 'blur(4px)',
+                    filter: "blur(4px)",
                     transform: `perspective(500px) ${rotateAxis}(${initialRotation}) scale(0.8)`,
                   }}
                   animate={{
                     opacity: 1,
-                    filter: 'blur(0px)',
+                    filter: "blur(0px)",
                     transform: `perspective(500px) ${rotateAxis}(0deg) scale(1)`,
                   }}
                   exit={{
                     opacity: 0,
-                    filter: 'blur(4px)',
+                    filter: "blur(4px)",
                     transform: `perspective(500px) ${rotateAxis}(${initialRotation}) scale(0.8)`,
                   }}
                   transition={transition}
                   className={cn(
-                    'fixed left-[50%] top-[50%] z-50 grid w-[calc(100%-2rem)] max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg rounded-xl',
+                    "fixed left-[50%] top-[50%] z-50 grid w-[calc(100%-2rem)] max-w-lg !translate-x-[-50%] !translate-y-[-50%] gap-4 rounded-xl border bg-background p-6 shadow-lg",
                     className,
                   )}
                 >
@@ -162,14 +162,14 @@ const DialogHeader = React.forwardRef<HTMLDivElement, DialogHeaderProps>(
     <div
       ref={ref}
       className={cn(
-        'flex flex-col space-y-1.5 text-center sm:text-left',
+        "flex flex-col space-y-1.5 text-center sm:text-left",
         className,
       )}
       {...props}
     />
   ),
 );
-DialogHeader.displayName = 'DialogHeader';
+DialogHeader.displayName = "DialogHeader";
 
 type DialogFooterProps = React.HTMLAttributes<HTMLDivElement>;
 const DialogFooter = React.forwardRef<HTMLDivElement, DialogFooterProps>(
@@ -177,14 +177,14 @@ const DialogFooter = React.forwardRef<HTMLDivElement, DialogFooterProps>(
     <div
       ref={ref}
       className={cn(
-        'flex flex-col-reverse sm:flex-row sm:justify-end gap-2',
+        "flex flex-col-reverse gap-2 sm:flex-row sm:justify-end",
         className,
       )}
       {...props}
     />
   ),
 );
-DialogFooter.displayName = 'DialogFooter';
+DialogFooter.displayName = "DialogFooter";
 
 type DialogTitleProps = React.ComponentPropsWithoutRef<
   typeof DialogPrimitive.Title
@@ -197,7 +197,7 @@ const DialogTitle = React.forwardRef<
   <DialogPrimitive.Title
     ref={ref}
     className={cn(
-      'text-lg font-semibold leading-none tracking-tight',
+      "text-lg font-semibold leading-none tracking-tight",
       className,
     )}
     {...props}
@@ -214,7 +214,7 @@ const DialogDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <DialogPrimitive.Description
     ref={ref}
-    className={cn('text-sm text-muted-foreground', className)}
+    className={cn("text-sm text-muted-foreground", className)}
     {...props}
   />
 ));
