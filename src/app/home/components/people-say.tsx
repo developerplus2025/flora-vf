@@ -158,8 +158,15 @@ export function PeopleSay() {
   const views = useStore($views);
   return (
     <div className="flex flex-col gap-[4rem]">
-      <div className="text-center text-4xl font-bold tracking-tighter text-white sm:text-5xl xl:text-[2.75rem]/none">
-        <p>What People Say ?</p>
+      <div className="flex-cols flex gap-[4rem]">
+        <div className="text-center text-4xl font-bold tracking-tighter text-white sm:text-5xl xl:text-[2.75rem]/none">
+          <p>What People Say ?</p>
+        </div>
+        <span className="text-md w-[480px] dark:text-zinc-400">
+          Discover what users around the world are saying about our music
+          software. From producers to casual listeners, hear real feedback on
+          how it&apos;s transforming the way they create, mix, and enjoy music.
+        </span>
       </div>
       <div className="grid grid-cols-3 justify-items-center gap-[2rem]">
         {items.map((item) => (

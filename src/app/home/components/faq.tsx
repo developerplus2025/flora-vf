@@ -125,7 +125,7 @@ export default function AccordionFAQ() {
           <h1 className="text-center text-[3.5rem] font-bold leading-[4.5rem] tracking-tighter text-white sm:text-5xl xl:text-[3.5rem]">
             Got Questions? We&apos;ve Got Answers!
           </h1>
-          <span className="md:text-md max-w-[497px] text-center text-zinc-500 dark:text-zinc-400">
+          <span className="md:text-md max-w-[480px] text-center text-zinc-500 dark:text-zinc-400">
             Curious about our flora software? Check out the frequently asked
             questions below to find answers about features, pricing,
             customization, and more. Whether you&apos;re wondering how it works
