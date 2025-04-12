@@ -8,7 +8,7 @@ export default function CompAvatar() {
       </span>
       <span className="backdrop absolute inset-px rounded-full bg-neutral-950 transition-colors duration-200" />
 
-      <div className="z-10 flex items-center rounded-full border bg-background p-1 px-2 shadow-sm">
+      <div className="z-10 flex items-center rounded-full bg-background p-1 px-2 shadow-sm">
         <div className="flex -space-x-1.5">
           <Image
             className="rounded-full ring-1 ring-background"
