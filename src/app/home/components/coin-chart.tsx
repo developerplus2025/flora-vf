@@ -410,14 +410,14 @@ export function CoinChart() {
       <CardHeader>
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div className="space-y-0.5">
-            <CardTitle>ArkFi</CardTitle>
-            <div className="mb-1 text-3xl font-bold">
+            <CardTitle>FloraVF</CardTitle>
+            {/* <div className="mb-1 text-3xl font-bold">
               <span className="text-xl text-muted-foreground">$</span>
               1,327,349.19
             </div>
             <div className="text-sm font-medium text-emerald-500">
               ↗ $2,849.27 (+4%)
-            </div>
+            </div> */}
           </div>
           <div className="inline-flex h-8 shrink-0 rounded-full bg-muted p-1 dark:bg-background/50">
             <RadioGroup
@@ -477,7 +477,7 @@ export function CoinChart() {
             <Line
               type="linear"
               dataKey="value"
-              stroke="var(--color-value)"
+              stroke="#fff"
               strokeWidth={2}
               dot={false}
               activeDot={{

@@ -13,7 +13,7 @@ function createWindow() {
     }, // Loại bỏ khung mặc định của hệ điều hành
   });
 
-  win.loadURL("http://Flora.vercel.app/docs");
+  win.loadURL("http://floravf.vercel.app/");
 }
 
 app.whenReady().then(() => {
