@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function CompAvatar() {
   return (
     <div className="group relative grid overflow-hidden rounded-full px-3 py-1 shadow-[0_1000px_0_0_hsl(0_0%_20%)_inset] transition-colors duration-200">
@@ -8,30 +10,30 @@ export default function CompAvatar() {
 
       <div className="z-10 flex items-center rounded-full border bg-background p-1 px-2 shadow-sm">
         <div className="flex -space-x-1.5">
-          <img
+          <Image
             className="rounded-full ring-1 ring-background"
-            src="/avatar-80-03.jpg"
+            src="/charlton-roberts.avif"
             width={20}
             height={20}
             alt="Avatar 01"
           />
-          <img
+          <Image
             className="rounded-full ring-1 ring-background"
-            src="/avatar-80-04.jpg"
+            src="/alan-cowen.avif"
             width={20}
             height={20}
             alt="Avatar 02"
           />
-          <img
+          <Image
             className="rounded-full ring-1 ring-background"
-            src="/avatar-80-05.jpg"
+            src="/thomas-zahner.avif"
             width={20}
             height={20}
             alt="Avatar 03"
           />
-          <img
+          <Image
             className="rounded-full ring-1 ring-background"
-            src="/avatar-80-06.jpg"
+            src="/jony.avif"
             width={20}
             height={20}
             alt="Avatar 04"
