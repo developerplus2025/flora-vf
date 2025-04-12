@@ -165,6 +165,7 @@ import BeautifulFeaturesLayout from "./components/beautiful-features-layout";
 import WaveAudioCard from "./components/wave-audio-card";
 import CompAvatar from "@/components/comp-412";
 import { RadixDialog } from "./components/modal-animation-video";
+import PowerBy from "./components/power-by";
 export default function Home() {
   const text = `
 
@@ -373,7 +374,7 @@ export default function Home() {
       <div className="mx-auto my-[4rem] h-px w-[700px] bg-gradient-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
       <PeopleSay />
       <div className="mx-auto my-[4rem] h-px w-[700px] bg-gradient-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
-      <GetInTouch />
+      <PowerBy />
       <div className="mx-auto my-[4rem] h-px w-[700px] bg-gradient-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
       <div className="flex gap-2">
         <p className="overflow-auto whitespace-pre">
@@ -426,7 +427,7 @@ export default function Home() {
         <ChartFirstYear />
         <ChartLastYear />
       </div> */}
-      <pre className="whitespace-pre">{text}</pre>
+      {/* <pre className="whitespace-pre">{text}</pre> */}
       <div
         className="contentsP min-[375px]:hidden min-[645px]:hidden xl:hidden"
         id="musicContent"
