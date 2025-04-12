@@ -16,10 +16,10 @@ export default function PowerBy() {
   return (
     <div className="flex flex-col items-center gap-[2rem]">
       <div className="flex flex-col items-center justify-center gap-4">
-        <h1 className="w-[750px] text-center text-[3.5rem] font-bold leading-[4.5rem] tracking-tighter text-white sm:text-5xl xl:text-[3.5rem]">
+        <h1 className="w-[860px] text-center text-[3.5rem] font-bold leading-[4.5rem] tracking-tighter text-white sm:text-5xl xl:text-[3.5rem]">
           Technologies Behind the Software
         </h1>
-        <span className="md:text-md max-w-[550px] text-center text-zinc-500 dark:text-zinc-400">
+        <span className="md:text-md max-w-[510px] text-center text-zinc-500 dark:text-zinc-400">
           This software is built using modern web technologies that ensure high
           performance, scalability, and a seamless user experience. From
           front-end frameworks to back-end services, each tool has been
@@ -27,7 +27,7 @@ export default function PowerBy() {
         </span>
       </div>
 
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-4 px-[11rem] sm:grid-cols-2 lg:grid-cols-3">
         <IntegrationCard
           title="Google Gemini"
           description="Amet praesentium deserunt ex commodi tempore fuga voluptatem. Sit, sapiente."
