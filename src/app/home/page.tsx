@@ -177,7 +177,7 @@ export default function Home() {
                                                
                                                
   `;
-  
+
   const { theme, systemTheme, setTheme } = useTheme();
   const [open, setOpen] = useState(false);
   const [position, setPosition] = React.useState("benoit");
@@ -200,62 +200,20 @@ export default function Home() {
     localStorage.setItem("close", newCloseValue.toString()); // Lưu giá trị boolean dưới dạng chuỗi
   };
   const listLogo = [
-    {
-      id: "1",
-      src: "10-up",
-    },
-    {
-      id: "2",
-      src: "altudo",
-    },
-    {
-      id: "3",
-      src: "american-eagle",
-    },
-    {
-      id: "4",
-      src: "avanade",
-    },
-    {
-      id: "5",
-      src: "basement",
-    },
-    {
-      id: "6",
-      src: "codal",
-    },
-    {
-      id: "7",
-      src: "jakala",
-    },
-    {
-      id: "8",
-      src: "merkle",
-    },
-    {
-      id: "9",
-      src: "monogram",
-    },
-    {
-      id: "10",
-      src: "brandung",
-    },
-    {
-      id: "11",
-      src: "code-theory",
-    },
-    {
-      id: "12",
-      src: "apply-digital",
-    },
-    {
-      id: "13",
-      src: "horizontal",
-    },
-    {
-      id: "14",
-      src: "labdigital",
-    },
+    { id: "1", src: "10-up" },
+    { id: "2", src: "altudo" },
+    { id: "3", src: "american-eagle" },
+    { id: "4", src: "avanade" },
+    { id: "5", src: "basement" },
+    { id: "6", src: "codal" },
+    { id: "7", src: "jakala" },
+    { id: "8", src: "merkle" },
+    { id: "9", src: "monogram" },
+    { id: "10", src: "brandung" },
+    { id: "11", src: "code-theory" },
+    { id: "12", src: "apply-digital" },
+    { id: "13", src: "horizontal" },
+    { id: "14", src: "labdigital" },
   ];
   const [value, setValue] = React.useState(0);
 
@@ -381,7 +339,7 @@ export default function Home() {
             </svg>
             Watch Demo Now
           </Button> */}
-          <RadixDialog/>
+          <RadixDialog />
           {/* <VideoModal/> */}
         </div>
       </motion.div>
@@ -417,54 +375,49 @@ export default function Home() {
       <div className="mx-auto my-[4rem] h-px w-[700px] bg-gradient-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
       <GetInTouch />
       <div className="mx-auto my-[4rem] h-px w-[700px] bg-gradient-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
-<div className="flex gap-2">
-
-      <p className="overflow-auto whitespace-pre">
-      ███████
-      <br />
-      ██  
-      <br />
-      █████ 
-      <br />
-      ██  
-      <br />
-      ██  
-      <br />
-      </p>    
-      <p>
-      ██
-      <br /> 
-      ██ 
-      <br />
-      ██ 
-      <br />
-      ██ 
-      <br />
-      ███████ 
-      </p>
-      <div className="flex items-center flex-col">
+      <div className="flex gap-2">
+        <p className="overflow-auto whitespace-pre">
+          ███████
+          <br />
+          ██
+          <br />
+          █████
+          <br />
+          ██
+          <br />
+          ██
+          <br />
+        </p>
         <p>
-             ███
-      </p> 
-      <div className="flex gap-[3rem]">  <div className="flex flex-col">
-<p>██    </p>
-<p>██    </p>
-<p>██    </p>
+          ██
+          <br />
+          ██
+          <br />
+          ██
+          <br />
+          ██
+          <br />
+          ███████
+        </p>
+        <div className="flex flex-col items-center">
+          <p>███</p>
+          <div className="flex gap-[3rem]">
+            {" "}
+            <div className="flex flex-col">
+              <p>██ </p>
+              <p>██ </p>
+              <p>██ </p>
+            </div>
+            <div className="flex flex-col">
+              <p>██ </p>
+              <p>██ </p>
+              <p>██ </p>
+            </div>
+          </div>
+          <p>███</p>
+        </div>
       </div>
-      <div className="flex flex-col">
-<p>██    </p>
-<p>██    </p>
-<p>██    </p>
-      </div></div>
-      <p>
-             ███
-      </p> 
-      </div>
-     
-</div>
 
-
-     
       {/* <Loader variant={"classic"} size={"sm"} />
       <AudioCard />
       <div className="mx-auto my-[4rem] h-px w-[700px] bg-gradient-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
@@ -473,12 +426,7 @@ export default function Home() {
         <ChartFirstYear />
         <ChartLastYear />
       </div> */}
-<pre className="whitespace-pre">
-     
-{text}          
-                                         
-                            
-</pre>
+      <pre className="whitespace-pre">{text}</pre>
       <div
         className="contentsP min-[375px]:hidden min-[645px]:hidden xl:hidden"
         id="musicContent"

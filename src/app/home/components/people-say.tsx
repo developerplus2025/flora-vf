@@ -23,24 +23,24 @@ const items = [
     body: "One of the best things about this app is its speed. Songs load almost instantly, and there's no lag at all. Even when I have a large playlist, the app handles it effortlessly, making it a top choice for music streaming.",
     img: "jony",
   },
-  // {
-  //   name: "Alan Cowen",
-  //   username: "Senior Software Engineer, Frontend",
-  //   body: "I have tried many music apps before, but this one truly amazed me. The interface is smooth, easy to navigate, and the overall experience is fantastic. I can quickly find my favorite songs and create playlists effortlessly, making my music experience seamless and enjoyable.",
-  //   img: "alan-cowen",
-  // },
-  // {
-  //   name: "Thomas Zahner",
-  //   username: "Charlton Roberts, Product Engineering",
-  //   body: "The audio quality in this app is outstanding. Every note is crystal clear, from the deep bass to the sharp highs. If you're a true music lover, you will appreciate the sound precision and richness this app offers.",
-  //   img: "thomas-zahner",
-  // },
-  // {
-  //   name: "Jason Cottrell",
-  //   username: "Daniel Lopes, Frontend Developer",
-  //   body: "One of the best things about this app is its speed. Songs load almost instantly, and there's no lag at all. Even when I have a large playlist, the app handles it effortlessly, making it a top choice for music streaming.",
-  //   img: "jasoncottrell-sm",
-  // },
+  {
+    name: "Alan Cowen",
+    username: "Senior Software Engineer, Frontend",
+    body: "I have tried many music apps before, but this one truly amazed me. The interface is smooth, easy to navigate, and the overall experience is fantastic. I can quickly find my favorite songs and create playlists effortlessly, making my music experience seamless and enjoyable.",
+    img: "alan-cowen",
+  },
+  {
+    name: "Thomas Zahner",
+    username: "Charlton Roberts, Product Engineering",
+    body: "The audio quality in this app is outstanding. Every note is crystal clear, from the deep bass to the sharp highs. If you're a true music lover, you will appreciate the sound precision and richness this app offers.",
+    img: "thomas-zahner",
+  },
+  {
+    name: "Jason Cottrell",
+    username: "Daniel Lopes, Frontend Developer",
+    body: "One of the best things about this app is its speed. Songs load almost instantly, and there's no lag at all. Even when I have a large playlist, the app handles it effortlessly, making it a top choice for music streaming.",
+    img: "jasoncottrell-sm",
+  },
   // {
   //   name: "David",
   //   username: "@david",
@@ -165,14 +165,14 @@ export function PeopleSay() {
         {items.map((item) => (
           <div
             key={item.name}
-            className="flex-cols gap relative flex w-[400px] flex-col justify-between gap-1 rounded-lg border bg-[#0c0c0c] p-4 text-card-foreground shadow-sm"
+            className="flex-cols gap relative flex w-[400px] flex-col justify-between gap-2 rounded-lg border bg-[#0c0c0c] p-4 text-card-foreground shadow-sm"
           >
             {/* <div className="absolute -left-[10px] -top-[10px] h-[10px] w-[10px] border-b border-r"></div>
               <div className="absolute -right-[10px] -top-[10px] h-[10px] w-[10px] border-b border-l"></div>
               <div className="absolute -bottom-[10px] -left-[10px] h-[10px] w-[10px] border-r border-t"></div>
               <div className="absolute -bottom-[10px] -right-[10px] h-[10px] w-[10px] border-l border-t"></div> */}
             <div className="flex justify-between gap-2 text-sm leading-tight sm:text-base">
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1">
                 <div>
                   <Image
                     alt={item.img}
@@ -183,8 +183,8 @@ export function PeopleSay() {
                   ></Image>
                 </div>
                 <div className="flex w-full flex-col gap-2">
-                  <p className="text-md">{item.name}</p>
-                  <p className="text-sm text-[#a1a1a1]">@{item.username}</p>
+                  <p className="text-sm">{item.name}</p>
+                  <p className="text-xs text-[#a1a1a1]">@{item.username}</p>
                 </div>
               </div>
               <svg
@@ -203,7 +203,7 @@ export function PeopleSay() {
                 />
               </svg>
             </div>
-            <span className="text-md text-white">&quot;{item.body}&quot;</span>
+            <span className="text-sm text-white">&quot;{item.body}&quot;</span>
             <Activity
               className="~px-0/16"
               likes={likes.count}
