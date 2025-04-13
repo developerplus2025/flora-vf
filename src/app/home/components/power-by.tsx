@@ -29,7 +29,7 @@ export default function PowerBy() {
 
       <div className="grid gap-4 px-[11rem] sm:grid-cols-2 lg:grid-cols-3">
         {items.map((items) => (
-          <Card key={items.id} className="p-6">
+          <Card key={items.id} className="p-4">
             <div className="relative">
               <div className="flex items-center justify-between">
                 <div className="*:size-10">{items.icon}</div>
@@ -37,10 +37,10 @@ export default function PowerBy() {
                   <div>
                     <svg
                       data-testid="geist-icon"
-                      height={16}
+                      height={24}
                       strokeLinejoin="round"
                       viewBox="0 0 16 16"
-                      width={16}
+                      width={24}
                       style={{ color: "currentcolor" }}
                     >
                       <g clipPath="url(#clip0_872_3147)">
