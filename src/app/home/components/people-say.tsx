@@ -172,13 +172,13 @@ export function PeopleSay() {
         {items.map((item) => (
           <div
             key={item.name}
-            className="flex-cols gap relative flex w-[400px] flex-col justify-between gap-2 rounded-lg border bg-[#0c0c0c] p-4 text-card-foreground shadow-sm"
+            className="flex-cols gap relative flex w-[400px] flex-col gap-2 rounded-lg border bg-[#0c0c0c] p-4 text-card-foreground shadow-sm"
           >
             {/* <div className="absolute -left-[10px] -top-[10px] h-[10px] w-[10px] border-b border-r"></div>
               <div className="absolute -right-[10px] -top-[10px] h-[10px] w-[10px] border-b border-l"></div>
               <div className="absolute -bottom-[10px] -left-[10px] h-[10px] w-[10px] border-r border-t"></div>
               <div className="absolute -bottom-[10px] -right-[10px] h-[10px] w-[10px] border-l border-t"></div> */}
-            <div className="flex justify-between gap-2 text-sm leading-tight sm:text-base">
+            <div className="flex justify-between gap-1 text-sm leading-tight sm:text-base">
               <div className="flex items-center gap-3">
                 <div>
                   <Image
@@ -211,7 +211,7 @@ export function PeopleSay() {
               </svg>
             </div>
             <span className="text-sm text-white">&quot;{item.body}&quot;</span>
-            <Activity
+            {/* <Activity
               className="~px-0/16"
               likes={likes.count}
               onLike={$likes.toggle}
@@ -223,7 +223,7 @@ export function PeopleSay() {
               onBookmark={$bookmarks.toggle}
               bookmarked={bookmarks.hasIncremented}
               views={views.count}
-            />
+            /> */}
           </div>
         ))}
       </div>
