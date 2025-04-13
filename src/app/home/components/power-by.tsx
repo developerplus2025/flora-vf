@@ -28,88 +28,334 @@ export default function PowerBy() {
       </div>
 
       <div className="grid gap-4 px-[11rem] sm:grid-cols-2 lg:grid-cols-3">
-        <IntegrationCard
-          title="Google Gemini"
-          description="Amet praesentium deserunt ex commodi tempore fuga voluptatem. Sit, sapiente."
-        >
-          <Gemini />
-        </IntegrationCard>
+        {items.map((items) => (
+          <Card key={items.id} className="p-6">
+            <div className="relative">
+              <div className="*:size-10">{items.icon}</div>
 
-        <IntegrationCard
-          title="Replit"
-          description="Amet praesentium deserunt ex commodi tempore fuga voluptatem. Sit, sapiente."
-        >
-          <Replit />
-        </IntegrationCard>
+              <div className="space-y-2 py-2">
+                <h3 className="text-base font-medium">{items.title}</h3>
+                <p className="line-clamp-2 text-sm text-muted-foreground">
+                  {items.description}
+                </p>
+              </div>
 
-        <IntegrationCard
-          title="Magic UI"
-          description="Amet praesentium deserunt ex commodi tempore fuga voluptatem. Sit, sapiente."
-        >
-          <MagicUI />
-        </IntegrationCard>
-
-        <IntegrationCard
-          title="VSCodium"
-          description="Amet praesentium deserunt ex commodi tempore fuga voluptatem. Sit, sapiente."
-        >
-          <VSCodium />
-        </IntegrationCard>
-
-        <IntegrationCard
-          title="MediaWiki"
-          description="Amet praesentium deserunt ex commodi tempore fuga voluptatem. Sit, sapiente."
-        >
-          <MediaWiki />
-        </IntegrationCard>
-
-        <IntegrationCard
-          title="Google PaLM"
-          description="Amet praesentium deserunt ex commodi tempore fuga voluptatem. Sit, sapiente."
-        >
-          <GooglePaLM />
-        </IntegrationCard>
+              <div className="flex gap-3 border-t border-dashed pt-6">
+                <Button
+                  asChild
+                  variant="outline"
+                  size="sm"
+                  className="gap-1 pr-2 shadow-none"
+                >
+                  <Link href={items.link}>
+                    Learn More
+                    <ChevronRight className="ml-0 !size-3.5 opacity-50" />
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </Card>
+        ))}
       </div>
     </div>
   );
 }
-const IntegrationCard = ({
-  title,
-  description,
-  children,
-  link = "https://github.com/meschacirung/cnblocks",
-}: {
-  title: string;
-  description: string;
-  children: React.ReactNode;
-  link?: string;
-}) => {
-  return (
-    <Card className="p-6">
-      <div className="relative">
-        <div className="*:size-10">{children}</div>
-
-        <div className="space-y-2 py-6">
-          <h3 className="text-base font-medium">{title}</h3>
-          <p className="line-clamp-2 text-sm text-muted-foreground">
-            {description}
-          </p>
-        </div>
-
-        <div className="flex gap-3 border-t border-dashed pt-6">
-          <Button
-            asChild
-            variant="secondary"
-            size="sm"
-            className="gap-1 pr-2 shadow-none"
+const items = [
+  {
+    link: "https://react.dev/",
+    id: 1,
+    icon: (
+      <svg
+        data-testid="geist-icon"
+        height={16}
+        strokeLinejoin="round"
+        viewBox="0 0 16 16"
+        width={16}
+        style={{ color: "currentcolor" }}
+      >
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M4.5 1.93782C4.70129 1.82161 4.99472 1.7858 5.41315 1.91053C5.83298 2.03567 6.33139 2.31073 6.87627 2.73948C7.01136 2.84578 7.14803 2.96052 7.28573 3.08331C6.86217 3.53446 6.44239 4.04358 6.03752 4.60092C5.35243 4.67288 4.70164 4.78186 4.09916 4.92309C4.06167 4.74244 4.03064 4.56671 4.00612 4.39656C3.90725 3.71031 3.91825 3.14114 4.01979 2.71499C4.12099 2.29025 4.29871 2.05404 4.5 1.93782ZM7.49466 1.95361C7.66225 2.08548 7.83092 2.22804 7.99999 2.38067C8.16906 2.22804 8.33773 2.08548 8.50532 1.95361C9.10921 1.47842 9.71982 1.12549 10.3012 0.952202C10.8839 0.778496 11.4838 0.7738 12 1.0718C12.5161 1.3698 12.812 1.89169 12.953 2.48322C13.0936 3.07333 13.0932 3.77858 12.9836 4.53917C12.9532 4.75024 12.9141 4.9676 12.8665 5.19034C13.0832 5.26044 13.291 5.33524 13.489 5.41444C14.2025 5.69983 14.8134 6.05217 15.2542 6.46899C15.696 6.8868 16 7.404 16 8C16 8.596 15.696 9.11319 15.2542 9.53101C14.8134 9.94783 14.2025 10.3002 13.489 10.5856C13.291 10.6648 13.0832 10.7396 12.8665 10.8097C12.9141 11.0324 12.9532 11.2498 12.9837 11.4608C13.0932 12.2214 13.0936 12.9267 12.953 13.5168C12.812 14.1083 12.5161 14.6302 12 14.9282C11.4839 15.2262 10.8839 15.2215 10.3012 15.0478C9.71984 14.8745 9.10923 14.5216 8.50534 14.0464C8.33775 13.9145 8.16906 13.7719 7.99999 13.6193C7.83091 13.7719 7.66223 13.9145 7.49464 14.0464C6.89075 14.5216 6.28014 14.8745 5.69879 15.0478C5.11605 15.2215 4.51613 15.2262 3.99998 14.9282C3.48383 14.6302 3.18794 14.1083 3.047 13.5168C2.9064 12.9267 2.90674 12.2214 3.01632 11.4608C3.04673 11.2498 3.08586 11.0324 3.13351 10.8097C2.91679 10.7395 2.709 10.6648 2.511 10.5856C1.79752 10.3002 1.18658 9.94783 0.745833 9.53101C0.304028 9.11319 0 8.596 0 8C0 7.404 0.304028 6.8868 0.745833 6.46899C1.18658 6.05217 1.79752 5.69983 2.511 5.41444C2.709 5.33524 2.9168 5.26044 3.13352 5.19034C3.08587 4.9676 3.04675 4.75024 3.01634 4.53917C2.90676 3.77858 2.90642 3.07332 3.04702 2.48321C3.18796 1.89169 3.48385 1.3698 4 1.0718C4.51615 0.773798 5.11607 0.778495 5.69881 0.952201C6.28016 1.12549 6.89077 1.47841 7.49466 1.95361ZM7.36747 4.51025C7.57735 4.25194 7.78881 4.00927 7.99999 3.78356C8.21117 4.00927 8.42263 4.25194 8.63251 4.51025C8.42369 4.50346 8.21274 4.5 8 4.5C7.78725 4.5 7.5763 4.50345 7.36747 4.51025ZM8.71425 3.08331C9.13781 3.53447 9.55759 4.04358 9.96246 4.60092C10.6475 4.67288 11.2983 4.78186 11.9008 4.92309C11.9383 4.74244 11.9693 4.56671 11.9939 4.39657C12.0927 3.71031 12.0817 3.14114 11.9802 2.71499C11.879 2.29025 11.7013 2.05404 11.5 1.93782C11.2987 1.82161 11.0053 1.7858 10.5868 1.91053C10.167 2.03568 9.66859 2.31073 9.12371 2.73948C8.98862 2.84578 8.85196 2.96052 8.71425 3.08331ZM8 5.5C8.48433 5.5 8.95638 5.51885 9.41188 5.55456C9.67056 5.93118 9.9229 6.33056 10.1651 6.75C10.4072 7.16944 10.6269 7.58766 10.8237 7.99998C10.6269 8.41232 10.4072 8.83055 10.165 9.25C9.92288 9.66944 9.67053 10.0688 9.41185 10.4454C8.95636 10.4812 8.48432 10.5 8 10.5C7.51567 10.5 7.04363 10.4812 6.58813 10.4454C6.32945 10.0688 6.0771 9.66944 5.83494 9.25C5.59277 8.83055 5.37306 8.41232 5.17624 7.99998C5.37306 7.58765 5.59275 7.16944 5.83492 6.75C6.07708 6.33056 6.32942 5.93118 6.5881 5.55456C7.04361 5.51884 7.51566 5.5 8 5.5ZM11.0311 6.25C11.1375 6.43423 11.2399 6.61864 11.3385 6.80287C11.4572 6.49197 11.5616 6.18752 11.6515 5.89178C11.3505 5.82175 11.0346 5.75996 10.706 5.70736C10.8163 5.8848 10.9247 6.06576 11.0311 6.25ZM11.0311 9.75C11.1374 9.56576 11.2399 9.38133 11.3385 9.19709C11.4572 9.50801 11.5617 9.81246 11.6515 10.1082C11.3505 10.1782 11.0346 10.24 10.7059 10.2926C10.8162 10.1152 10.9247 9.93424 11.0311 9.75ZM11.9249 7.99998C12.2051 8.62927 12.4362 9.24738 12.6151 9.83977C12.7903 9.78191 12.958 9.72092 13.1176 9.65708C13.7614 9.39958 14.2488 9.10547 14.5671 8.80446C14.8843 8.50445 15 8.23243 15 8C15 7.76757 14.8843 7.49555 14.5671 7.19554C14.2488 6.89453 13.7614 6.60042 13.1176 6.34292C12.958 6.27907 12.7903 6.21808 12.6151 6.16022C12.4362 6.7526 12.2051 7.37069 11.9249 7.99998ZM9.96244 11.3991C10.6475 11.3271 11.2983 11.2181 11.9008 11.0769C11.9383 11.2576 11.9694 11.4333 11.9939 11.6034C12.0928 12.2897 12.0817 12.8589 11.9802 13.285C11.879 13.7098 11.7013 13.946 11.5 14.0622C11.2987 14.1784 11.0053 14.2142 10.5868 14.0895C10.167 13.9643 9.66861 13.6893 9.12373 13.2605C8.98863 13.1542 8.85196 13.0395 8.71424 12.9167C9.1378 12.4655 9.55758 11.9564 9.96244 11.3991ZM8.63249 11.4898C8.42262 11.7481 8.21116 11.9907 7.99999 12.2164C7.78881 11.9907 7.57737 11.7481 7.36749 11.4897C7.57631 11.4965 7.78726 11.5 8 11.5C8.21273 11.5 8.42367 11.4965 8.63249 11.4898ZM4.96891 9.75C5.07528 9.93424 5.18375 10.1152 5.29404 10.2926C4.9654 10.24 4.64951 10.1782 4.34844 10.1082C4.43833 9.81246 4.54276 9.508 4.66152 9.19708C4.76005 9.38133 4.86254 9.56575 4.96891 9.75ZM6.03754 11.3991C5.35244 11.3271 4.70163 11.2181 4.09914 11.0769C4.06165 11.2576 4.03062 11.4333 4.0061 11.6034C3.90723 12.2897 3.91823 12.8589 4.01977 13.285C4.12097 13.7098 4.29869 13.946 4.49998 14.0622C4.70127 14.1784 4.9947 14.2142 5.41313 14.0895C5.83296 13.9643 6.33137 13.6893 6.87625 13.2605C7.01135 13.1542 7.14802 13.0395 7.28573 12.9167C6.86217 12.4655 6.4424 11.9564 6.03754 11.3991ZM4.07507 7.99998C3.79484 8.62927 3.56381 9.24737 3.38489 9.83977C3.20969 9.78191 3.042 9.72092 2.88239 9.65708C2.23864 9.39958 1.75123 9.10547 1.43294 8.80446C1.11571 8.50445 1 8.23243 1 8C1 7.76757 1.11571 7.49555 1.43294 7.19554C1.75123 6.89453 2.23864 6.60042 2.88239 6.34292C3.042 6.27907 3.2097 6.21808 3.3849 6.16022C3.56383 6.75261 3.79484 7.37069 4.07507 7.99998ZM4.66152 6.80287C4.54277 6.49197 4.43835 6.18752 4.34846 5.89178C4.64952 5.82175 4.96539 5.75996 5.29402 5.70736C5.18373 5.8848 5.07526 6.06576 4.96889 6.25C4.86253 6.43423 4.76005 6.61864 4.66152 6.80287ZM9.25 8C9.25 8.69036 8.69036 9.25 8 9.25C7.30964 9.25 6.75 8.69036 6.75 8C6.75 7.30965 7.30964 6.75 8 6.75C8.69036 6.75 9.25 7.30965 9.25 8Z"
+          fill="#149ECA"
+        />
+        <defs>
+          <rect width={16} height={16} fill="white" />
+        </defs>
+      </svg>
+    ),
+    title: "React",
+    description:
+      "A popular JavaScript library for building user interfaces with a component-based architecture.",
+  },
+  {
+    link: "https://nextjs.org/",
+    id: 2,
+    icon: (
+      <svg
+        data-testid="geist-icon"
+        height={16}
+        strokeLinejoin="round"
+        viewBox="0 0 16 16"
+        width={16}
+        style={{ color: "currentcolor" }}
+      >
+        <g clipPath="url(#clip0_53_108)">
+          <circle
+            cx={8}
+            cy={8}
+            r="7.375"
+            fill="black"
+            stroke="#fff"
+            strokeWidth="1.25"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M10.63 11V5"
+            stroke="url(#paint0_linear_53_108rfq)"
+            strokeWidth="1.25"
+            strokeMiterlimit="1.41421"
+          />
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M5.995 5.00087V5H4.745V11H5.995V6.96798L12.3615 14.7076C12.712 14.4793 13.0434 14.2242 13.353 13.9453L5.99527 5.00065L5.995 5.00087Z"
+            fill="url(#paint1_linear_53_108rfq)"
+          />
+        </g>
+        <defs>
+          <linearGradient
+            id="paint0_linear_53_108rfq"
+            x1="11.13"
+            y1={5}
+            x2="11.13"
+            y2={11}
+            gradientUnits="userSpaceOnUse"
           >
-            <Link href={link}>
-              Learn More
-              <ChevronRight className="ml-0 !size-3.5 opacity-50" />
-            </Link>
-          </Button>
-        </div>
-      </div>
-    </Card>
-  );
-};
+            <stop stopColor="white" />
+            <stop offset="0.609375" stopColor="white" stopOpacity="0.57" />
+            <stop offset="0.796875" stopColor="white" stopOpacity={0} />
+            <stop offset={1} stopColor="white" stopOpacity={0} />
+          </linearGradient>
+          <linearGradient
+            id="paint1_linear_53_108rfq"
+            x1="9.9375"
+            y1="9.0625"
+            x2="13.5574"
+            y2="13.3992"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="white" />
+            <stop offset={1} stopColor="white" stopOpacity={0} />
+          </linearGradient>
+          <clipPath id="clip0_53_108">
+            <rect width={16} height={16} fill="red" />
+          </clipPath>
+        </defs>
+      </svg>
+    ),
+    title: "Next.js",
+    description:
+      "A powerful React framework that supports server-side rendering, SEO, and high performance.",
+  },
+  {
+    link: "",
+    id: 3,
+    icon: (
+      <svg
+        data-testid="geist-icon"
+        height={16}
+        strokeLinejoin="round"
+        viewBox="0 0 16 16"
+        width={16}
+        style={{ color: "currentcolor" }}
+      >
+        <g clipPath="url(#clip0_872_3153)">
+          <path
+            d="M16 3.6782C16 3.6782 10.6667 -0.275745 6.5409 0.636705L6.23901 0.738088C5.63524 0.940855 5.13209 1.245 4.8302 1.65054L4.62894 1.95469L3.11951 4.59065L5.73587 5.09757C6.84279 5.80725 8.25159 6.1114 9.55977 5.80725L14.1887 6.7197L16 3.6782Z"
+            fill="#76B3E1"
+          />
+          <path
+            opacity="0.3"
+            d="M16 3.6782C16 3.6782 10.6667 -0.275745 6.5409 0.636705L6.23901 0.738088C5.63524 0.940855 5.13209 1.245 4.8302 1.65054L4.62894 1.95469L3.11951 4.59065L5.73587 5.09757C6.84279 5.80725 8.25159 6.1114 9.55977 5.80725L14.1887 6.7197L16 3.6782Z"
+            fill="url(#paint0_linear_872_3153)"
+          />
+          <path
+            d="M4.8303 3.67821L4.42779 3.77959C2.71709 4.28651 2.21395 5.90864 3.11961 7.32801C4.1259 8.64599 6.23911 9.35567 7.94981 8.84876L14.1888 6.71971C14.1888 6.71971 8.85547 2.76576 4.8303 3.67821Z"
+            fill="#518AC8"
+          />
+          <path
+            opacity="0.3"
+            d="M4.8303 3.67821L4.42779 3.77959C2.71709 4.28651 2.21395 5.90864 3.11961 7.32801C4.1259 8.64599 6.23911 9.35567 7.94981 8.84876L14.1888 6.71971C14.1888 6.71971 8.85547 2.76576 4.8303 3.67821Z"
+            fill="url(#paint1_linear_872_3153)"
+          />
+          <path
+            d="M13.0818 8.24045C12.5184 7.53133 11.7577 7.00778 10.8972 6.73686C10.0367 6.46593 9.1155 6.45996 8.25159 6.7197L2.01258 8.74737L0 12.2958L11.2705 14.2221L13.283 10.5723C13.6856 9.86259 13.5849 9.05152 13.0818 8.24045Z"
+            fill="url(#paint2_linear_872_3153)"
+          />
+          <path
+            d="M11.0692 11.7889C10.5058 11.0797 9.74516 10.5562 8.88464 10.2853C8.02412 10.0143 7.10292 10.0084 6.23901 10.2681L0 12.2958C0 12.2958 5.33335 16.3511 9.45914 15.3373L9.76103 15.2359C11.4717 14.729 12.0755 13.1069 11.0692 11.7889Z"
+            fill="url(#paint3_linear_872_3153)"
+          />
+        </g>
+        <defs>
+          <linearGradient
+            id="paint0_linear_872_3153"
+            x1="2.36479"
+            y1="0.433938"
+            x2="14.9287"
+            y2="6.49387"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop offset="0.1" stopColor="#76B3E1" />
+            <stop offset="0.3" stopColor="#DCF2FD" />
+            <stop offset={1} stopColor="#76B3E1" />
+          </linearGradient>
+          <linearGradient
+            id="paint1_linear_872_3153"
+            x1="9.23786"
+            y1="3.43489"
+            x2="7.01391"
+            y2="10.7862"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="#76B3E1" />
+            <stop offset="0.5" stopColor="#4377BB" />
+            <stop offset={1} stopColor="#1F3B77" />
+          </linearGradient>
+          <linearGradient
+            id="paint2_linear_872_3153"
+            x1="1.44906"
+            y1="6.6386"
+            x2="14.1779"
+            y2="15.2286"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="#315AA9" />
+            <stop offset="0.5" stopColor="#518AC8" />
+            <stop offset={1} stopColor="#315AA9" />
+          </linearGradient>
+          <linearGradient
+            id="paint3_linear_872_3153"
+            x1="7.1648"
+            y1="7.68285"
+            x2="1.98132"
+            y2="26.5509"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="#4377BB" />
+            <stop offset="0.5" stopColor="#1A336B" />
+            <stop offset={1} stopColor="#1A336B" />
+          </linearGradient>
+          <clipPath id="clip0_872_3153">
+            <rect width={16} height={16} fill="white" />
+          </clipPath>
+        </defs>
+      </svg>
+    ),
+    title: " Solid",
+    description:
+      "A high-performance, reactive-first JavaScript library without a virtual DOM.",
+  },
+  {
+    link: "https://turbo.build/",
+    id: 4,
+    icon: (
+      <svg
+        data-testid="geist-icon"
+        height={16}
+        strokeLinejoin="round"
+        viewBox="0 0 16 16"
+        width={16}
+        style={{ color: "currentcolor" }}
+      >
+        <g clipPath="url(#clip0_872_3187)">
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M7.26824e-06 2.99332C2.42358e-06 2.99555 0 2.99777 0 3V13C0 13.6479 0.205396 14.2479 0.554626 14.7383L2.03387 13.259C2.01178 13.1764 2 13.0896 2 13V8H7.26824e-06V2.99332ZM8.00001 2H13C13.5523 2 14 2.44772 14 3V13C14 13.5523 13.5523 14 13 14H8.50001V16H13C14.6569 16 16 14.6569 16 13V3C16 1.34315 14.6569 0 13 0H8.00001V2ZM7.50001 16V14H3C2.91042 14 2.82359 13.9882 2.74098 13.9661L1.26173 15.4454C1.75214 15.7946 2.35208 16 3 16H7.50001Z"
+            fill="url(#paint0_linear_872_3187)"
+          />
+          <mask id="path-2-inside-1_872_3187" fill="white">
+            <rect x="3.5" y="3.5" width={9} height={9} rx="0.5" />
+          </mask>
+          <rect
+            x="3.5"
+            y="3.5"
+            width={9}
+            height={9}
+            rx="0.5"
+            stroke="#fff"
+            fill="transparent"
+            strokeWidth={4}
+            mask="url(#path-2-inside-1_872_3187)"
+          />
+        </g>
+        <defs>
+          <linearGradient
+            id="paint0_linear_872_3187"
+            x1="8.68832"
+            y1="1.98437"
+            x2="1.79792"
+            y2="8.82805"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="#0096FF" />
+            <stop offset={1} stopColor="#FF1E56" />
+          </linearGradient>
+          <clipPath id="clip0_872_3187">
+            <rect width={16} height={16} fill="white" />
+          </clipPath>
+        </defs>
+      </svg>
+    ),
+    title: "Turbopack",
+    description:
+      "A next-generation bundler from Vercel, faster than Webpack with optimized hot reload.",
+  },
+  {
+    link: "",
+    id: 5,
+    icon: (
+      <svg
+        data-testid="geist-icon"
+        height={16}
+        strokeLinejoin="round"
+        viewBox="0 0 16 16"
+        width={16}
+        style={{ color: "currentcolor" }}
+      >
+        <path
+          d="M1.17156 9.61319C1.14041 9.4804 1.2986 9.39676 1.39505 9.49321L6.50679 14.6049C6.60323 14.7014 6.5196 14.8596 6.38681 14.8284C3.80721 14.2233 1.77669 12.1928 1.17156 9.61319ZM1.00026 7.56447C0.997795 7.60413 1.01271 7.64286 1.0408 7.67096L8.32904 14.9592C8.35714 14.9873 8.39586 15.0022 8.43553 14.9997C8.76721 14.9791 9.09266 14.9353 9.41026 14.8701C9.51729 14.8481 9.55448 14.7166 9.47721 14.6394L1.36063 6.52279C1.28337 6.44552 1.15187 6.48271 1.12989 6.58974C1.06466 6.90734 1.02092 7.23278 1.00026 7.56447ZM1.58953 5.15875C1.56622 5.21109 1.57809 5.27224 1.6186 5.31275L10.6872 14.3814C10.7278 14.4219 10.7889 14.4338 10.8412 14.4105C11.0913 14.2991 11.3336 14.1735 11.5672 14.0347C11.6445 13.9888 11.6564 13.8826 11.5929 13.819L2.18099 4.40714C2.11742 4.34356 2.01121 4.35549 1.96529 4.43278C1.8265 4.66636 1.70091 4.9087 1.58953 5.15875ZM2.77222 3.53036C2.7204 3.47854 2.7172 3.39544 2.76602 3.34079C4.04913 1.9043 5.9156 1 7.99327 1C11.863 1 15 4.13702 15 8.00673C15 10.0844 14.0957 11.9509 12.6592 13.234C12.6046 13.2828 12.5215 13.2796 12.4696 13.2278L2.77222 3.53036Z"
+          fill="#5E6AD2"
+        />
+      </svg>
+    ),
+    title: "Linear",
+    description:
+      "A modern issue tracking and project management platform for software teams.",
+  },
+  {
+    link: "",
+    id: 6,
+    icon: (
+      <svg
+        data-testid="geist-icon"
+        height={16}
+        strokeLinejoin="round"
+        viewBox="0 0 16 16"
+        width={16}
+        style={{ color: "currentcolor" }}
+      >
+        <path
+          d="M8.62008 1C12.2215 1 14 2.71409 14 5.45218C14 7.50017 12.7406 8.83579 11.0393 9.05841C12.4754 9.34782 13.315 10.1715 13.4697 11.7965L13.4921 12.0953L13.5116 12.3747L13.5285 12.636L13.5402 12.8331L13.5528 13.0656L13.5594 13.1983L13.5687 13.4091L13.5762 13.6082L13.5799 13.7226L13.5849 13.906L13.5893 14.1156L13.5909 14.2169L13.5937 14.5105L13.5946 14.8168L13.5947 15H9.89195L9.89213 14.9236L9.89346 14.7752L9.89567 14.6307L9.9021 14.2806L9.90372 14.1633L9.90499 13.9792L9.90482 13.8615L9.90374 13.7381L9.90224 13.6413L9.89918 13.5057L9.89478 13.3618L9.88887 13.2089L9.88129 13.046L9.87682 12.9605L9.86922 12.827L9.86049 12.6866L9.84695 12.4883L9.83528 12.3307C9.83193 12.2821 9.82806 12.2347 9.82365 12.1883L9.81414 12.0972C9.69149 11.0207 9.26452 10.5807 8.53324 10.434L8.47159 10.4224C8.43002 10.4152 8.38752 10.4088 8.34407 10.4032L8.2782 10.3955C8.26711 10.3943 8.25595 10.3931 8.24474 10.392L8.17675 10.3861L8.10736 10.3812L8.03656 10.3774L7.96513 10.3746L7.89232 10.3728L7.81814 10.3719L1.98401 10.3718V7.45568H7.95729C8.05569 7.45568 8.15105 7.45381 8.24336 7.45L8.33466 7.44555L8.42393 7.43978L8.51117 7.43269C8.52554 7.43139 8.53982 7.43004 8.55403 7.42864L8.63822 7.41952C8.69368 7.41299 8.74778 7.40555 8.80053 7.39717L8.87864 7.3839C9.85519 7.20685 10.3434 6.68846 10.3434 5.67686C10.3434 4.54159 9.54808 3.85355 7.95729 3.85355H1.98401V1H8.62008ZM5.86625 12.8261C6.35352 12.8261 6.55739 13.0966 6.63002 13.3556L6.6396 13.3928L6.64747 13.4297L6.65259 13.4588L6.65478 13.4732L6.65844 13.5017L6.66121 13.5295L6.66226 13.5432L6.66376 13.57L6.66422 13.5831L6.66458 13.6086V15H1.98401V12.8261H5.86625Z"
+          fill="currentColor"
+        />
+      </svg>
+    ),
+    title: "Remix",
+    description:
+      "A full-stack React framework focused on performance, data loading, and fast navigation.",
+  },
+];
