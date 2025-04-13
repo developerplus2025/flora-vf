@@ -315,7 +315,7 @@ const items = [
       "A next-generation bundler from Vercel, faster than Webpack with optimized hot reload.",
   },
   {
-    link: "",
+    link: "https://linear.app/",
     id: 5,
     icon: (
       <svg
@@ -337,7 +337,7 @@ const items = [
       "A modern issue tracking and project management platform for software teams.",
   },
   {
-    link: "",
+    link: "https://remix.run/",
     id: 6,
     icon: (
       <svg
