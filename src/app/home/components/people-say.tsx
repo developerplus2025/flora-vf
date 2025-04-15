@@ -189,7 +189,7 @@ export function PeopleSay() {
                     className="h-[30px] w-[40px]"
                   ></Image>
                 </div>
-                <div className="flex w-full flex-col gap-2">
+                <div className="flex w-full flex-col gap-1">
                   <p className="text-sm">{item.name}</p>
                   <p className="text-xs text-[#a1a1a1]">@{item.username}</p>
                 </div>
