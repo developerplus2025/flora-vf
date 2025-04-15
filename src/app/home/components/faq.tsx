@@ -38,51 +38,51 @@ const branch = [
 const items = [
   {
     id: "1",
-    title: "What makes Origin UI different?",
+    title: "What makes this software unique?",
     content:
-      "Origin UI focuses on developer experience and performance. Built with TypeScript, it offers excellent type safety, follows accessibility standards, and provides comprehensive documentation with regular updates.",
+      "Our music software prioritizes user experience and performance. Built with TypeScript, it ensures strong type safety, follows accessibility standards, and includes thorough documentation with regular updates.",
   },
   {
     id: "2",
-    title: "How can I customize the components?",
+    title: "How can I customize the interface?",
     content:
-      "Use our CSS variables for global styling, or className and style props for component-specific changes. We support CSS modules, Tailwind, and dark mode out of the box.",
+      "You can use CSS variables for global styling, or className and style props for specific components. We support CSS modules, Tailwind CSS, and built-in dark mode.",
   },
   {
     id: "3",
-    title: "Is Origin UI optimized for performance?",
+    title: "Is the software optimized for performance?",
     content:
-      "Yes, with tree-shaking, code splitting, and minimal runtime overhead. Most components are under 5KB gzipped.",
+      "Yes. The software features tree-shaking, code splitting, and minimal runtime overhead. Most components are lightweight—under 5KB gzipped.",
   },
   {
     id: "4",
-    title: "How accessible are the components?",
+    title: "Is the software accessible?",
     content:
-      "All components follow WAI-ARIA standards, featuring proper ARIA attributes, keyboard navigation, and screen reader support. Regular testing ensures compatibility with NVDA, VoiceOver, and JAWS.",
+      "All features follow WAI-ARIA guidelines with proper ARIA attributes, keyboard navigation, and screen reader support. We regularly test with NVDA, VoiceOver, and JAWS.",
   },
   {
     id: "5",
-    title: "How accessible are the components?",
+    title: "What platforms are supported?",
     content:
-      "All components follow WAI-ARIA standards, featuring proper ARIA attributes, keyboard navigation, and screen reader support. Regular testing ensures compatibility with NVDA, VoiceOver, and JAWS.",
+      "The software works on Windows, macOS, and modern browsers. The web version also adapts well to mobile devices.",
   },
   {
     id: "6",
-    title: "How accessible are the components?",
+    title: "Is dark mode supported?",
     content:
-      "All components follow WAI-ARIA standards, featuring proper ARIA attributes, keyboard navigation, and screen reader support. Regular testing ensures compatibility with NVDA, VoiceOver, and JAWS.",
+      "Yes, dark mode is built-in and can be toggled based on your system settings or personal preferences.",
   },
   {
     id: "7",
-    title: "How accessible are the components?",
+    title: "How do I import music?",
     content:
-      "All components follow WAI-ARIA standards, featuring proper ARIA attributes, keyboard navigation, and screen reader support. Regular testing ensures compatibility with NVDA, VoiceOver, and JAWS.",
+      "You can import music files from your computer, via direct links, or from cloud platforms like Google Drive and Dropbox.",
   },
   {
     id: "8",
-    title: "How accessible are the components?",
+    title: "Does it require an internet connection?",
     content:
-      "All components follow WAI-ARIA standards, featuring proper ARIA attributes, keyboard navigation, and screen reader support. Regular testing ensures compatibility with NVDA, VoiceOver, and JAWS.",
+      "No, internet is not required for core functionality. However, features like syncing and updates do require connectivity.",
   },
 ];
 
