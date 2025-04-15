@@ -72,7 +72,7 @@ const CookieAlert = ({
     //   },
     // }}
     >
-      <AnimatePresence initial={false}>
+      <AnimatePresence initial={true}>
         {!isAccepted ? (
           <motion.div
             initial={{ opacity: 0, scale: 0 }}
