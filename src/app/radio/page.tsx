@@ -16,6 +16,7 @@ import {
   Repeat1Icon as RepeatOne,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 type Track = {
   id: number;
@@ -181,7 +182,7 @@ export default function EnhancedAudioPlayer() {
     <Card className="w-[900px] bg-gradient-to-br from-zinc-900 to-black text-white">
       <CardContent className="p-6">
         <div className="mb-4 aspect-square w-[100px] overflow-hidden rounded-md bg-zinc-800 shadow-lg">
-          <img
+          <Image
             src="/placeholder.svg?height=400&width=400"
             alt="Album Cover"
             className="h-[0px] w-full object-cover"
