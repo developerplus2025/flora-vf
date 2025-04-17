@@ -235,8 +235,7 @@ export const Navigation = (): JSX.Element => {
                 href="/"
                 className="text-[1.1rem] font-bold transition-colors duration-300 ease-out dark:text-white"
               >
-        
-       FLORA
+                FLORA
               </Link>
               <Link
                 href="/"
@@ -342,86 +341,55 @@ export const Navigation = (): JSX.Element => {
                   </NavigationMenuTrigger>
                   <NavigationMenuContent className="flex w-[37rem] justify-between gap-[2.5rem] px-[1rem] py-[1rem]">
                     <div className="grid w-[37rem] grid-cols-2 place-content-between gap-[2rem]">
-                      <div className="flex flex-col gap-[1.5rem]">
-                        <div>
-                          <h1 className="text-[1rem] text-[#a1a1a1]">
-                            Playlist
-                          </h1>
-                        </div>
-                        <div className="flex flex-col gap-[1.8rem]">
-                          <div className="group flex cursor-pointer items-center gap-[0.5rem]">
-                            <div>
-                              <ListPlus className="h-[2rem] w-[2rem] rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
-                            </div>
-                            <div className="flex flex-col items-start justify-start">
-                              <NavigationMenuLink className="text-nowrap text-sm font-bold">
-                                Create New
-                              </NavigationMenuLink>
-                              <p className="text-nowrap text-xs text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:text-white">
-                                Start personalized playlists here.
-                              </p>
-                            </div>
+                      <div>
+                        <h1 className="text-[1rem] text-[#a1a1a1]">Playlist</h1>
+                      </div>
+                      <div className="flex flex-col gap-[1.8rem]">
+                        <div className="group flex cursor-pointer items-center gap-[0.5rem]">
+                          <div>
+                            <ListPlus className="h-[2rem] w-[2rem] rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
                           </div>
-                          <div className="group flex cursor-pointer items-center gap-[0.5rem]">
-                            <div>
-                              <Heart className="h-[2rem] w-[2rem] rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
-                            </div>
-                            <div className="flex flex-col items-start justify-start">
-                              <NavigationMenuLink className="text-nowrap text-sm font-bold">
-                                Favorites
-                              </NavigationMenuLink>
-                              <p className="text-nowrap text-xs text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:text-white">
-                                Manage curated favorite playlists.
-                              </p>
-                            </div>
-                          </div>
-                          <div className="group flex cursor-pointer items-center gap-[0.5rem]">
-                            <div>
-                              <Play className="h-[2rem] w-[2rem] rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
-                            </div>
-                            <div className="flex flex-col items-start justify-start">
-                              <NavigationMenuLink className="text-nowrap text-sm font-bold">
-                                Currently Playing
-                              </NavigationMenuLink>
-                              <p className="text-nowrap text-xs text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:text-white">
-                                View active playlists now.
-                              </p>
-                            </div>
+                          <div className="flex flex-col items-start justify-start">
+                            <NavigationMenuLink className="text-nowrap text-sm font-bold">
+                              Create New
+                            </NavigationMenuLink>
+                            <p className="text-nowrap text-xs text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:text-white">
+                              Start personalized playlists here.
+                            </p>
                           </div>
                         </div>
                       </div>
-                      <div className="flex flex-col gap-[1.5rem]">
-                        <div>
-                          <h1 className="text-[1rem] text-[#a1a1a1]">
-                            Listening History
-                          </h1>
-                        </div>
-                        <div className="flex flex-col gap-[1.8rem]">
-                          <div className="group flex cursor-pointer items-center gap-[0.5rem]">
-                            <div>
-                              <Clock className="h-[2rem] w-[2rem] rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
-                            </div>
-                            <div className="flex flex-col items-start justify-start">
-                              <NavigationMenuLink className="text-nowrap text-sm font-bold">
-                                Recent
-                              </NavigationMenuLink>
-                              <p className="text-nowrap text-xs text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:text-white">
-                                Review recently played songs and albums.
-                              </p>
-                            </div>
+
+                      <div>
+                        <h1 className="text-md text-[#a1a1a1]">
+                          Listening History
+                        </h1>
+                      </div>
+                      <div className="flex flex-col gap-[1.8rem]">
+                        <div className="group flex cursor-pointer items-center gap-[0.5rem]">
+                          <div>
+                            <Clock className="h-[2rem] w-[2rem] rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
                           </div>
-                          <div className="group flex cursor-pointer items-center gap-[0.5rem]">
-                            <div>
-                              <Save className="h-[2rem] w-[2rem] rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
-                            </div>
-                            <div className="flex flex-col items-start justify-start">
-                              <NavigationMenuLink className="text-nowrap text-sm font-bold">
-                                Saved
-                              </NavigationMenuLink>
-                              <p className="text-nowrap text-xs text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:text-white">
-                                Access saved songs and albums.
-                              </p>
-                            </div>
+                          <div className="flex flex-col items-start justify-start">
+                            <NavigationMenuLink className="text-nowrap text-sm font-bold">
+                              Recent
+                            </NavigationMenuLink>
+                            <p className="text-nowrap text-xs text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:text-white">
+                              Review recently played songs and albums.
+                            </p>
+                          </div>
+                        </div>
+                        <div className="group flex cursor-pointer items-center gap-[0.5rem]">
+                          <div>
+                            <Save className="h-[2rem] w-[2rem] rounded-sm border p-1 text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:bg-white group-hover:text-black" />
+                          </div>
+                          <div className="flex flex-col items-start justify-start">
+                            <NavigationMenuLink className="text-nowrap text-sm font-bold">
+                              Saved
+                            </NavigationMenuLink>
+                            <p className="text-nowrap text-xs text-[#a1a1a1] transition-colors duration-300 ease-out group-hover:text-white">
+                              Access saved songs and albums.
+                            </p>
                           </div>
                         </div>
                       </div>
