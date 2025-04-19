@@ -17,7 +17,7 @@ export default function LibraryLayout({
             {" "}
             Explore a Powerful Sound Library - Crafted for Creators
           </p>
-          <span className="w-[530px] text-center text-xl font-semibold">
+          <span className="w-[530px] text-center text-xl">
             Discover a rich collection of high-quality sounds, loops, and
             effects tailored for music producers. Instantly preview, customize,
             and add them to your projects — all within one seamless platform.
