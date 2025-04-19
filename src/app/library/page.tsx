@@ -45,7 +45,7 @@ export default function LibraryPage() {
   return (
     <div className="grid grid-cols-4 justify-items-center">
       <div className="flex h-[450px] w-[300px] flex-col justify-between rounded-lg border">
-        <div className="flex h-[410px] w-full flex-col p-4">
+        <div className="flex h-[410px] w-full flex-col gap-4 p-4">
           <div className="flex h-[60px] w-full items-center gap-4">
             <div className="flex h-[50px] w-[50px] items-center justify-center rounded-md border bg-[#131313]">
               CF
