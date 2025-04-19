@@ -11,9 +11,9 @@ export default function LibraryLayout({
 }) {
   return (
     <section className="flex flex-col items-center gap-[3rem] px-[3rem] py-[5rem]">
-      <div className="flex flex-col items-center gap-[3rem]">
-        <div className="flex flex-col items-center gap-[3rem]">
-          <p className="w-[838px] text-center text-[57px] font-bold leading-[3.5rem]">
+      <div className="flex flex-col items-center gap-[2rem]">
+        <div className="flex flex-col items-center gap-[2rem]">
+          <p className="w-[950px] text-center text-[65px] font-bold leading-[4.5rem]">
             {" "}
             Explore a Powerful Sound Library - Crafted for Creators
           </p>
