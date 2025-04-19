@@ -30,7 +30,7 @@ export default function LibraryLayout({
           </span>
         </div>
         <div className="flex flex-col items-center gap-[2rem]">
-          <p className="w-[950px] text-center text-[65px] font-bold leading-[4.5rem]">
+          <p className="w-[860px] text-center text-[55px] font-bold leading-[3.5rem]">
             {" "}
             Explore a Powerful Sound Library - Crafted for Creators
           </p>
