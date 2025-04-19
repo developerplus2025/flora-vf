@@ -44,23 +44,23 @@ export default function LibraryPage() {
 
   return (
     <div className="grid grid-cols-4 justify-items-center">
-      <div className="flex h-[400px] w-[300px] flex-col justify-between rounded-lg border">
-        <div className="flex h-[340px] w-full flex-col p-4">
+      <div className="flex h-[450px] w-[300px] flex-col justify-between rounded-lg border">
+        <div className="flex h-[410px] w-full flex-col p-4">
           <div className="flex h-[60px] w-full items-center gap-4">
             <div className="flex h-[50px] w-[50px] items-center justify-center rounded-md border bg-[#131313]">
               CF
             </div>
             <div className="flex h-[40px] flex-col justify-between">
-              <p className="text-sm">The Flower</p>
-              <p className="text-xs">Aartist: Alan Walker</p>
+              <p className="text-sm">Name: The Flower</p>
+              <p className="text-xs text-[#a1a1a1]">Aartist: Alan Walker</p>
             </div>
           </div>
-          <div className="h-full">
+          <div className="relative h-full">
             <Image
               height={"400"}
               width={"300"}
               alt="gf-vg"
-              className="w-fulls h-full"
+              className="absolute h-full w-full rounded-lg"
               src={
                 "/image/man-person-music-road-street-guitar-1409658-pxhere.com.jpg"
               }
