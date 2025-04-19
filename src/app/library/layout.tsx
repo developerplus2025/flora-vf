@@ -9,7 +9,7 @@ export default function LibraryLayout({
   children: React.ReactNode;
 }) {
   return (
-    <section className="flex flex-col gap-[3rem] px-[3rem] py-[5rem]">
+    <section className="flex flex-col items-center gap-[3rem] px-[3rem] py-[5rem]">
       {children}
     </section>
   );
