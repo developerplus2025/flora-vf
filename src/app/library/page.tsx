@@ -55,7 +55,17 @@ export default function LibraryPage() {
               <p className="text-xs">Aartist: Alan Walker</p>
             </div>
           </div>
-          <div></div>
+          <div className="h-full">
+            <Image
+              height={"400"}
+              width={"300"}
+              alt="gf-vg"
+              className="w-fulls h-full"
+              src={
+                "/image/man-person-music-road-street-guitar-1409658-pxhere.com.jpg"
+              }
+            ></Image>
+          </div>
         </div>
         <div className="flex h-[60px] w-full items-center justify-between gap-[2rem] border-t px-[2rem]">
           <svg
