@@ -42,8 +42,18 @@ export default function LibraryLayout({
           </span>
         </div>
         <div className="flex gap-[2rem]">
-          <Button>Start Listening</Button>
-          <Button variant={"outline"}>Browse Sounds</Button>
+          <Button
+            variant={"outline"}
+            className="bg-[#131313] ring-1 ring-[#c6c6c680] ring-offset-2 ring-offset-black"
+          >
+            Start Listening
+          </Button>
+          <Button
+            variant={"outline"}
+            className="bg-[#131313] ring-1 ring-[#c6c6c680] ring-offset-2 ring-offset-black"
+          >
+            Browse Sounds
+          </Button>
         </div>
       </div>
       {children}
