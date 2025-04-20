@@ -34,10 +34,11 @@ export default function LibraryLayout({
             {" "}
             Fuel Your Music with Sounds that Spark Ideas
           </p>
-          <span className="text-md w-[530px] text-center">
-            Discover a rich collection of high-quality sounds, loops, and
-            effects tailored for music producers. Instantly preview, customize,
-            and add them to your projects — all within one seamless platform.
+          <span className="text-md w-[570px] text-center">
+            Step into a world of sound where every detail is crafted to inspire.
+            Browse through evolving textures, vivid tones, and compelling
+            rhythms that breathe life into your musical ideas and take your
+            creativity to new heights.
           </span>
         </div>
         <div className="flex gap-[2rem]">
