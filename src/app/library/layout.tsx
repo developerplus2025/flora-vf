@@ -11,7 +11,7 @@ export default function LibraryLayout({
   children: React.ReactNode;
 }) {
   return (
-    <section className="flex flex-col items-center gap-[3rem] px-[3rem] py-[5rem]">
+    <section className="flex flex-col items-center gap-[8.3rem] px-[3rem] pb-[5rem] pt-[9rem]">
       <div className="flex flex-col items-center gap-[2rem]">
         <div className="group relative grid overflow-hidden rounded-full px-3 py-1 shadow-[0_1000px_0_0_hsl(0_0%_85%)_inset] transition-colors duration-200 dark:shadow-[0_1000px_0_0_hsl(0_0%_20%)_inset]">
           <span>
