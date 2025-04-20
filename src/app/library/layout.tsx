@@ -30,9 +30,9 @@ export default function LibraryLayout({
           </span>
         </div>
         <div className="flex flex-col items-center gap-[2rem]">
-          <p className="w-[860px] text-center text-[55px] font-bold leading-[3.5rem]">
+          <p className="w-[794px] text-balance text-center text-[66px] font-semibold leading-[3.6rem] -tracking-[3px]">
             {" "}
-            A Curated Library of Sounds Made for Music Makers
+            Fuel Your Music with Sounds that Spark Ideas
           </p>
           <span className="text-md w-[530px] text-center">
             Discover a rich collection of high-quality sounds, loops, and
