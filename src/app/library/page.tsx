@@ -86,16 +86,16 @@ export default function LibraryPage() {
         {songs.map((song) => (
           <div
             key={song.name}
-            className="flex h-[450px] w-[300px] flex-col justify-between rounded-lg border"
+            className="flex h-[208px] w-[320px] flex-col justify-between rounded-lg border"
           >
-            <div className="flex h-[410px] w-full flex-col gap-4 p-4">
+            <div className="flex h-[200px] w-full flex-col gap-4 p-4">
               <div className="flex h-[60px] w-full items-center gap-4">
-                <div className="flex h-[50px] w-[50px] items-center justify-center rounded-md border bg-[#131313]">
+                <div className="flex h-[50px] w-[50px] items-center justify-center rounded-md bg-[#131313]">
                   <Image
                     height={"400"}
                     width={"300"}
                     alt="gf-vg"
-                    className="absolute h-full w-full rounded-lg"
+                    className="h-full w-full rounded-lg"
                     src={`/${song.img}.avif`}
                   ></Image>
                 </div>
