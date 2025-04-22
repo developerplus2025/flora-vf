@@ -6,6 +6,9 @@ const nextConfig = {
   experimental: {
     viewTransition: true,
   },
+  images: {
+    formats: ["image/avif"],
+  },
   reactStrictMode: true,
   compiler: {
     styledComponents: true,
