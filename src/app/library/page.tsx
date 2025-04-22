@@ -96,7 +96,7 @@ export default function LibraryPage() {
                     width={"300"}
                     alt="gf-vg"
                     className="absolute h-full w-full rounded-lg"
-                    src={`{"/${song.img}.avif"}`}
+                    src={`/${song.img}.avif`}
                   ></Image>
                 </div>
                 <div className="flex h-[40px] flex-col justify-between">
