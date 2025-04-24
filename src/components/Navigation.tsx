@@ -229,7 +229,7 @@ export const Navigation = (): JSX.Element => {
         <nav
           className={`${isScrolled || isBottom ? "border-b bg-[#0c0c0c]" : "border-b"} ${isDocsPath || isCreative || isGeneration ? "border-b bg-[#0c0c0c]" : "border-b"} relative z-[1] flex w-full items-center justify-between gap-[2rem] bg-white px-[2rem] dark:border-[#292929] dark:bg-[#000000]`}
         >
-          <div className="flex h-[58px] w-fit items-center gap-[1rem] text-sm">
+          <div className="flex h-[58px] w-fit items-center gap-[2rem] text-sm">
             <div className="flex items-center gap-4">
               <Link
                 href="/"
