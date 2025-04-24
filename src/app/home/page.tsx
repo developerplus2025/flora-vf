@@ -378,47 +378,8 @@ export default function Home() {
       <div className="mx-auto my-[4rem] h-px w-[700px] bg-gradient-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
       <PeopleSay />
       <div className="mx-auto my-[4rem] h-px w-[700px] bg-gradient-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
-      <div className="flex gap-2">
-        <p className="overflow-auto whitespace-pre">
-          ███████
-          <br />
-          ██
-          <br />
-          █████
-          <br />
-          ██
-          <br />
-          ██
-          <br />
-        </p>
-        <p>
-          ██
-          <br />
-          ██
-          <br />
-          ██
-          <br />
-          ██
-          <br />
-          ███████
-        </p>
-        <div className="flex flex-col items-center">
-          <p>███</p>
-          <div className="flex gap-[3rem]">
-            {" "}
-            <div className="flex flex-col">
-              <p>██ </p>
-              <p>██ </p>
-              <p>██ </p>
-            </div>
-            <div className="flex flex-col">
-              <p>██ </p>
-              <p>██ </p>
-              <p>██ </p>
-            </div>
-          </div>
-          <p>███</p>
-        </div>
+      <div className="text-center">
+        <p className="font-[BespokeStencil-BoldItalic] font-[55px]">FLORA</p>
       </div>
 
       {/* <Loader variant={"classic"} size={"sm"} />
