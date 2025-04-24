@@ -379,7 +379,7 @@ export default function Home() {
       <PeopleSay />
       <div className="mx-auto my-[4rem] h-px w-[700px] bg-gradient-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
       <div className="text-center">
-        <p className="font-[BespokeStencil-BoldItalic] font-[55px]">FLORA</p>
+        <p className="font-[BespokeStencil-BoldItalic] text-[55px]">FLORA</p>
       </div>
 
       {/* <Loader variant={"classic"} size={"sm"} />
