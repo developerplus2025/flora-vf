@@ -233,7 +233,7 @@ export const Navigation = (): JSX.Element => {
             <div className="flex items-center gap-4">
               <Link
                 href="/"
-                className="text-[1.1rem] font-bold transition-colors duration-300 ease-out dark:text-white"
+                className="font-[BespokeStencil-BoldItalic] text-[1.1rem] font-bold transition-colors duration-300 ease-out dark:text-white"
               >
                 FLORA
               </Link>

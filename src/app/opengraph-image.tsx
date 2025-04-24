@@ -34,7 +34,7 @@ export default async function Image() {
   }
 
   const geistLight = fetch(
-    new URL("./font/Geist-Bold.woff", import.meta.url),
+    new URL("./fonts/Geist-Bold.woff", import.meta.url),
   ).then((res) => res.arrayBuffer());
 
   return new ImageResponse(
