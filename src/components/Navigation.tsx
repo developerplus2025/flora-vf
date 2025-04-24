@@ -237,12 +237,12 @@ export const Navigation = (): JSX.Element => {
               >
                 FLORA
               </Link>
-              <Link
+              {/* <Link
                 href="/"
                 className="rounded-full border px-4 py-1 text-xs font-bold transition-colors duration-300 ease-out dark:text-white"
               >
                 v10.9.5
-              </Link>
+              </Link> */}
             </div>
             <NavigationMenu>
               <NavigationMenuList className="font-medium">
