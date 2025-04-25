@@ -47,6 +47,20 @@ const songs: Song[] = [
     description:
       "Smooth and rhythmic, this track captures the feel of cruising under city lights.",
   },
+  {
+    img: "alan-cowen",
+    name: "Electric Pulse",
+    artist: "Nova Beats",
+    description:
+      "A high-energy electronic track with pulsating beats and futuristic melodies.",
+  },
+  {
+    img: "thomas-zahner",
+    name: "Golden Skies",
+    artist: "Aiden Cross",
+    description:
+      "An uplifting journey through warm synths and nostalgic guitar riffs.",
+  },
 ];
 
 export default function LibraryPage() {
@@ -82,7 +96,7 @@ export default function LibraryPage() {
   return (
     <div className="flex flex-col gap-[3rem]">
       {/* <p>Top Audio</p> */}
-      <div className="justify-items-between grid grid-cols-4 gap-[3rem]">
+      <div className="justify-items-between grid grid-cols-3 gap-[3rem]">
         {songs.map((song) => (
           <div
             key={song.name}
