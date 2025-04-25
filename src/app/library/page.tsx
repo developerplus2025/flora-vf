@@ -104,12 +104,12 @@ export default function LibraryPage() {
           >
             <div className="flex h-[200px] w-full flex-col gap-4 p-4">
               <div className="flex h-[60px] w-full items-center gap-4">
-                <div className="flex h-[50px] w-[50px] items-center justify-center rounded-md bg-[#131313]">
+                <div className="flex h-[35px] w-[35px] items-center justify-center rounded-md">
                   <Image
                     height={"400"}
                     width={"300"}
                     alt="gf-vg"
-                    className="h-full w-full rounded-lg"
+                    className="h-full w-full"
                     src={`/${song.img}.avif`}
                   ></Image>
                 </div>
