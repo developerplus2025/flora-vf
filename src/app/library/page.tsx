@@ -94,7 +94,7 @@ export default function LibraryPage() {
   }, []);
 
   return (
-    <div className="flex flex-col gap-[2rem] pt-[2rem]">
+    <div className="flex flex-col gap-[2rem] border-t pt-[2rem]">
       <p className="font-bold text-[#a1a1a1]">Top Audio</p>
       <div className="justify-items-between grid grid-cols-3 gap-[3rem]">
         {songs.map((song) => (
