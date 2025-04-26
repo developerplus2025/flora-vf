@@ -100,22 +100,45 @@ export default function LibraryPage() {
         {songs.map((song) => (
           <div
             key={song.name}
-            className="flex h-[208px] w-[320px] flex-col justify-between rounded-lg border"
+            className="relative flex h-[165px] w-[320px] flex-col justify-between border"
           >
-            <div className="flex h-[200px] w-full flex-col gap-4 p-4">
-              <div className="flex h-[60px] w-full items-center gap-4">
-                <div className="flex h-[35px] w-[35px] items-center justify-center rounded-md">
-                  <Image
-                    height={"400"}
-                    width={"300"}
-                    alt="gf-vg"
-                    className="h-full w-full"
-                    src={`/${song.img}.avif`}
-                  ></Image>
+            <div className="absolute -left-[1px] -top-[1px] h-[14px] w-[14px] border-l border-t border-[#ffffff]"></div>
+            <div className="absolute -right-[1px] -top-[1px] h-[14px] w-[14px] border-r border-t border-[#ffffff]"></div>
+            <div className="absolute -bottom-[1px] -left-[1px] h-[14px] w-[14px] border-b border-l border-[#ffffff]"></div>
+            <div className="absolute -bottom-[1px] -right-[1px] h-[14px] w-[14px] border-b border-r border-[#ffffff]"></div>
+            <div className="flex h-[122px] w-full flex-col gap-4 p-4">
+              <div className="flex h-[60px] w-full flex-row-reverse justify-between">
+                <div>
+                  <svg
+                    data-testid="geist-icon"
+                    height={16}
+                    strokeLinejoin="round"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    style={{ color: "currentcolor" }}
+                  >
+                    <path
+                      fillRule="evenodd"
+                      clipRule="evenodd"
+                      d="M0.5 0.5H5.75L9.48421 5.71053L14 0.5H16L10.3895 6.97368L16.5 15.5H11.25L7.51579 10.2895L3 15.5H1L6.61053 9.02632L0.5 0.5ZM12.0204 14L3.42043 2H4.97957L13.5796 14H12.0204Z"
+                      fill="currentColor"
+                    />
+                  </svg>
                 </div>
-                <div className="flex h-[40px] flex-col justify-between">
-                  <p className="text-sm">{song.name}</p>
-                  <p className="text-xs text-[#a1a1a1]">{song.artist}</p>
+                <div className="flex items-center gap-4">
+                  <div className="flex h-[35px] w-[35px] items-center justify-center rounded-md">
+                    <Image
+                      height={"400"}
+                      width={"300"}
+                      alt="gf-vg"
+                      className="h-full w-full"
+                      src={`/${song.img}.avif`}
+                    ></Image>
+                  </div>
+                  <div className="flex h-[40px] flex-col justify-between">
+                    <p className="text-sm">{song.name}</p>
+                    <p className="text-xs text-[#a1a1a1]">{song.artist}</p>
+                  </div>
                 </div>
               </div>
               <div className="relative h-full">

@@ -335,7 +335,28 @@ export const Navigation = (): JSX.Element => {
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
-                <NavigationMenuItem>
+                <NavigationMenuItem className="px-3">
+                  <Link href="/library" legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={`relative flex h-7 items-center rounded-full text-sm duration-300 ease-out ${
+                        pathname === "/library"
+                          ? "dark:text-white"
+                          : "dark:text-[#9b9b9b]"
+                      } cursor-pointer select-none transition-colors dark:hover:text-white`}
+                    >
+                      <TextHoverEnter
+                        className={`${
+                          pathname === "/library"
+                            ? "dark:text-white"
+                            : "dark:text-[#9b9b9b]"
+                        }`}
+                      >
+                        Library
+                      </TextHoverEnter>
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+                {/* <NavigationMenuItem >
                   <NavigationMenuTrigger className="text-[#9b9b9b]">
                     Library
                   </NavigationMenuTrigger>
@@ -395,7 +416,7 @@ export const Navigation = (): JSX.Element => {
                       </div>
                     </div>
                   </NavigationMenuContent>
-                </NavigationMenuItem>
+                </NavigationMenuItem> */}
                 <NavigationMenuItem className="px-3">
                   <Link href="/creative" legacyBehavior passHref>
                     <NavigationMenuLink
