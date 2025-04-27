@@ -100,13 +100,13 @@ export default function LibraryPage() {
         {songs.map((song) => (
           <div
             key={song.name}
-            className="relative flex h-[165px] w-[320px] flex-col justify-between border"
+            className="relative flex h-[200px] w-[320px] flex-col justify-between border"
           >
             <div className="absolute -left-[1px] -top-[1px] h-[14px] w-[14px] border-l border-t border-[#ffffff]"></div>
             <div className="absolute -right-[1px] -top-[1px] h-[14px] w-[14px] border-r border-t border-[#ffffff]"></div>
             <div className="absolute -bottom-[1px] -left-[1px] h-[14px] w-[14px] border-b border-l border-[#ffffff]"></div>
             <div className="absolute -bottom-[1px] -right-[1px] h-[14px] w-[14px] border-b border-r border-[#ffffff]"></div>
-            <div className="flex h-[122px] w-full flex-col gap-4 p-4">
+            <div className="flex h-[155px] w-full flex-col gap-4 p-4">
               <div className="flex h-[60px] w-full flex-row-reverse justify-between">
                 <div>
                   <svg
@@ -145,6 +145,10 @@ export default function LibraryPage() {
                 <p className="text-center text-sm text-[#a1a1a1]">
                   {song.description}
                 </p>
+              </div>
+              <div className="flex justify-between">
+                <p className="text-xs">March 15, 2024</p>
+                <p className="text-xs">Rock</p>
               </div>
             </div>
             <div className="flex h-[60px] w-full items-center justify-between gap-[2rem] border-t px-[2rem]">
