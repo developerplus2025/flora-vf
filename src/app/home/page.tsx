@@ -165,6 +165,8 @@ import BeautifulFeaturesLayout from "./components/beautiful-features-layout";
 import WaveAudioCard from "./components/wave-audio-card";
 import CompAvatar from "@/components/comp-412";
 import { RadixDialog } from "./components/modal-animation-video";
+import { animate, stagger } from "motion";
+import { splitText } from "motion-plus";
 import PowerBy from "./components/power-by";
 export default function Home() {
   const text = `
@@ -217,7 +219,30 @@ export default function Home() {
     { id: "14", src: "labdigital" },
   ];
   const [value, setValue] = React.useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
 
+  useEffect(() => {
+    document.fonts.ready.then(() => {
+      if (!containerRef.current) return;
+
+      // Hide the container until the fonts are loaded
+      containerRef.current.style.visibility = "visible";
+
+      const { words } = splitText(containerRef.current.querySelector("h1")!);
+
+      // Animate the words in the h1
+      animate(
+        words,
+        { opacity: [0, 1], y: [10, 0] },
+        {
+          type: "spring",
+          duration: 2,
+          bounce: 0,
+          delay: stagger(0.05),
+        },
+      );
+    });
+  }, []);
   React.useEffect(() => {
     const interval = setInterval(() => {
       setValue((v) => (v >= 100 ? 0 : v + 10));
@@ -273,8 +298,11 @@ export default function Home() {
             The next generation of audio collaboration.
           </TextEffect> */}
           <div className="flex flex-col items-center justify-center">
-            <div className="relative flex h-[5rem] w-[900px] items-center justify-center overflow-hidden text-center text-[5rem] font-bold">
-              <motion.h1
+            <div
+              ref={containerRef}
+              className="relative flex h-[5rem] w-[900px] items-center justify-center overflow-hidden text-center text-[5rem] font-bold"
+            >
+              {/* <motion.h1
                 initial={{ y: "100%" }} // Trạng thái ban đầu: mờ và di chuyển xuống
                 animate={{ y: "0" }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
                 transition={{
@@ -287,9 +315,12 @@ export default function Home() {
                 className="absolute bottom-0 leading-[6rem]"
               >
                 The next generation of
-              </motion.h1>
+              </motion.h1> */}
+              <h1 className="h1">
+                The next generation of audio collaboration.
+              </h1>
             </div>
-            <div className="relative flex h-[5.3rem] w-[900px] items-center justify-center overflow-y-hidden text-[5rem] font-bold leading-[5rem]">
+            {/* <div className="relative flex h-[5.3rem] w-[900px] items-center justify-center overflow-y-hidden text-[5rem] font-bold leading-[5rem]">
               <motion.h1
                 initial={{ y: "100%" }} // Trạng thái ban đầu: mờ và di chuyển xuống
                 animate={{ y: "0" }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
@@ -298,7 +329,7 @@ export default function Home() {
               >
                 audio collaboration.
               </motion.h1>
-            </div>
+            </div> */}
           </div>
           {/* <TextScramble
             className="w-[800px] text-center font-mono text-[4rem] font-bold leading-[4rem]"
