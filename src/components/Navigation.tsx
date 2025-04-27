@@ -235,7 +235,7 @@ export const Navigation = (): JSX.Element => {
                 href="/"
                 className="font-[BespokeStencil-BoldItalic] text-[1.1rem] font-bold transition-colors duration-300 ease-out dark:text-white"
               >
-                FLORA
+                WESTERN
               </Link>
               {/* <Link
                 href="/"

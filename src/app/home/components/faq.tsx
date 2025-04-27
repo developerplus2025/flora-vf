@@ -126,7 +126,7 @@ export default function AccordionFAQ() {
             Got Questions? We&apos;ve Got Answers!
           </h1>
           <span className="md:text-md max-w-[480px] text-center text-zinc-500 dark:text-zinc-400">
-            Curious about our flora software? Check out the frequently asked
+            Curious about our WESTERN software? Check out the frequently asked
             questions below to find answers about features, pricing,
             customization, and more. Whether you&apos;re wondering how it works
             or what&apos;s included, we&apos;ve got all the details you need

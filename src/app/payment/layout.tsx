@@ -1,17 +1,13 @@
 import { Toaster } from "@/components/ui/toaster";
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Payment | Flora",
-  description: "Flora",
+  title: "Payment | WESTERN",
+  description: "WESTERN",
 };
 export default function PayMentLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <section>
-      {children}
-    </section>
-  );
+  return <section>{children}</section>;
 }

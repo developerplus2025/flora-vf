@@ -379,7 +379,7 @@ export default function Home() {
       <PeopleSay />
       <div className="mx-auto my-[4rem] h-px w-[700px] bg-gradient-to-r from-transparent via-zinc-700 to-transparent dark:via-zinc-300"></div>
       <div className="text-center">
-        <p className="font-[BespokeStencil-BoldItalic] text-[55px]">FLORA</p>
+        <p className="font-[BespokeStencil-BoldItalic] text-[55px]">WESTERN</p>
       </div>
 
       {/* <Loader variant={"classic"} size={"sm"} />
@@ -400,22 +400,22 @@ export default function Home() {
             <div className="flex gap-[2rem] rounded-t-lg border-b dark:border-b-[#202020] dark:bg-black">
               <Menubar className="rounded-t-lg border-none dark:bg-black">
                 <MenubarMenu>
-                  <MenubarTrigger>Flora</MenubarTrigger>
+                  <MenubarTrigger>WESTERN</MenubarTrigger>
                   <MenubarContent>
-                    <MenubarItem>About Flora</MenubarItem>
+                    <MenubarItem>About WESTERN</MenubarItem>
                     <MenubarSeparator />
                     <MenubarItem>
                       Preferences<MenubarShortcut>⌘,</MenubarShortcut>
                     </MenubarItem>
                     <MenubarSeparator />
                     <MenubarItem>
-                      Hide Flora<MenubarShortcut>⇧⌘H</MenubarShortcut>
+                      Hide WESTERN<MenubarShortcut>⇧⌘H</MenubarShortcut>
                     </MenubarItem>
                     <MenubarItem>
                       Hide Other<MenubarShortcut>⌘H</MenubarShortcut>
                     </MenubarItem>
                     <MenubarItem>
-                      Quit Flora <MenubarShortcut>⌘Q</MenubarShortcut>
+                      Quit WESTERN <MenubarShortcut>⌘Q</MenubarShortcut>
                     </MenubarItem>
                   </MenubarContent>
                 </MenubarMenu>

@@ -17,13 +17,16 @@ export default function Footer() {
   const isDocs = path === "/docs";
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
-    const promise = () => new Promise((resolve) => setTimeout(() => resolve({ name: 'Sonner' }), 2000));
+    const promise = () =>
+      new Promise((resolve) =>
+        setTimeout(() => resolve({ name: "Sonner" }), 2000),
+      );
     toast.promise(promise, {
-      loading: 'Loading...',
+      loading: "Loading...",
       success: (data) => {
         return `Thanks for subscribing!`;
       },
-      error: 'Error',
+      error: "Error",
     });
   };
   return (
@@ -37,7 +40,7 @@ export default function Footer() {
             <div className="mb-3 flex items-center gap-2">
               {/* <Music2 className="h-5 w-5 text-white" /> */}
               <h3 className="text-lg font-semibold tracking-tight">
-                Flora Software Company
+                WESTERN Software Company
               </h3>
             </div>
           </div>
@@ -119,7 +122,7 @@ export default function Footer() {
               <Input
                 type="email"
                 placeholder="you@domain.com"
-                className="h-8  bg-[#27272a80] text-xs text-white placeholder:text-[#a1a1a1]"
+                className="h-8 bg-[#27272a80] text-xs text-white placeholder:text-[#a1a1a1]"
                 required
               />
               <Button
@@ -135,7 +138,7 @@ export default function Footer() {
         {/* Bottom Section */}
         <div className="mt-6 flex flex-col items-center justify-between gap-4 border-t pt-6 md:flex-row">
           <p className="w-full text-center text-sm text-[#a1a1a1]">
-            © {new Date().getFullYear()} Flora Software Company, Inc.
+            © {new Date().getFullYear()} WESTERN Software Company, Inc.
           </p>
           <div className="hidden space-x-5">
             <a

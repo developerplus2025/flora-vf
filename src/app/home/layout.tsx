@@ -5,8 +5,8 @@ import { GeistSans } from "geist/font/sans";
 import Image from "next/image";
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
-  title: "Flora: A Useful Platform For Musicians",
-  description: "Flora - Home",
+  title: "WESTERN: A Useful Platform For Musicians",
+  description: "WESTERN - Home",
 };
 export default function HomeLayout({
   children,

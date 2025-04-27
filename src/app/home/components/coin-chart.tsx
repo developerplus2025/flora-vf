@@ -410,7 +410,7 @@ export function CoinChart() {
       <CardHeader>
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div className="space-y-0.5">
-            <CardTitle>FloraVF</CardTitle>
+            <CardTitle>WESTERNVF</CardTitle>
             {/* <div className="mb-1 text-3xl font-bold">
               <span className="text-xl text-muted-foreground">$</span>
               1,327,349.19

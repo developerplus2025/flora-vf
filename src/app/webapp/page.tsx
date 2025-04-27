@@ -124,7 +124,7 @@ import { NavigationEffect } from "@/components/NavigationEffect";
 import { ToasterSonner } from "@/components/ui/sonner";
 import { TabList, tablist } from "./data/tablist";
 import MusicTab from "./components/musictab";
-export default function FloraWebApp() {
+export default function WESTERNWebApp() {
   const { theme, systemTheme, setTheme } = useTheme();
   const [position, setPosition] = React.useState("benoit");
   return (
@@ -135,22 +135,22 @@ export default function FloraWebApp() {
             <div className="title_bar flex h-[37px] gap-[2rem] rounded-t-lg border-b dark:border-b-[#202020] dark:bg-black">
               <Menubar className="title_bar_no rounded-t-lg border-none dark:bg-black">
                 <MenubarMenu>
-                  <MenubarTrigger>Flora</MenubarTrigger>
+                  <MenubarTrigger>WESTERN</MenubarTrigger>
                   <MenubarContent>
-                    <MenubarItem>About Flora</MenubarItem>
+                    <MenubarItem>About WESTERN</MenubarItem>
                     <MenubarSeparator />
                     <MenubarItem>
                       Preferences<MenubarShortcut>⌘,</MenubarShortcut>
                     </MenubarItem>
                     <MenubarSeparator />
                     <MenubarItem>
-                      Hide Flora<MenubarShortcut>⇧⌘H</MenubarShortcut>
+                      Hide WESTERN<MenubarShortcut>⇧⌘H</MenubarShortcut>
                     </MenubarItem>
                     <MenubarItem>
                       Hide Other<MenubarShortcut>⌘H</MenubarShortcut>
                     </MenubarItem>
                     <MenubarItem>
-                      Quit Flora                   <MenubarShortcut>⌘Q</MenubarShortcut>
+                      Quit WESTERN <MenubarShortcut>⌘Q</MenubarShortcut>
                     </MenubarItem>
                   </MenubarContent>
                 </MenubarMenu>

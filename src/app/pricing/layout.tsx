@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Pricing | Flora",
-  description: "Flora - Pricing",
+  title: "Pricing | WESTERN",
+  description: "WESTERN - Pricing",
 };
 export default function PricingLayout({
   children,

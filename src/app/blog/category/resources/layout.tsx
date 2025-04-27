@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Blog - Flora",
-  description: "Blog - Flora",
+  title: "Blog - WESTERN",
+  description: "Blog - WESTERN",
 };
 export default function BlogLayout({
   children,

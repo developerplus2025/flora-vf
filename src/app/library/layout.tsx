@@ -2,8 +2,8 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/cn";
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Library | Flora",
-  description: "Flora - Library",
+  title: "Library | WESTERN",
+  description: "WESTERN - Library",
 };
 export default function LibraryLayout({
   children,
@@ -26,7 +26,7 @@ export default function LibraryLayout({
           </span>
           <span className="backdrop absolute inset-px rounded-full bg-neutral-100 transition-colors duration-200 dark:bg-neutral-950" />
           <span className="z-10 text-xs font-medium text-neutral-500 dark:text-neutral-400">
-            Introducing Flora AI v1.5.2
+            Introducing WESTERN AI v1.5.2
           </span>
         </div>
         <div className="flex flex-col items-center gap-[2rem]">

@@ -184,7 +184,7 @@ export default function Metric() {
       </div>
       <div className="flex flex-col items-center justify-center gap-4">
         <h1 className="w-[750px] text-center text-[3.5rem] font-bold leading-[4.5rem] tracking-tighter text-white sm:text-5xl xl:text-[3.5rem]">
-          Flora by the Numbers
+          WESTERN by the Numbers
         </h1>
         <span className="md:text-md max-w-[550px] text-center text-zinc-500 dark:text-zinc-400">
           See why musicians and producers trust our music software! From the

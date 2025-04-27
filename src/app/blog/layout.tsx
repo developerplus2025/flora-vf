@@ -22,8 +22,8 @@ import { DatePickerBlog } from "./date-picker-blog";
 // import Tabs from "./tabs";
 import TabAnimation from "./tabs";
 export const metadata: Metadata = {
-  title: "Blog - Flora",
-  description: "Blog - Flora",
+  title: "Blog - WESTERN",
+  description: "Blog - WESTERN",
 };
 export default function BlogLayout({
   children,

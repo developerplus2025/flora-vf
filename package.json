@@ -1,12 +1,12 @@
 {
-  "name": "flora-vf",
+  "name": "WESTERN-vf",
   "version": "10.9.5",
   "private": true,
   "main": "main.js",
   "build": {
     "asar": false,
     "compression": "store",
-    "appId": "com.Flora.inc",
+    "appId": "com.WESTERN.inc",
     "directories": {
       "output": "dist"
     },

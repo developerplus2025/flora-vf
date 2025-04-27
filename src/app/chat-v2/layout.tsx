@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "ChatV2 | Flora",
-  description: "Flora - ChatV2",
+  title: "ChatV2 | WESTERN",
+  description: "WESTERN - ChatV2",
 };
 export default function ChatV2Layout({
   children,
