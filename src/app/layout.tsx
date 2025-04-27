@@ -20,6 +20,7 @@ import { ToasterSonner } from "../components/ui/sonner";
 import CookieAlert from "@/components/cookie-alert";
 import { RootProvider } from "fumadocs-ui/provider";
 import FrameVideo from "./home/components/frame-video";
+import { Analytics } from "@vercel/analytics/react";
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "WESTERN: Buy and Sell Pi Network",
@@ -41,6 +42,8 @@ export default function RootLayout({
       >
         <head />
         <body className="relative overflow-x-hidden antialiased">
+          <Analytics />
+
           <CookieAlert />
           <ThemeProvider enableSystem attribute="class" defaultTheme="dark">
             <Navigation />
