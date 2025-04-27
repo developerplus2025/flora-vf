@@ -262,7 +262,7 @@ export default function Home() {
         className="mx-[5rem] mt-[1rem] flex w-full items-center justify-center gap-[2rem] min-[375px]:flex-col min-[645px]:flex-col xl:flex-col"
       >
         <div className="flex flex-col items-center justify-center gap-[2rem]">
-          {/* <TextEffect
+          <TextEffect
             className="w-[800px] text-center text-[4rem] font-bold leading-[4rem]"
             per="char"
             delay={0.5}
@@ -296,13 +296,13 @@ export default function Home() {
             }}
           >
             The next generation of audio collaboration.
-          </TextEffect> */}
-          <div className="flex flex-col items-center justify-center">
+          </TextEffect>
+          {/* <div className="flex flex-col items-center justify-center">
             <div
               ref={containerRef}
-              className="relative flex h-[5rem] w-[900px] items-center justify-center overflow-hidden text-center text-[5rem] font-bold"
-            >
-              {/* <motion.h1
+              className=" flex  w-[900px] items-center justify-center overflow-hidden text-center text-[5rem] font-bold"
+            > */}
+          {/* <motion.h1
                 initial={{ y: "100%" }} // Trạng thái ban đầu: mờ và di chuyển xuống
                 animate={{ y: "0" }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
                 transition={{
@@ -316,11 +316,11 @@ export default function Home() {
               >
                 The next generation of
               </motion.h1> */}
-              <h1 className="h1">
+          {/* <h1 className="h1">
                 The next generation of audio collaboration.
               </h1>
-            </div>
-            {/* <div className="relative flex h-[5.3rem] w-[900px] items-center justify-center overflow-y-hidden text-[5rem] font-bold leading-[5rem]">
+            </div> */}
+          {/* <div className="relative flex h-[5.3rem] w-[900px] items-center justify-center overflow-y-hidden text-[5rem] font-bold leading-[5rem]">
               <motion.h1
                 initial={{ y: "100%" }} // Trạng thái ban đầu: mờ và di chuyển xuống
                 animate={{ y: "0" }} // Trạng thái sau khi hoàn thành: rõ và về vị trí ban đầu
@@ -330,7 +330,7 @@ export default function Home() {
                 audio collaboration.
               </motion.h1>
             </div> */}
-          </div>
+          {/* </div> */}
           {/* <TextScramble
             className="w-[800px] text-center font-mono text-[4rem] font-bold leading-[4rem]"
             duration={1.2}
