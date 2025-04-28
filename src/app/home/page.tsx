@@ -228,7 +228,9 @@ export default function Home() {
       // Hide the container until the fonts are loaded
       containerRef.current.style.visibility = "visible";
 
-      const { words } = splitText(containerRef.current.querySelector("h1")!);
+      const { words } = splitText(
+        containerRef.current.querySelector("animation-h1")!,
+      );
 
       // Animate the words in the h1
       animate(
@@ -261,9 +263,12 @@ export default function Home() {
         transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
         className="mx-[5rem] mt-[1rem] flex w-full items-center justify-center gap-[2rem] min-[375px]:flex-col min-[645px]:flex-col xl:flex-col"
       >
-        <div className="flex flex-col items-center justify-center gap-[2rem]">
-          <TextEffect
-            className="w-[990px] text-center text-[5rem] font-semibold leading-[5rem] -tracking-[3px]"
+        <div
+          ref={containerRef}
+          className="flex flex-col items-center justify-center gap-[2rem]"
+        >
+          {/* <TextEffect
+            className="w-[990px] animation-h1 text-center text-[5rem] font-semibold leading-[5rem] -tracking-[3px]"
             per="char"
             delay={0.5}
             variants={{
@@ -296,7 +301,10 @@ export default function Home() {
             }}
           >
             The next generation of audio collaboration.
-          </TextEffect>
+          </TextEffect> */}
+          <h1 className="animation-h1 w-[990px] text-center text-[5rem] font-semibold leading-[5rem] -tracking-[3px]">
+            The next generation of audio collaboration.
+          </h1>
           {/* <div className="flex flex-col items-center justify-center">
             <div
               ref={containerRef}
