@@ -263,7 +263,7 @@ export default function Home() {
       >
         <div className="flex flex-col items-center justify-center gap-[2rem]">
           <TextEffect
-            className="w-[800px] text-center text-[4rem] font-bold leading-[4rem]"
+            className="w-[990px] text-center text-[5rem] font-semibold leading-[5rem] -tracking-[3px]"
             per="char"
             delay={0.5}
             variants={{
@@ -338,10 +338,11 @@ export default function Home() {
           >
             The next generation of audio collaboration.
           </TextScramble> */}
-          <h1 className="w-[520px] text-center text-xl">
+          <h1 className="text-md w-[522px] text-center">
             Dive into a seamless music experience with our cutting-edge
-            software. Unleash your creativity, manage your playlists, and
-            explore a universe of sounds.
+            software. Collaborate effortlessly, unleash your creativity, manage
+            playlists, and craft professional-quality tracks — all in one
+            powerful platform.
           </h1>
         </div>
         <div className="flex gap-[2rem]">
