@@ -16,7 +16,7 @@ export const contentType = "image/png";
 export default async function OpenGraphImage() {
   // Font
   const geistLight = fetch(
-    new URL("./font/Geist-Bold.woff", import.meta.url)
+    new URL("./fonts/Geist-Bold.woff", import.meta.url),
   ).then((res) => res.arrayBuffer());
 
   return new ImageResponse(
@@ -58,6 +58,6 @@ export default async function OpenGraphImage() {
           weight: 600,
         },
       ],
-    }
+    },
   );
 }
